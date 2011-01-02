@@ -1,0 +1,84 @@
+%\RequirePackage[swedish]{babel}
+\documentclass[a4paper]{amsbook}
+%\includeonly{}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{hyperref}
+%\usepackage{lettrine}
+\usepackage[swedish]{babel}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{natbib}
+\bibliographystyle{kthnat}
+
+\newtheorem{theorem}{Sats}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Exempel}
+\newtheorem{exercise}[theorem]{Uppgift}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Anmärkning}
+
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
+
+%\renewcommand{\qedsymbol}{Q.E.D.}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\powerset}{\mathcal{P}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\card}{\textnormal{card}\,}
+% \implies is already defined by AMS
+%\newcommand{\implies}{\Longrightarrow}
+\newcommand{\equivalent}{\Longleftrightarrow}
+% \land and \lor already defined by AMS
+%\newcommand{\land}{\wedge}
+%\newcommand{\lor}{\vee}
+
+\makeindex
+
+\begin{document}
+\frontmatter
+
+\title{Matematik 1c}
+\date{\today}
+\author{Daniel Bosk}
+%\address[Daniel Bosk]{Sandgatan 6, 86035 Söråker}
+%\email{\url{dbosk@kth.se}}
+%\urladdr{\url{http://www.bosk.se/}}
+%\dedicatory{En formalisering av matematiken i svensk gymnasieundervisning}
+%\thanks{...}
+
+\begin{abstract}
+	\noindent
+	\input{abstract.tex}
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+% unnumbered chapters: preface, acknowledgements, etc.
+%\include{intro.tex}
+
+\mainmatter
+% main chapters
+\include{intro}
+
+% appendices
+\appendix
+%\include{app-a.tex}
+
+\backmatter
+\bibliographystyle{kthnat}
+\bibliography{../thesis/thesis}
+
+\printindex
+
+\end{document}
