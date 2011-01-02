@@ -21,17 +21,19 @@ PRINT?=		lpr
 .tex.pdf:
 	${PDFTEX} ${TEXFLAGS} $<
 	-${BIBTEX} ${<:.tex=}
-	-${MAKEINDEX} $<
+	-${MAKEINDEX} ${<:.tex=.idx}
 	while (${PDFTEX} ${TEXFLAGS} $<; \
 		grep "Rerun to get cross" ${<:.tex=.log}) \
 		do true; done
+	${PDFTEX} ${TEXFLAGS} $<
 .tex.dvi:
 	${TEX} ${TEXFLAGS} $<
 	-${BIBTEX} ${<:.tex=}
-	-${MAKEINDEX} $<
+	-${MAKEINDEX} ${<:.tex=.idx}
 	while (${TEX} ${TEXFLAGS} $<; \
 		grep "Rerun to get cross" ${<:.tex=.log}) \
 		do true; done
+	${TEX} ${TEXFLAGS} $<
 .dvi.ps:
 	${DVIPS} -t ${PAPER} -o $@ $<
 
@@ -44,7 +46,7 @@ all-print: ${DOCUMENTS:.pdf=.print}
 
 clean:
 	@rm -f *.log *.aux *.toc *.core *.o *~ *.bbl *.blg *.ind *.ilg \
-		*.dvi *.ps *.pdf *.out
+		*.dvi *.ps *.out ${DOCUMENTS} *.idx
 
 struct:
 	@for f in ${DOCUMENTS}; do \
@@ -58,3 +60,7 @@ view: ${DOCUMENT}.pdf
 
 run: view
 
+todo:
+	@grep -e TODO -e todo -e XXX * | grep -v '^Makefile:'
+
+include depends.mk
