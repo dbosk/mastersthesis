@@ -1,19 +1,23 @@
-\docmentclass[a4paper,11pt]{kth-mag}
+\documentclass[a4paper,11pt]{kth-mag}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{lmodern}
 \usepackage[latin1]{inputenc}
-\usepackage{swedish,english]{babel}
+\usepackage[swedish,english]{babel}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{natbib}
+\bibliographystyle{kthnat}
 
 \title{Formalisering av matematiken i svensk gymnasieundervisning}
 \author{Daniel Bosk}
 \date{Maj 2010}
-\blurb{Examensarbete på Civilingenjörs- och lärarprogrammet\\
-	Handledare: Roy Skjelnes (KTH Matematik)\\
-	Biträdande handledare: Lil Engström (SU MND)\\
-	Examinatorer: Hans Thunberg (KTH) och Anneli Liukko (SU)
+\blurb{Examensarbete vid programmet \emph{Civilingenjör och lärare}\\
+	inom området Teknik och lärande\\
 }
-\trita{TRITA xxx}
+\trita{Stockholm 2010}
+
+\setlength{\parskip}{0pt}
 
 \begin{document}
 \frontmatter
@@ -21,25 +25,42 @@
 
 \clearpage
 
-\selectlanguage{swedish}
-\begin{abstract}
-	\input{abstract-sv.tex}
-\end{abstract}
 \selectlanguage{english}
 \begin{abstract}
 	\input{abstract-en.tex}
 \end{abstract}
+\selectlanguage{swedish}
+\begin{abstract}
+	\input{abstract-sv.tex}
+\end{abstract}
+
+\clearpage
+
+\begin{description}
+	\item[Handledare] Roy Skjelnes,
+		Matematiska institutionen,
+		Kungliga Tekniska Högskolan.
+	\item[Biträdande handledare] Lil Engström,
+		Institutionen för matematikämnets och naturvetenskapsämnenas
+			didaktik (MND),
+		Stockholms Universitet.
+	\item[Examinatorer] Hans Thunberg, Kungliga Tekniska Högskolan, och
+		Anneli Liukko, Stockholms Universitet.
+\end{description}
+
+\clearpage
+
+\vspace*{5cm}
+Tack till ...
 
 \clearpage
 
 \tableofcontents
 \mainmatter
 
-\input{contents.tex}
+\include{contents}
 
-\begin{thebibliography}{}
-	\input{references.tex}
-\end{thebibliography}
+\bibliography{thesis}
 
 \end{document}
 
