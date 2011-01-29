@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{kth-mag}
+\documentclass[a4paper,11pt,draft]{kth-mag}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{lmodern}
@@ -8,22 +8,35 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 \bibliographystyle{kthnat}
-\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{ifdraft}
 
-\kthlogo{logo_kth.png}
-\sulogo{logo_su.png}
+%\includeonly{}
 
-\title{Formalisering av matematiken i svensk gymnasieundervisning}
+%\kthlogo{logo_kth.png}
+\kthlogo{kth_logo.pdf}
+%\sulogo{logo_su.png}
+\sulogo{su_logo.pdf}
+
+\title{En formalisering av matematiken i svensk gymnasieundervisning}
 \author{Daniel Bosk}
 \date{Maj 2010}
 \blurb{Examensarbete vid programmet \emph{Civilingenjör och lärare}\\
 	inom området Teknik och lärande\\
 }
-\trita{Stockholm 2010}
+\trita{Stockholm 2011}
 
 \setlength{\parskip}{0pt}
 
 \begin{document}
+% draft
+\ifdraft{
+\makeevenfoot{plain}{dbosk-\today}{\thepage}{}
+\makeoddfoot{plain}{}{\thepage}{dbosk-\today}
+\makeevenfoot{headings}{dbosk-\today}{}{}
+\makeoddfoot{headings}{}{}{dbosk-\today}
+}{}
+% /draft
 \frontmatter
 \maketitle
 
@@ -40,31 +53,65 @@
 
 \clearpage
 
+\vspace*{5cm}
 \begin{description}
 	\item[Handledare] Roy Skjelnes,
-		Matematiska institutionen,
+		Institutionen för matematik,
 		Kungliga Tekniska Högskolan.
 	\item[Biträdande handledare] Lil Engström,
 		Institutionen för matematikämnets och naturvetenskapsämnenas
 			didaktik (MND),
 		Stockholms Universitet.
-	\item[Examinatorer] Hans Thunberg, Kungliga Tekniska Högskolan, och
-		Anneli Liukko, Stockholms Universitet.
+	\item[Extern handledare] Dan Laksov,
+		professor emeritus,
+		Kungliga Tekniska Högskolan.
+	\item[Examinator] Hans Thunberg,
+		Institutionen för matematik,
+		Kungliga Tekniska Högskolan.
 \end{description}
 
 \clearpage
 
-\vspace*{5cm}
-Tack till ...
+\tableofcontents*
 
-\clearpage
+\include{preface}
 
-\tableofcontents
 \mainmatter
 
-\include{contents}
+\ifdraft{
+\DoubleSpacing
+}{}
+
+% inledning
+% syfte och frågeställning
+\include{intro}
+% tidigare forskning
+\include{research}
+% metod
+% - urval (eventuellt)
+% - genomförande
+% - etiska synpunkter
+\include{method}
+% resultat och resultatanalys
+% - empiri eller beskrivning av data
+% - analys av data eller analys av empiri
+\include{results}
+% diskussion
+\include{discussion}
+
+\ifdraft{
+\SingleSpacing
+}{}
 
 \bibliography{thesis}
+
+\appendix
+\ifdraft{
+\DoubleSpacing
+}{}
+
+\include{material}
+\include{undersokning}
 
 \end{document}
 
