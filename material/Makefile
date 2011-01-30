@@ -22,6 +22,7 @@ PRINT?=		lpr
 	${PDFTEX} ${TEXFLAGS} $<
 	-${BIBTEX} ${<:.tex=}
 	-${MAKEINDEX} ${<:.tex=.idx}
+	-${MAKEINDEX} ${<:.tex=.nlo} -s nomencl.ist -o ${<:.tex=.nls}
 	while (${PDFTEX} ${TEXFLAGS} $<; \
 		grep "Rerun to get cross" ${<:.tex=.log}) \
 		do true; done
@@ -30,6 +31,7 @@ PRINT?=		lpr
 	${TEX} ${TEXFLAGS} $<
 	-${BIBTEX} ${<:.tex=}
 	-${MAKEINDEX} ${<:.tex=.idx}
+	-${MAKEINDEX} ${<:.tex=.nlo} -s nomencl.ist -o ${<:.tex=.nls}
 	while (${TEX} ${TEXFLAGS} $<; \
 		grep "Rerun to get cross" ${<:.tex=.log}) \
 		do true; done
@@ -46,7 +48,7 @@ all-print: ${DOCUMENTS:.pdf=.print}
 
 clean:
 	@rm -f *.log *.aux *.toc *.core *.o *~ *.bbl *.blg *.ind *.ilg \
-		*.dvi *.ps *.out ${DOCUMENTS} *.idx
+		*.dvi *.ps *.out ${DOCUMENTS} *.idx *.nls *.nlo
 
 struct:
 	@for f in ${DOCUMENTS}; do \
