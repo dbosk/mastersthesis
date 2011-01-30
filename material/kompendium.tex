@@ -1,31 +1,38 @@
 %\RequirePackage[swedish]{babel}
-\documentclass[a4paper]{amsbook}
-%\includeonly{}
+\documentclass[a4paper,reqno,draft]{amsbook}
+%\includeonly{talsystem}
 
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{url}
 \usepackage{hyperref}
-%\usepackage{lettrine}
+\usepackage{lettrine}
 \usepackage[swedish]{babel}
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{natbib}
 \bibliographystyle{kthnat}
+\usepackage{setspace}
+\usepackage{nomencl}
+\usepackage{marginnote}
+\usepackage{ifdraft}
+\ifdraft{
+\usepackage{fancyhdr}
+}{}
 
 \newtheorem{theorem}{Sats}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Följdsats}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Exempel}
-\newtheorem{exercise}[theorem]{Uppgift}
-
+\newtheorem{exercise}[theorem]{Övning}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Anmärkning}
 
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
 
-%\renewcommand{\qedsymbol}{Q.E.D.}
+\renewcommand{\qedsymbol}{Q.E.D.}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
@@ -41,12 +48,33 @@
 %\newcommand{\land}{\wedge}
 %\newcommand{\lor}{\vee}
 
+\makenomenclature
 \makeindex
 
 \begin{document}
+\ifdraft{
+\fancypagestyle{plain}{
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot[co,ce]{\thepage}
+\fancyfoot[ro,le]{dbosk-\today}
+}
+\fancypagestyle{ams}{
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[ce]{\small\leftmark}
+\fancyhead[co]{\small\rightmark}
+\fancyhead[lo,re]{}
+\fancyhead[ro,le]{\thepage}
+\fancyfoot[ro,le]{dbosk-\today}
+}
+\pagestyle{ams}
+}{}
 \frontmatter
 
-\title{Matematik 1c}
+\title{
+	%Mathematica prima gamma\\
+	Matematik 1c
+}
 \date{\today}
 \author{Daniel Bosk}
 %\address[Daniel Bosk]{Sandgatan 6, 86035 Söråker}
@@ -61,24 +89,52 @@
 \end{abstract}
 
 \maketitle
+%\begin{titlepage}
+%	\begin{center}
+%		\vskip0.1\textheight
+%		\textsc{\huge \...@title}
+%		\vskip0.1\textheight
+%		\textsc{\large \...@author}
+%		\vskip0.7\textheight
+%		\textsc{\...@date}
+%	\end{center}
+%\end{titlepage}
 
+\printnomenclature
 \tableofcontents
 
 % unnumbered chapters: preface, acknowledgements, etc.
 %\include{intro.tex}
 
 \mainmatter
+\ifdraft{
+\doublespacing
+}{}
 % main chapters
 \include{intro}
-
-% appendices
-\appendix
-%\include{app-a.tex}
+\include{logik}
+\include{mangder}
+\include{naturliga}
+\include{heltalen}
+\include{talsystem}
+\include{reella}
 
 \backmatter
+\ifdraft{
+\singlespacing
+}{}
 \bibliographystyle{kthnat}
 \bibliography{../thesis/thesis}
 
+\clearpage
 \printindex
+\clearpage
+
+% appendices
+\appendix
+\ifdraft{
+\doublespacing
+}{}
+\include{kursplanering}
 
 \end{document}
