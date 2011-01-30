@@ -64,5 +64,3 @@ run: view
 
 todo:
 	@grep -e TODO -e todo -e XXX * | grep -v '^Makefile:'
-
-include depends.mk
