@@ -2,6 +2,8 @@
 
 DOCUMENTS=	kompendium.pdf
 DOCUMENT?=	kompendium
+SOURCES=	kompendium kursplanering intro frontmatter backmatter \
+			heltalen naturliga reella logik mangder talsystem preface
 PAPER?=		a4
 
 TEX=		latex
@@ -15,7 +17,7 @@ PRINT?=		lpr
 
 
 .SUFFIXES: .tex .pdf .ps .dvi .print
-.PHONY: all all-print clean struct print view run
+.PHONY: all all-print clean struct print view run clean-all
 
 
 .tex.pdf:
@@ -47,8 +49,28 @@ all: ${DOCUMENTS}
 all-print: ${DOCUMENTS:.pdf=.print}
 
 clean:
-	@rm -f *.log *.aux *.toc *.core *.o *~ *.bbl *.blg *.ind *.ilg \
-		*.dvi *.ps *.out ${DOCUMENTS} *.idx *.nls *.nlo
+	@rm -f \
+		${DOCUMENT}.log \
+		${DOCUMENT}.aux \
+		${DOCUMENT}.toc \
+		${DOCUMENT}.bbl \
+		${DOCUMENT}.blg \
+		${DOCUMENT}.ind \
+		${DOCUMENT}.ilg \
+		${DOCUMENT}.dvi \
+		${DOCUMENT}.ps \
+		${DOCUMENT}.out \
+		${DOCUMENT}.pdf \
+		${DOCUMENT}.idx \
+		${DOCUMENT}.nls \
+		${DOCUMENT}.nlo \
+		${DOCUMENT}.lof \
+		${DOCUMENT}.lot \
+		*.core *.o *~ *.out 
+clean-all:
+	@for d in ${SOURCES}; do \
+		${MAKE} DOCUMENT=$$d clean; \
+		done
 
 struct:
 	@for f in ${DOCUMENTS}; do \
