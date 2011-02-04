@@ -1,0 +1,25 @@
+\begin{abstract}
+    \noindent
+    \input{abstract.tex}
+\end{abstract}
+
+\ifdraft{}{
+    \newgeometry{rmargin=4cm,lmargin=4cm}
+}
+\maketitle
+\ifdraft{}{
+    \restoregeometry
+}
+%\begin{titlepage}
+%   \begin{center}
+%       \vskip0.1\textheight
+%       \textsc{\huge \...@title}
+%       \vskip0.1\textheight
+%       \textsc{\large \...@author}
+%       \vskip0.7\textheight
+%       \textsc{\...@date}
+%   \end{center}
+%\end{titlepage}
+
+\printnomenclature
+\tableofcontents
