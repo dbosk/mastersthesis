@@ -1,4 +1,5 @@
-\documentclass[a4paper,11pt,draft]{kth-mag}
+\documentclass[a4paper,11pt,draft,twoside]{kth-mag}
+%\documentclass[a4paper,11pt,final,twoside]{kth-mag}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{lmodern}
@@ -11,7 +12,9 @@
 \usepackage{pdfpages}
 \usepackage{ifdraft}
 
-%\includeonly{}
+\ifdraft{
+	\includeonly{intro,research,dokument}
+}{}
 
 %\kthlogo{logo_kth.png}
 \kthlogo{kth_logo.pdf}
@@ -29,51 +32,16 @@
 \setlength{\parskip}{0pt}
 
 \begin{document}
-% draft
+\selectlanguage{swedish}
 \ifdraft{
 \makeevenfoot{plain}{dbosk-\today}{\thepage}{}
 \makeoddfoot{plain}{}{\thepage}{dbosk-\today}
 \makeevenfoot{headings}{dbosk-\today}{}{}
 \makeoddfoot{headings}{}{}{dbosk-\today}
 }{}
-% /draft
+
 \frontmatter
-\maketitle
-
-\clearpage
-
-\selectlanguage{english}
-\begin{abstract}
-	\input{abstract-en.tex}
-\end{abstract}
-\selectlanguage{swedish}
-\begin{abstract}
-	\input{abstract-sv.tex}
-\end{abstract}
-
-\clearpage
-
-\vspace*{5cm}
-\begin{description}
-	\item[Handledare] Roy Skjelnes,
-		Institutionen för matematik,
-		Kungliga Tekniska Högskolan.
-	\item[Biträdande handledare] Lil Engström,
-		Institutionen för matematikämnets och naturvetenskapsämnenas
-			didaktik (MND),
-		Stockholms Universitet.
-	\item[Extern handledare] Dan Laksov,
-		professor emeritus,
-		Kungliga Tekniska Högskolan.
-	\item[Examinator] Hans Thunberg,
-		Institutionen för matematik,
-		Kungliga Tekniska Högskolan.
-\end{description}
-
-\clearpage
-
-\tableofcontents*
-
+\include{frontmatter}
 \include{preface}
 
 \mainmatter
@@ -111,7 +79,7 @@
 }{}
 
 \include{material}
-\include{undersokning}
+\include{dokument}
 
 \end{document}
 
