@@ -1,104 +1,302 @@
-\chapter{Talsystem}
 %{Förkunskaper: mängder, heltalsdivision, potenser}
+\chapter{Talsystem}\index{talsystem}\index{talbeteckningssystem|see{talsystem}}
+\label{ch:Talsystem}
 \noindent
-\lettrine{E}{tt talsystem} \index{talsystem}
-är ett givet system för att representera tal med hjälp av olika
-teckenkombinationer.
-Det finns flera kända talsystem som används aktivt,
-det mest kända är det decimala\index{talsystem!decimalt}
-talsystemet, som är ett positionsvärdesystem. I detta system används 10
-som bas och således tecknen (siffrorna) 0, 1, 2, 3, 4, 5, 6, 7, 8 och 9.
-Det är detta talsystem alla svenska grundskoleelever lär sig att räkna med.
-Det finns även andra kända talsystem, exempelvis det binära
-positionsvärdesystemet som oftast associeras med datorer, där enbart siffrorna
-0 och 1 används.
-Ett annat talsystem som ibland används är det
-romerska\index{talsystem!romerskt} talsystemet, där
-bl.a. tecknen I, V och X används.
-Detta talsystem är, till skillnad från de två föregående, inte ett
-positionsvärdesystem.
-De tre talsystemen illustreras i Tabell \ref{tbl:NumSysOneToTen}, där visas hur
-talen 1-10 representeras i respektive nämnda talsystem.
+\lettrine{V}{i vet sedan} tidigare avsnitt att tal existerar och att det finns
+olika typer av tal; naturliga tal, hela tal, rationella tal och irrationella
+tal.
+Vi vet dessutom att det finns oändligt\footnote{Med detta är det inte sagt att
+de olika mängderna har samma kardinalitet.} många tal av varje typ samt att de
+går att räkna med på olika sätt.
+Men vad är egentligen ett tal?
+
+Ett tal är inom matematiken ett \emph{abstrakt objekt} som följer givna regler,
+exempelvis de för heltalen givna reglerna som vi behandlade i
+\chref{ch:Heltalen}.
+Är då \(123\) ett tal?
+Nej, \(123\) är bara en \emph{representation} av talet vi \emph{benämner}
+etthundratjugotre.
+Det bör påpekas att ordet etthundratjugotre också är en representation av
+talet, och alltså inte talet självt.
+Ett talsystem\index{talsystem}, eller
+talbeteckningssystem\index{talbeteckningssystem}, tillhandahåller ett entydigt
+sätt att representera dessa abstrakta tal på.
+Genom historien har det använts många olika talsystem, varav några finns kvar
+än idag.
+I \tblref{tbl:OlikaEtthundratjugotre} ges några representationer av
+etthundratjugotre i olika talsystem.
 
 \begin{table}[h]
-	\caption{Tabell över talen 1-10 i olika talsystem.}
-	\begin{tabular}{l|llllllllll}
-		Decimala talsystemet & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-		Binära talsystemet & 1 & 10 & 11 & 100 & 101 &
-			110 & 111 & 1000 & 1001 & 1010 \\
-		Romerska talsystemt & I & II & III & IV & V &
-			VI & VII & VIII & IX & X \\
+	\caption{Olika representationer av etthundratjugotre i olika talsystem.}
+	\begin{tabular}{ll}
+		\hline\hline
+		Binära talsystemet & \(1111011\) \\
+		Decimala talsystemet & \(123\) \\
+		Hexadecimala talsystemet & \(7B\) \\
+		Romerska talsystemet & LXXIII \\
+		\hline\hline
 	\end{tabular}
-	\label{tbl:NumSysOneToTen}
+	\label{tbl:OlikaEtthundratjugotre}
 \end{table}
 
+\begin{exercise}
+	\label{xrc:HittaTalsystem}
+	Fundera på alla sätt du känner till att representera tal på.
+\end{exercise}
+\begin{exercise}
+	\label{xrc:SkapaTalsystem}
+	Försök att hitta på ett eget sätt att representera tal på.
+\end{exercise}
+
+Det talsystem som är vanligast idag är det \emph{decimala talsystemet}, där
+tecknen som används är siffrorna \(1, 2, 3, 4, 5, 6, 7, 8\) och \(9\).
+\begin{remark}
+	Märk väl skillnaden mellan ett decimalt tal, som är ett tal skrivet med
+	det decimala talsystemet, och ett decimaltal, som är ett
+	tal med komma och decimaler.
+\end{remark}
+Andra vanliga talsystem är det binära, med siffrorna \(0\) och \(1\), och det
+hexadecimala, med 16 olika siffror.
+Dessa två används flitigt inom datateknik.
+Det decimala, det binära och det hexadecimala talsystemen är av en speciell
+typ av talsystem som kallas \emph{positionssystem}.
+Anledningen till namnet är att en siffras position har betydelse för dess
+värde.
+\begin{example}\label{ex:PositionensBetydelse}
+I \(111\) betyder den första ettan \(100\) medan den andra ettan
+betyder \(10\) och den sista betyder \(1\).
+Det vill säga, samma siffra har olika betydelse beroende på var i
+representationen som den befinner sig.
+\end{example}
+Positionssystemen behandlas i detalj i kommande avsnitt.
+
+Det romerska talsystemet är däremot inte ett positionssystem, utan är en
+modifikation av typen \emph{teckenvärdessystem}.
+Det romerska systemet behandlas i nästa avsnitt.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DET ROMERSKA TALSYSTEMET
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Det romerska talsystemet}
+\index{romerska talsystemet}\index{talsystem!romerskt}
+\noindent
+\lettrine{D}{et romerska talsystemet} är baserat på en modifikation av ett
+\emph{teckenvärdessystem}.
+I ett teckenvärdessystem har varje tecken ett speciellt värde.
+Detta till skillnad från positionssystemet där positionen är avgörande för
+tecknets värde.
+I ett mycket enkelt teckenvärdessystem, som används idag, representerar ett
+streck talet ett, två streck representerar talet två, och så vidare till och
+med talet fyra.
+Alltså har samma tecken samma värde och upprepningar adderas tillsammans för
+att få talet de representerar.
+Talet fem representeras däremot med fyra streck, som ovan, och ett femte streck
+snett över de fyra andra strecken.
+Detta bildar ett nytt tecken även om det är logiskt uppbyggt från tidigare
+tecken.
+Systemet består alltså av två tecken, ett tecken som har värdet ett och ett
+tecken som har värdet fem.
+Se \figref{fig:Strecktal}.
+
+\begin{figure}[h]
+	\caption{Tecknen i ett enkelt teckenvärdessystem.}
+	% TODO fixa figur för streckteckensystemet
+	%\includegraphics{}
+	Ingen figur ännu ...
+	\label{fig:Strecktal}
+\end{figure}
+
+Det romerska systemet är en modifiering av detta system.
+Tecknen och deras betydelse i det romerska talsystemet ges i
+\tblref{tbl:RomerskaSiffror}.
+
+\begin{table}[h]
+	\caption{De romerska siffrorna.}
+	\begin{tabular}{ccccccc}
+		\hline\hline
+		I & V & X & L & C & D & M \\
+		1 & 5 & 10 & 50 & 100 & 500 & 1000 \\
+%		I & 1 \\
+%		V & 5 \\
+%		X & 10 \\
+%		L & 50 \\
+%		C & 100 \\
+%		D & 500 \\
+%		M & 1000 \\
+		\hline\hline
+	\end{tabular}
+	\label{tbl:RomerskaSiffror}
+\end{table}
+
+Det romerska talsystemt fungerar nästan på samma sätt som ett
+tecken\-värdes\-system.
+Den väsentliga skillnaden är att i teckenvärdessystemet summeras alla tecknens
+värden medan det i det romerska systemet även finns subtraktion.
+I det romerska systemet subtraheras ett tecken av lägre värde som står före ett
+tecken med högre värde.
+Exempelvis, IV ger \(4\) eftersom att en etta står före en femma.
+VI ger däremot \(6\) eftersom att tecknens värde summeras.
+Talen 1-10 ges i \tblref{tbl:RomerskaTal} och några andra större tal finns i
+\tblref{tbl:RomerskaTal2}.
+
+\begin{table}[h]
+	\caption{Talen 1-10 i det decimala och det romerska talsystemen.}
+	\begin{tabular}{l|llllllllll}
+		\hline\hline
+		Decimala talsystemet & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+		Romerska talsystemt & I & II & III & IV & V &
+			VI & VII & VIII & IX & X \\
+		\hline\hline
+	\end{tabular}
+	\label{tbl:RomerskaTal}
+\end{table}
+
+\begin{table}[h]
+	\caption{Några tal skrivna med det romerska talsystemet.}
+	\begin{tabular}{ll}
+		\hline\hline
+		\(2011\) & MMXI \\
+		\(1999\) & MCMXCIX \\
+		\(1998\) & MCMXCVIII \\
+		\(587\) & DLXXXVII \\
+		\(487\) & CDLXXXVII \\
+		\hline\hline
+	\end{tabular}
+	\label{tbl:RomerskaTal2}
+\end{table}
+
+Som kan ses i \tblref{tbl:RomerskaTal2} är det endast tecknet med direkt lägre
+värde som används vid subtraktion.
+Exempelvis kan tänkas att \(487\) är \(500\) minus \(13\) och därför skulle
+kunna skrivas som XIIID, men sådant är alltså inte fallet.
+Det är istället C, eller \(100\), som används för subtraktion för D, eller
+\(500\), och sedan läggs tecknen för \(87\) till som vanligt.
+
+\begin{exercise}\label{xrc:RaknaMedRomerskaTal}
+	Undersök och diskutera hur enkelt det är att räkna med och
+	representera tal med det romerska talsystemet.
+\end{exercise}
+\begin{exercise}
+	Med utgångspunkt i föregående övning, hur tror du att romarna bidragit till
+	matematikhistorien?
+\end{exercise}
+\begin{exercise}
+	Hur är det med talet noll och negativa tal i det romerska talsystemet?
+\end{exercise}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% POSITIONSSYSTEM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Positionssystem}
+\index{positionssystem}\index{talsystem!positionssystem}
+\label{sec:Positionssystem}
+\noindent
+\lettrine{S}{om nämnts tidigare} innebär ett positionssystem att samma tecken
+har olika betydelse eller värde beroende på vilken position tecknet innehar.
+Systemet har en \emph{talbas}.
+Det decimala talsystemet har basen \(10\) och positionen ger exponenten i en
+\(10\)-potens.
+Siffran på denna position ger multipeln för denna potens.
+
+\begin{example}\label{ex:DecimaltPosistionssystem}
+	Det decimala talsystemet har basen \(10\).
+	Talet etthundratjugotre representeras i detta system som \(123\).
+	Vi har alltså
+	\[1\cdot10^2 + 2\cdot10^1 + 3\cdot10^0 = 100 + 20 + 3 = 123.\]
+\end{example}
+\begin{example}\label{ex:BinartPositionssystem}
+	Det binära talsystemet har basen \(2\).
+	Således representeras talet etthundratjugotre som \(1111011\).
+	Vi har alltså
+	\[1\cdot2^6 + 1\cdot2^5 + 1\cdot 2^4 + 1\cdot2^3 + 0\cdot2^2 +
+	1\cdot2^1 + 1\cdot2^0 = 123.\]
+\end{example}
+\begin{example}
+	Om ett positionssystem har basen \(b\) används då \(b\) antal siffror,
+	dessa har värdena \(0, 1, 2, \ldots, b-1\).
+	För att representera ett tal används summor av \(b\)-potenser där siffrans
+	position avgör exponenten.
+	Siffrans värde avgör multipeln för, det vill säga hur många av, den
+	specifika \(b\)-potensen som ska adderas.
+	Det vill säga talet vars värde beräknas som
+	\[
+		d_1b^{n-1} + d_2b^{n-1} + \cdots + d_{n-1}b^1 + d_nb^0
+	\]
+	representeras som \(d_1d_2\cdots d_n\) i basen \(b\).
+\end{example}
+
 Det finns även andra talsystem, exempelvis babyloniernas
-sexageisimala positionsvärdesystem\index{talsystem!babylonskt}
-\index{talsystem!sexageisimalt} som hade basen 60.
+sexagesimala positionssystem\index{talsystem!babylonskt}
+\index{talsystem!sexagesimalt} som hade basen \(60\).
 Spår av detta kan vi idag se i hur vi räknar tid, att en minut har 60
 sekunder och en timme har 60 minuter.
 Vi använder dock inte 60 olika tecken för att representera våra sekunder och
 minuter utan tar istället hjälp av det decimala talsystemet.
-Det babylonska sexageisimalsystemet är det äldsta kända användandet av ett
-positionsvärdesystem och härstammar från Babylonien\footnote{Babylonien låg i
+Det babylonska sexagesimalsystemet är det äldsta kända användandet av ett
+positionssystem och härstammar från Babylonien\footnote{Babylonien låg i
 södra delen av Mesopotamien, ungefär i dagens Irak.} omkring 3100 f.Kr.
-För att tydligt visa vad som menas med ett positionsvärdesystem, definierar vi
-det genom följande:
 
-\begin{definition}[Positionsvärdesystem]
+Kan då alla naturliga tal verkligen representeras med en godtycklig bas på
+detta sätt?
+Följande sats visar att sådant är fallet.
+\begin{theorem}\label{thm:PositionssystemAllaUnika}
+	Alla naturliga tal \(x \in \N\) kan skrivas som en summa av
+	\(b\)-potenser, där \(b\in\N\setminus\{0,1\}\) och varje potens får
+	förekomma maximalt \(b-1\) gånger i summan.
+	Denna summa är dessutom unik upp till ordningen av termerna.
+\end{theorem}
+\begin{proof}
+	% TODO bevisa att alla naturliga tal kan representeras med en godtycklig
+	% TODO bas och att denna representation är unik.
+	Inget bevis ännu ...
+\end{proof}
+
+\begin{exercise}
+	Diskutera innebörden av denna sats och dess bevis.
+\end{exercise}
+
+Eftersom att vi enligt \thmref{thm:PositionssystemAllaUnika} kan representera
+alla naturliga tal i en godtycklig bas och att denna representation är unik
+kan vi med säkerhet definiera ett positionssystem enligt följande.
+\begin{definition}[Positionssystem\footnote{\emph{Eng.} positional system,
+	place-value system}]
 	\index{talsystem!positionsvärdesystem}\index{positionsvärdesystem}
 	\index{talbas}\index{positionsvärdesystem!talbas}
-	\label{def:PosValueSys}
-	Ett positionsvärdesystem har en bas, eller \emph{talbas},
-	\(b \in \N \setminus \{0,1\}\),
-	siffrorna \(S=\{s\in\N : s<b\}\) och representerar ett tal \(x\) som
-	\(d_1d_2\ldots d_n\), där \(d_i \in S\) är siffran på position \(i\), och
+	\index{positionssystem|see{positionsvärdesystem}}
+	\label{def:Positionssystem}
+	Ett \emph{positionssystem}, eller positionsvärdesystem, har en
+	\emph{talbas} \(b \in \N \setminus \{0,1\}\),
+	siffrorna \(S=\{s\in\N : s<b\}\) och representerar ett tal \(x\in\N\) som
+	\(d_1d_2\cdots d_n\), där \(d_i \in S\) är siffran på position \(i\), och
 	\begin{equation}
 		\nonumber
 		x = d_1b^{n-1} + d_2b^{n-2} + \ldots + d_{n-1}b^1 + d_nb^0.
 	\end{equation}
-	För att veta vilken talbas som används brukar basen inkluderas som ett
-	subskript i slutet av dess representation.
 \end{definition}
 
-\begin{example}\label{ex:DecimalPosValueSys}
-	Enligt Definition \ref{def:PosValueSys} har det decimala talsystemet basen
-	%positionsvärdesystemet basen
-	\(b=10\) och siffrorna \(S=\{0,1,2,3,4,5,6,7,8,9\}\). Talet \(123\)
-	skrivs alltså \(123_{10}\) i det decimala talsystemet, och vi har att
-	\[123 = 1\cdot10^2 + 2\cdot10^1 + 3\cdot10^0 = 100 + 20 + 3.\]
+\begin{example}\label{ex:DecimalaTalsystemet}
+	Det decimala talsystemet har basen \(b=10\) och använder siffrorna
+	\(S=\{0,1,2,3,4,5,6,7,8,9\}\).
 \end{example}
-\begin{remark}
-	Märk väl skillnaden mellan ett decimalt tal, som är ett tal skrivet med
-	basen 10, och ett decimaltal, som är ett tal med komma och decimaler.
-\end{remark}
-
-\begin{example}
-	Enligt definitionen har det binära talsystemet basen \(b=2\) och siffrorna
-	\(S=\{0,1\}\). Talet \(123\) skrivs alltså \(1111011_2\) och
-	\[123 = 1\cdot2^6 + 1\cdot2^5 + 1\cdot 2^4 + 1\cdot2^3 + 0\cdot2^2 +
-	1\cdot2^1 + 1\cdot2^0.\]
+\begin{example}\label{ex:BinaraTalsystemet}
+	Det binära talsystemet har basen \(b=2\) och använder siffrorna
+	\(S=\{0,1\}\).
+\end{example}
+\begin{example}\label{ex:HexadecimalaTalsystemet}
+	Det hexadecimala talsystemet har basen \(b=16\).
+	När ett talsystem har basen \(b>10\) används vanligtvis bokstäver från
+	alfabetet som siffror för värdena \(10\), \(11\) och så vidare.
+	Det hexadecimala talsystemet använder alltså vanligtvis
+	siffrorna \[S=\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\},\] där \(A=10\),
+	\(B=11\) och så vidare.
 \end{example}
 
-\begin{remark}
-	I detta material är det endast denna typ av talsystem,
-	positionsvärdesystem, som kommer att behandlas.
-	%i fortsättningen av denna text kommer begreppen \emph{talsystem} och
-	%\emph{positionsvärdesystem} att användas synonymt.
-\end{remark}
-
-
-Andra talsystem som aktivt används idag
-är, som nämndes tidigare, det binära talsystemet, med basen 2, och det
-hexadecimala talsystemet, med basen 16.
-När vi använder en bas \(b>10\), exempelvis bas \(b=16\), används vanligtvis
-även bokstäverna A-F som tecken för siffror. I bas 16 har vi alltså
-siffrorna \[\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\},\] där \(A=10\), \(B=11\)
-o.s.v.
-%Båda dessa talsystem används aktivt inom datateknik idag.
-
-För att kunna urskilja när olika talbaser används brukar basen anges som ett
-subskript, exempelvis talet \(123\) skrivet med det decimala systemt anges som
+För att kunna urskilja vilken talbas ett tal representeras med brukar basen
+anges som ett subskript.
+Exempelvis talet \(123\) skrivet med det decimala systemet anges som
 \(123_{10}\).
 Det blir då lättare att förstå \(123_{10} = 1111011_2\) som betyder att \(123\)
 i bas 10 skrivs som \(1111011\) i bas 2.
@@ -107,37 +305,32 @@ I de första 9 åren i grundskolan är det uteslutande det decimala talsystemet
 som används och alltså har det aldrig varit nödvändigt att där specificera att
 basen varit 10.
 
-Kan då alla naturliga tal verkligen representeras med en gottycklig bas?
-Följande sats visar att så är fallet.
-\begin{theorem}
-	Alla naturliga tal \(x \in \N\) kan representeras med en godtycklig bas
-	\(b\) i ett positionsvärdesystem och denna representation är unik.
-\end{theorem}
-\begin{proof}
-	...
-\end{proof}
-
-\begin{exercise}\label{xrc:NumSysBase1}
-	Enligt Definition \ref{def:PosValueSys} används inte talen 0 och 1 som
-	baser, försök att förklara varför.
+\begin{exercise}\label{xrc:GiltigaTalbaser}
+	Enligt \defref{def:Positionssystem} används inte talen \(0\) och \(1\)
+	som baser, försök att förklara varför.
 \end{exercise}
-\begin{exercise}\label{xrc:NumSysDefExt}
-	Vidareutveckla Definition \ref{def:PosValueSys} till att omfatta även
-	decimaltal (tal med komma och decimaler).
+\begin{exercise}\label{xrc:RationelltPositionssystem}
+	Vidareutveckla \defref{def:Positionssystem} till att även
+	omfatta rationella tal.
 \end{exercise}
-\begin{exercise}\label{xrc:NumSysCompleteness}
+\begin{exercise}\label{xrc:KomplettRationelltPositionssystem}
 	Visa att alla rationella tal kan representeras med en godtycklig bas
-	\(1<b\in\N\) enligt den nya definitionen från Övning \ref{xrc:NumSysDefExt}.
+	\(1<b\in\N\) enligt den nya definitionen från
+	\xrcref{xrc:RationelltPositionssystem}.
 \end{exercise}
-\begin{exercise}\label{xrc:NumSysInfLong}
+\begin{exercise}\label{xrc:Decimalfoljder}
 	Det rationella talet \(\frac{1}{3} = 0.333\ldots\) skrivs som en oändlig
-	decimalutveckling i bas 10. Är det så i alla baser?
+	decimalutveckling i bas \(10\).
+	Är det så i alla baser \(1<b\in\N\)?
 \end{exercise}
-\begin{exercise}\label{xrc:NumSysConvert}
-	Undersök vad som händer vid heltalsdivision mellan ett tal \(x\), skrivet i
-	basen \(b\), och dess bas \(b\). Vad händer om talet \(x\) heltalsdivideras
-	med ett tal \(b^\prime \neq b\).
+\begin{exercise}\label{xrc:Basbyte}
+	Försök att formulera en metod för att byta talbas för ett tal.
 \end{exercise}
+%\begin{exercise}\label{xrc:NumSysConvert}
+%	Undersök vad som händer vid heltalsdivision mellan ett tal \(x\), skrivet i
+%	basen \(b\), och dess bas \(b\). Vad händer om talet \(x\) heltalsdivideras
+%	med ett tal \(b^\prime \neq b\).
+%\end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,59 +338,13 @@ Följande sats visar att så är fallet.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Byte av talbas}
 \noindent
-\lettrine{E}{ftersom} att ett tal \(x\) kan representeras i olika talbaser kan
-det vara intressant att konvertera ett tal från en talbas till en annan,
-tidigare gavs exempelet \(123_{10} = 1111011_2\) där samma tal är givet i två
-olika talbaser.
-
-\index{talbas!byte}
-Inledningsvis, om vi studerar talet \(x = d_1b^{n-1} + d_2b^{n-2} + \ldots +
-d_nb^0\) skrivet med basen \(1<b\in\N\), kan vi konstatera att om vi tittar på
-heltalsdivisionen\footnote{Heltalsdivision mellan \(a\) och \(b\) ger
-\(a = qb + r\).} mellan \(x\) och \(b\) får vi
-\begin{multline}
-	\label{eq:NumSysDiv}
-	x = d_1b^{n-1} + d_2b^{n-2} + \ldots + d_{n-1}b^1 + d_nb^0 \\
-	 = (d_1b^{n-2} + d_2b^{n-3} + \ldots + d_{n-1}b^0)b + d_n
-\end{multline}
-och vi kan konstatera att vi får \(d_n\), d.v.s. sista siffran i talet, som
-rest och vi får de resterande siffrorna av talet som kvoten.
-Om vi upprepar detta förfarande kan vi få ut alla siffror enskilt som
-resttermer vid heltalsdivision.
-När vi får ut den första siffran i talet, \(d_1\), som den sista resten har vi
-delat \(x\) med \(b\) \(n\) gånger\footnote{Eftersom att \(d_1b^{n-1}/b^n\) ger
-\(d_1\) som restterm.}.
-Om vi nu går åt andra hållet och bygger upp det ursprungliga talet med de
-siffror vi fått ut får vi
-\begin{equation}
-	\label{eq:NumSysDivRetrace}
-	((((0 + d_1)b + d_2)b + d_3)b + ...)b + d_n
-	= d_1b^{n-1} + d_2b^{n-2} + \ldots + d_nb^0
-\end{equation}
-
-\marginnote[Svar Övn. \ref{xrc:NumSysConvert} $\rightarrow$]
-{$\leftarrow$ Svar Övn. \ref{xrc:NumSysConvert}}
-Om vi nu använder ett tal \(b^\prime \neq b\) för heltalsdivisionen får vi
-istället för ekvationerna \eqref{eq:NumSysDiv} och \eqref{eq:NumSysDivRetrace}
-\begin{equation}
-	\label{eq:NumSysDivGen}
-	x = d_1b^{n-1} + d_2b^{n-2} + \ldots + d_{n-1}b^1 + d_nb^0
-	= qb^\prime + d^\prime_{n^\prime},
-\end{equation}
-där \(q\) är kvoten, \(d^\prime\) är resten och \(n^\prime\) är det nya antalet
-siffror, respektive
-\begin{equation}
-	\label{eq:NumSysDivRetraceGen}
-	(((0 + d^\prime_1)b^\prime + d^\prime_2)b^\prime + d^\prime_3)b^\prime +
-	\ldots)b^\prime + d^\prime_{n^\prime}
-	= d^\prime_1(b^\prime)^{n^\prime-1} + \ldots +
-	d^\prime_{n^\prime}(b^\prime)^0.
-\end{equation}
-Enligt Definition \ref{def:PosValueSys} ger ekvationen
-\eqref{eq:NumSysDivRetraceGen} talet \(x = d^\prime_1d^\prime_2\cdots
-d^\prime_{n^\prime}\), där \(d^\prime_i\) är siffran på plats \(i\), skrivet
-med basen \(b^\prime\).
-
+\lettrine{E}{ftersom att} \thmref{thm:PositionssystemAllaUnika} säger att alla
+naturliga tal kan representeras i alla baser innebär detta att samma tal har
+en unik representation i varje bas.
+Det kan alltså vara intressant att se ett tals olika representationer i olika
+baser.
+Hur detta basbyte går till och att det fungerar framgår av beviset för satsen.
+Metoden illustreras här med nedan givna exempel.
 \begin{example}
 	Talet \(123_{10} = 1111011_2\), detta finner vi genom följande:
 	\begin{align*}
@@ -218,14 +365,25 @@ med basen \(b^\prime\).
 		= 1111011_2 = 123_{10}.
 	\end{multline}
 \end{example}
+\begin{example}
+	Talet \(123_{10} = 7B_{16}\), detta finner vi genom följande:
+	\begin{align*}
+		123 &= 7\cdot16 + 11 \\
+		7 &= 0\cdot16 + 7
+	\end{align*}
+	Alltså får vi siffrorna \(7\) och \(B\) samt att
+	\begin{equation*}
+		(0+7)\cdot16 + 11 = 7\cdot16^1 + 11\cdot16^0 = 7B_{16} = 123_{10}.
+	\end{equation*}
+\end{example}
 
-\begin{exercise}\label{xrc:NumSysCompSci}
+\begin{exercise}\label{xrc:TalbasDatavetenskap}
 	Inom datateknik är baserna \(2=2^1\), \(8=2^3\) och \(16=2^4\) väldigt
 	populära, men bas \(10=2\cdot5\) är däremot inte lika populär.
-	Datorns interna representation av tal sker i form av ''bitar'' som kan anta
-	värdena \emph{på} och \emph{av}, eller \(1\) och \(0\).
-	Detta motsvarar precis det binära talsystemet, d.v.s. basen \(2\), detta
-	förklarar dess popularitet.
+	Datorns interna representation av tal sker i form av \emph{bitar} som kan
+	anta värdena \emph{på} och \emph{av}, eller \(1\) och \(0\).
+	Detta motsvarar precis det binära talsystemet, det vill säga basen
+	\(2=2^1\), detta förklarar basens popularitet.
 	Försök att förklara varför baserna \(8=2^3\) och \(16=2^4\) är populära,
 	medan bas \(10=2\cdot5\) inte är det.
 \end{exercise}
@@ -237,13 +395,18 @@ med basen \(b^\prime\).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{En additionsalgoritm}
 \noindent
-\lettrine{P}{ositionens} betydelse hos siffrorna i värdepositionssystemet gör
+\lettrine{P}{ositionens betydelse} för siffrornas värde i positionssystemet gör
 att tal representerade i detta talsystem blir väldigt enkla att räkna med.
 Vi ska i detta avsnitt undersöka varför.
 
-...
+Om vi vill addera de två talen \(x\) och \(y\) representerade med samma talbas
+\(b\) kan vi göra enligt följande.
+Vi adderar värdena för siffror på samma position i de båda representationerna.
+Tänk på att om talen representeras med olika antal siffror kan det kortare
+talet kompletteras med inledande nollor.
+Dessa summor \(s_i\) kan ...
 
-\begin{exercise}\label{xrc:MultAlg}
+\begin{exercise}\label{xrc:MultiplikationsAlgoritm}
 	Visa att den välkända multiplikationsalgoritmen, som elever lär sig i den
 	svenska grundskolan, även den fungerar för alla baser \(1<b\in\N\).
 \end{exercise}
