@@ -16,8 +16,8 @@ exempelvis de för heltalen givna reglerna som vi behandlade i
 Är då \(123\) ett tal?
 Nej, \(123\) är bara en \emph{representation} av talet vi \emph{benämner}
 etthundratjugotre.
-Det bör påpekas att ordet etthundratjugotre också är en representation av
-talet, och alltså inte talet självt.
+%Det bör påpekas att ordet etthundratjugotre också är en representation av
+%talet, och alltså inte talet självt.
 Ett talsystem\index{talsystem}, eller
 talbeteckningssystem\index{talbeteckningssystem}, tillhandahåller ett entydigt
 sätt att representera dessa abstrakta tal på.
@@ -33,7 +33,7 @@ etthundratjugotre i olika talsystem.
 		Binära talsystemet & \(1111011\) \\
 		Decimala talsystemet & \(123\) \\
 		Hexadecimala talsystemet & \(7B\) \\
-		Romerska talsystemet & LXXIII \\
+		Romerska talsystemet & CXXIII \\
 		\hline\hline
 	\end{tabular}
 	\label{tbl:OlikaEtthundratjugotre}
@@ -41,19 +41,20 @@ etthundratjugotre i olika talsystem.
 
 \begin{exercise}
 	\label{xrc:HittaTalsystem}
-	Fundera på alla sätt du känner till att representera tal på.
+	Lista alla sätt du känner till att representera tal på.
 \end{exercise}
 \begin{exercise}
 	\label{xrc:SkapaTalsystem}
-	Försök att hitta på ett eget sätt att representera tal på.
+	Hitta på ett eget sätt att representera tal på.
 \end{exercise}
 
 Det talsystem som är vanligast idag är det \emph{decimala talsystemet}, där
-tecknen som används är siffrorna \(1, 2, 3, 4, 5, 6, 7, 8\) och \(9\).
+tecknen som används är siffrorna \(0, 1, 2, 3, 4, 5, 6, 7, 8\) och \(9\).
 \begin{remark}
-	Märk väl skillnaden mellan ett decimalt tal, som är ett tal skrivet med
-	det decimala talsystemet, och ett decimaltal, som är ett
-	tal med komma och decimaler.
+	Märk väl skillnaden mellan ett decimalt tal och ett decimaltal.
+	Ett decimalt tal är ett tal representerat med det decimala talsystemet.
+	Ett decimaltal är ett tal med decimalkomma och decimaler, exempelvis
+	\(1.2\).
 \end{remark}
 Andra vanliga talsystem är det binära, med siffrorna \(0\) och \(1\), och det
 hexadecimala, med 16 olika siffror.
@@ -63,10 +64,10 @@ typ av talsystem som kallas \emph{positionssystem}.
 Anledningen till namnet är att en siffras position har betydelse för dess
 värde.
 \begin{example}\label{ex:PositionensBetydelse}
-I \(111\) betyder den första ettan \(100\) medan den andra ettan
-betyder \(10\) och den sista betyder \(1\).
-Det vill säga, samma siffra har olika betydelse beroende på var i
-representationen som den befinner sig.
+	I \(111\) betyder den första ettan \(100\) medan den andra ettan
+	betyder \(10\) och den sista betyder \(1\).
+	Det vill säga, samma siffra har olika betydelse beroende på var i
+	representationen som den befinner sig.
 \end{example}
 Positionssystemen behandlas i detalj i kommande avsnitt.
 
@@ -80,6 +81,7 @@ Det romerska systemet behandlas i nästa avsnitt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Det romerska talsystemet}
 \index{romerska talsystemet}\index{talsystem!romerskt}
+\label{sec:RomerskaTalsystemet}
 \noindent
 \lettrine{D}{et romerska talsystemet} är baserat på en modifikation av ett
 \emph{teckenvärdessystem}.
@@ -154,13 +156,13 @@ Talen 1-10 ges i \tblref{tbl:RomerskaTal} och några andra större tal finns i
 
 \begin{table}[h]
 	\caption{Några tal skrivna med det romerska talsystemet.}
-	\begin{tabular}{ll}
+	\begin{tabular}{lll}
 		\hline\hline
-		\(2011\) & MMXI \\
-		\(1999\) & MCMXCIX \\
-		\(1998\) & MCMXCVIII \\
-		\(587\) & DLXXXVII \\
-		\(487\) & CDLXXXVII \\
+		\(2011\) & MMXI & \(1000+1000+10+1\) \\
+		\(1999\) & MCMXCIX & \(1000+(1000-100)+(100-10)+(10-1)\) \\
+		\(1998\) & MCMXCVIII & \(1000+(1000-100)+(100-10)+5+1+1+1\) \\
+		\(587\) & DLXXXVII & \(500+50+10+10+10+5+1+1\) \\
+		\(487\) & CDLXXXVII & \((500-100)+50+10+10+10+5+1+1\) \\
 		\hline\hline
 	\end{tabular}
 	\label{tbl:RomerskaTal2}
@@ -197,8 +199,8 @@ Det är istället C, eller \(100\), som används för subtraktion för D, eller
 \lettrine{S}{om nämnts tidigare} innebär ett positionssystem att samma tecken
 har olika betydelse eller värde beroende på vilken position tecknet innehar.
 Systemet har en \emph{talbas}.
-Det decimala talsystemet har basen \(10\) och positionen ger exponenten i en
-\(10\)-potens.
+Det decimala talsystemet har basen \(10\) och varje position motsvarar en
+unik \(10\)-potens.
 Siffran på denna position ger multipeln för denna potens.
 
 \begin{example}\label{ex:DecimaltPosistionssystem}
@@ -238,20 +240,57 @@ minuter utan tar istället hjälp av det decimala talsystemet.
 Det babylonska sexagesimalsystemet är det äldsta kända användandet av ett
 positionssystem och härstammar från Babylonien\footnote{Babylonien låg i
 södra delen av Mesopotamien, ungefär i dagens Irak.} omkring 3100 f.Kr.
+\nocite{Kline1990mtf1}
 
 Kan då alla naturliga tal verkligen representeras med en godtycklig bas på
 detta sätt?
 Följande sats visar att sådant är fallet.
 \begin{theorem}\label{thm:PositionssystemAllaUnika}
-	Alla naturliga tal \(x \in \N\) kan skrivas som en summa av
-	\(b\)-potenser, där \(b\in\N\setminus\{0,1\}\) och varje potens får
-	förekomma maximalt \(b-1\) gånger i summan.
-	Denna summa är dessutom unik upp till ordningen av termerna.
+	Låt \(b>1\) vara ett naturligt tal större än ett.
+	Då kan varje naturligt tal \(x\in\N\) skrivas som
+	\begin{equation*}
+		d_1b^{n-1} + d_2b^{n-2} + \cdots + d_{n-1}b^1 + d_nb^0
+	\end{equation*}
+	med heltal \(0 \leq d_i < b\) för alla \(1\leq i\leq n\).
+	Denna presentation är unik upp till ordningen av termerna.
 \end{theorem}
 \begin{proof}
-	% TODO bevisa att alla naturliga tal kan representeras med en godtycklig
-	% TODO bas och att denna representation är unik.
-	Inget bevis ännu ...
+	Vi börjar med att visa att summan existerar.
+	Om vi delar \(x\) med \(b\) får vi en kvot \(q_1\) och en restterm
+	\(r_1\) sådana att \(x=q_1b+r_1\) och \(0\leq r_1<b\).
+	Om vi på samma vis delar \(q_1\) med \(b\) får vi en kvot \(q_2\) och en
+	restterm \(r_2\) sådana att \(q_1=q_2b+r_2\) och \(0\leq r_2 < b\).
+	Upprepas detta förfarande får vi att \(q_i=q_{i+1}b+r_{i+1}\), \(i\in\N\).
+	Från \thmref{thm:KvotenMindre} har vi att \(q_{i+1}<q_i\) eftersom att
+	\(b>1\).
+%	Vi får då från \defref{def:Valordningsprincipen} att \(q_n=0\) för något
+%	\(n\in\N\).
+	Vi får då från välordningsprincipen för de naturliga talen att \(q_n=0\)
+	för något \(n\in\N\).
+	Vi nu sätter ihop dessa resultat enligt följande idé.
+	Vi hade först att \(x=q_1b+r_1\), men \(q_1=q_2b+r_2\) och alltså är
+	\[x=(q_2b+r_2)b+r_1.\]
+	Eftersom att \(q_i=q_{i+1}b+r_{i+1}\) får vi att
+	\begin{align*}
+		x &= ((((q_nb+r_n)b+r_{n-1})b+\cdots+r_3)b+r_2)b+r_1 \\
+		 &= r_nb^{n-1}+r_{n-1}b^{n-2}+\cdots+r_3b^2+r_2b^1+r_1b^0.
+	\end{align*}
+	Om vi låter \(d_1=r_n, d_2=r_{n-1}, \ldots, d_{n-1}=r_2, d_n=r_1\) ser vi
+	att vi får en summa på korrekt form.
+
+	Antag att det även finns ett tal \(y\neq x\) skilt från \(x\) men med
+	samma representation.
+	Då har vi att
+	\begin{equation*}
+		y = r_nb^{n-1}+\cdots+r_2b^1+r_1.
+	\end{equation*}
+	Men
+	\begin{equation*}
+		x = r_nb^{n-1}+\cdots+r_2b^1+r_1 = y,
+	\end{equation*}
+	vilket är en motsägelse eftersom att vi antagit \(x\neq y\).
+	Alltså kan inget sådant tal \(y\) existera och representationen måste
+	därför vara unik.
 \end{proof}
 
 \begin{exercise}
@@ -259,8 +298,9 @@ Följande sats visar att sådant är fallet.
 \end{exercise}
 
 Eftersom att vi enligt \thmref{thm:PositionssystemAllaUnika} kan representera
-alla naturliga tal i en godtycklig bas och att denna representation är unik
-kan vi med säkerhet definiera ett positionssystem enligt följande.
+alla naturliga tal i en godtycklig bas \(b>1\) större än ett och att denna
+representation är unik kan vi med säkerhet definiera ett positionssystem enligt
+följande.
 \begin{definition}[Positionssystem\footnote{\emph{Eng.} positional system,
 	place-value system}]
 	\index{talsystem!positionsvärdesystem}\index{positionsvärdesystem}
@@ -326,11 +366,6 @@ basen varit 10.
 \begin{exercise}\label{xrc:Basbyte}
 	Försök att formulera en metod för att byta talbas för ett tal.
 \end{exercise}
-%\begin{exercise}\label{xrc:NumSysConvert}
-%	Undersök vad som händer vid heltalsdivision mellan ett tal \(x\), skrivet i
-%	basen \(b\), och dess bas \(b\). Vad händer om talet \(x\) heltalsdivideras
-%	med ett tal \(b^\prime \neq b\).
-%\end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -375,7 +410,14 @@ Metoden illustreras här med nedan givna exempel.
 	\begin{equation*}
 		(0+7)\cdot16 + 11 = 7\cdot16^1 + 11\cdot16^0 = 7B_{16} = 123_{10}.
 	\end{equation*}
+	Detta betyder att \(7B_{16} = 123_{10}\) och alltså är \(7B\) hexadecimalt
+	samma tal som 123 är decimalt.
 \end{example}
+
+\begin{exercise}
+	Vilket tal representerar \(123\) när det hexadecimala talsystemet används?
+	Det vill säga, hur representeras \(123_{16}\) med basen 10?
+\end{exercise}
 
 \begin{exercise}\label{xrc:TalbasDatavetenskap}
 	Inom datateknik är baserna \(2=2^1\), \(8=2^3\) och \(16=2^4\) väldigt
@@ -399,14 +441,158 @@ Metoden illustreras här med nedan givna exempel.
 att tal representerade i detta talsystem blir väldigt enkla att räkna med.
 Vi ska i detta avsnitt undersöka varför.
 
-Om vi vill addera de två talen \(x\) och \(y\) representerade med samma talbas
-\(b\) kan vi göra enligt följande.
-Vi adderar värdena för siffror på samma position i de båda representationerna.
-Tänk på att om talen representeras med olika antal siffror kan det kortare
-talet kompletteras med inledande nollor.
-Dessa summor \(s_i\) kan ...
+Vi inleder först med en illustration av algoritmen genom följande exempel.
+\begin{example}
+	Vi vill addera talen \(123\) och \(253\).
+	Vi skriver dem då ovanför varandra och får då steg \verb'a)' nedan.
+	\begin{verbatim}
+     a)   1 2 3   b)   1 2 3  c)   1 2 3  d)   1 2 3
+        + 2 5 3      + 2 5 3     + 2 5 3     + 2 5 3
+        -------      -------     -------     -------
+                           6         7 6       3 7 6
+	\end{verbatim}
+	Vi fortsätter genom att addera siffrorna i den sista kolumnen, det vill
+	säga \(3\) och \(3\), och får då \(6\).
+	Detta tal skriver vi under raden och hamnar då i steg \verb'b)'.
+	Vi fortsätter på samma sätt i stegen \verb'c)' och \verb'd)'.
+	Summan av de två talen är talet som står under raden, det vill säga
+	\(123+253=376\).
+\end{example}
+\begin{example}
+	Vi vill nu addera talen \(123\) och \(999\).
+	Vi gör då som ovan och får steg \verb'a)' nedan.
+	\begin{verbatim}
+                         1         1 1       1 1 1       1 1 1
+     a)   1 2 3   b)   1 2 3  c)   1 2 3  d)   1 2 3  e)   1 2 3
+        + 9 9 9      + 9 9 9     + 9 9 9     + 9 9 9     + 9 9 9
+        -------      -------     -------     -------     -------
+                           2         2 2       1 2 2     1 1 2 2
+	\end{verbatim}
+	Vi fortsätter genom att addera siffrorna i den sista kolumnen, det vill
+	säga \(3\) och \(9\), och får då \(12\).
+	Vi skriver entalet under raden och tiotalet ovanpå nästa kolumn med tal,
+	detta visas i steg \verb'b)'.
+	I steg \verb'c)' adderar vi kolumnen med talen \(1, 2\) och \(9\).
+	Vi får åter \(12\) och gör som i steg \verb'b)'.
+	I steg \verb'd)' när vi adderar \(1,1\) och \(9\) får vi \(11\).
+	Denna gång skriver vi tiotalet över den tomma kolumnen längst till höger.
+	I steg \verb'e)' adderar vi \(1,0\) och \(0\) och får \(1\) som skrivs
+	under raden.
+	Alltså får vi att \(123+999=1122\).
+\end{example}
+\begin{remark}
+	Notera att entalet är resten vid heltalsdivision med basen som nämnare och
+	tiotalet är kvoten vid samma division.
+\end{remark}
+
+Vi vill nu titta på det generella fallet.
+När vi ovan adderar kolumnerna kan vi få ett en- eller tvåsiffrigt tal som
+resultat.
+Om \(b>1\) är basen i ett talsystem, \(s<b\) och \(t<b\) är två siffror i detta
+talsystem.
+Då är summan \(0\leq s+t\leq 2(b-1)\).
+Det följer direkt av \thmref{thm:PositionssystemAllaUnika} att summorna
+\(s+t<b\) är ensiffriga.
+Följande lemma fastställer att \(b\leq s+t\leq 2(b-1)\) är tvåsiffrig.
+\begin{lemma}\label{lem:AdditionSiffror}
+	Ett naturligt tal \(x\) i intervallet \(b \leq x \leq 2(b-1)\) kan skrivas
+	som en summa \(d_1b^1 + d_2b^0\),
+	där \(1 \leq d_1 \leq b-1\) och \(0 \leq d_2 \leq b-1\).
+\end{lemma}
+\begin{proof}
+	Det är klart från \thmref{thm:PositionssystemAllaUnika} att \(x\) kan
+	skrivas som en summa på formen \(d_1b^{n-1}+\cdots+d_nb^0\) och att denna
+	är unik.
+	Det som återstår att visa är att den består av enbart två termer, det vill
+	säga att \(n=2\).
+
+	Om vi tittar på fallet \(x=b\) får vi vid heltalsdivision kvoten \(x/b = 1\)
+	och resttermen \(0\).
+	Det vill säga, vi har \(d_1=1\), \(d_2=0\) och således \(x=1\cdot b+0\).
+	Alltså måste vi ha minst två termer.
+
+	Om vi tittar på fallet \(x=2(b-1)\) ser vi att \(2(b-1)=b+(b-2)\).
+	Heltalsdivisionen \(x/b\) ger då kvoten \(b/b=1\) och resttermen \(b-2\).
+	Vi har således \(d_1=1\), \(d_2=b-2\) och alltså \(x=1\cdot b+(b-2)\).
+
+	Alltså har vi exakt två termer.
+\end{proof}
+
+\begin{exercise}
+	Diskutera innebörden av detta lemma och dess bevis.
+\end{exercise}
+
+Följande sats visar att denna additionsmetod fungerar för godtyckligt långa tal
+\(x=x_1x_2\cdots x_n\) och \(y=y_1y_2\cdots y_m\) representerade i samma talbas
+\(b>1\).
+\begin{theorem}[Additionsalgoritm]
+	Låt \(x=x_1x_2\cdots x_n\) och \(y=y_1y_2\cdots y_m\) vara två tal
+	representerade i ett positionssystem med basen \(b>1\),
+	\(x_i\) och \(y_i\) vara identiskt noll för \(i<1\) och \(N=\max\{n,m\}\).
+	Låt också \(q_b(t)=t/b\) vara kvoten och \(r_b(t)=t\%b\) vara resten vid
+	heltalsdivisionen \(t/b\).
+	Summan \(x+y\) kan då fås genom 
+	\begin{multline}\label{eq:AdditionsEkvation}
+		x+y= q_b(x_{n-N}+y_{m-N})b^N + \\
+		\left(r_b(x_{n-N}+y_{m-N})+q_b(x_{n-N+1}+y_{m-N+1})\right)b^{N-1} +\\
+		\left(r_b(x_{n-N+1}+y_{m-N+1})+q_b(x_{n-N+2}+y_{m-N+2})\right)b^{N-2}
+			+ \\
+		\cdots + \left(r_b(x_{n-1}+y_{m-1})+q_b(x_n+y_m)\right)b^1 +
+		r_b(x_n+y_{m})b^0.
+	\end{multline}
+\end{theorem}
+\begin{proof}
+	Låt oss först antaga att \(n=m+k\).
+	Om vi tittar på \(x=x_1b^{n-1}+x_2b^{n-2}+\cdots+x_nb^0\) och
+	\(y=y_1b^{m-1}+y_2b^{m-2}+\cdots+y_mb^0\) får vi att
+	\begin{align*}
+		x+y=&x_1b^{n-1}+\cdots+x_{k-1}b^{n-k+1}+(x_k+y_1)b^m+\\
+		&(x_{k+1}+y_2)b^{m-1}+\cdots+(x_{n-1}+y_{m-1})b^1+(x_n+y_m)b^0
+	\end{align*}
+	Vi fortsätter med att titta på en av termerna \((x_{i+k}+y_i)b^{n-k-i}\)
+	och vi ser att \(0\leq x_{i+k}+y_i\leq b-2\).
+	Vi har från \lemref{lem:AdditionSiffror} att om \(b\leq x_{i+k}+y_i\leq
+	2(b-1)\) är \(x_{i+k}+y_i = d_1b+d_2\) med \(1\leq d_1<b\) och \(0\leq
+	d_2<b\) och \(x_{i+k}+y_i = d < b\) annars.
+
+	Vi tittar på det första fallet.
+	Vi får då att
+	\begin{align*}
+		(x_{i+k}+y_i)b^{n-k-i} &= (d_1b+d_2)b^{n-k-i}
+			= d_1b^{n-k-i+1}+d_2b^{n-k-i}.
+	\end{align*}
+	Vi har att \(q_b(d_1b+d_2)=d_1\) och att \(r_b(d_1b+d_2)=d_2\) och således
+	att
+	\begin{equation*}
+		(x_{i+k}+y_i)b^{n-k-i} = q_b(x_{i+k}+y_i)b^{n-k-i+1} +
+		r_b(x_{i+k}+y_i)b^{n-k-i}.
+	\end{equation*}
+	Om \(x_{i+k}+y_i<b\) har vi att \(q_b(x_{i+k}+y_i)=0\) och
+	\(r_b(x_{i+k}+y_i)=x_{i+k}+y_i\) och alltså får vi även med det andra
+	fallet.
+
+	Vi ser i \eqref{eq:AdditionsEkvation} att båda dessa termer finns med.
+	\(q_b(x_{i+k}+y_i)\) finns med som en del i \(b^{n-k-i+1}\)-potensen och
+	\(r_b(x_{i+k}+y_i)\) finns med som en del i \(b^{n-k-i}\)-potensen.
+
+	Vi kan således konstatera att likheten i \eqref{eq:AdditionsEkvation} är
+	korrekt.
+\end{proof}
+\begin{exercise}
+	Diskutera innebörden av denna sats och dess bevis.
+\end{exercise}
+
+Med detta har vi visat att additionsmetoden fungerar för en godtycklig bas
+\(b>1\) i ett positionssystem.
+Alla \(q_b\)-termerna motsvarar tiotalet som skrivs ovanför vänstervarande
+kolumn om summan blir för stor.
+Om summan inte blir för stor blir \(q_b\)-termen noll.
+Alla \(r_b\)-termerna motsvarar entalet som alltid skrivs under strecket.
 
 \begin{exercise}\label{xrc:MultiplikationsAlgoritm}
-	Visa att den välkända multiplikationsalgoritmen, som elever lär sig i den
+	Undersök om den välkända multiplikationsalgoritmen, som elever lär sig i den
 	svenska grundskolan, även den fungerar för alla baser \(1<b\in\N\).
+\end{exercise}
+\begin{exercise}
+	Bevisa ditt resultat från \xrcref{xrc:MultiplikationsAlgoritm}.
 \end{exercise}
