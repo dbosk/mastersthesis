@@ -14,10 +14,12 @@
 \usepackage{setspace}
 \usepackage{nomencl}
 \usepackage{marginnote}
+%\usepackage{enumerate}
 \usepackage{ifdraft}
 \ifdraft{
 	\usepackage{fancyhdr}
-	\includeonly{heltalen,talsystem,kursplanering}
+%	\usepackage{showlabels}
+	\includeonly{naturliga,heltalen,talsystem}
 }{
 	\usepackage[a4paper,rmargin=6cm,lmargin=3cm,bmargin=3.5cm]{geometry}
 }
@@ -36,15 +38,19 @@
 \numberwithin{equation}{chapter}
 
 \newcommand{\chref}[1]{Kapitel \ref{#1}}
+\newcommand{\secref}[1]{avsnitt \ref{#1}}
+\newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\tblref}[1]{Tabell \ref{#1}}
 \newcommand{\figref}[1]{Figur \ref{#1}}
 \newcommand{\defref}[1]{Definition \ref{#1}}
 \newcommand{\thmref}[1]{Sats \ref{#1}}
-\newcommand{\lmref}[1]{Lemma \ref{#1}}
+\newcommand{\lemref}[1]{Lemma \ref{#1}}
 \newcommand{\corref}[1]{Följdsats \ref{#1}}
 \newcommand{\exref}[1]{Exempel \ref{#1}}
 \newcommand{\xrcref}[1]{Övning \ref{#1}}
 %\newcommand{\defref}[1]{Definition \ref{#1}}
+
+\newcommand{\imp}[1]{\emph{#1}\marginnote{#1}}
 
 \renewcommand{\qedsymbol}{Q.E.D.}
 \newcommand{\N}{\mathbb{N}}
