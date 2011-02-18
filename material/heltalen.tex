@@ -6,10 +6,11 @@
 ...
 
 \begin{definition}
-	Ett element \(x\) i en mängd med en definierad operation \(\diamond\)
-	kallas för \emph{inversen till \(y\)} om och endast om det för något \(y\)
-	uppfyller att \(y\diamond x = e\), där \(e\) är identitetselementet under
-	operationen.
+	\index{invers}
+	Givet en mängd med en definierad operation \(\diamond\) och ett
+	identitetselement \(e\).
+	Ett element \(x\) kallas för \emph{inversen till \(y\)} om
+	\(y\diamond x = x\diamond y = e\).
 \end{definition}
 
 \section{Algebraiska egenskaper hos de hela talen}
@@ -18,25 +19,25 @@
 
 \begin{definition}[Algebraiska egenskaper hos de hela talen]
 	\nocite{Bartle2000itr,Grillet2007aa}
-	\label{def:WholeNumAxioms}
+	\label{def:HeltalenEgenskaper}
 	På mängden \(\Z\) definieras två binära operationer, addition (\(+\)) och
 	multiplikation (\(\cdot\)).
 	För addition gäller följande:
 	\begin{description}
-		\item[Kommutativitet] \(a+b=b+a\) för alla \(a,b\in\R\).
-		\item[Associtivitet] \((a+b)+c=a+(b+c)\) för alla \(a,b,c\in\R\).
-		\item[Additivt identitetselement] Det finns ett element \(0\in\R\)
-			sådant att för alla \(a\in\R\) gäller att \(0+a = a+0 = a\).
-		\item[Additiv invers] För alla \(a\in\R\) finns ett element \(-a\in\R\)
+		\item[Kommutativitet] \(a+b=b+a\) för alla \(a,b\in\Z\).
+		\item[Associtivitet] \((a+b)+c=a+(b+c)\) för alla \(a,b,c\in\Z\).
+		\item[Additivt identitetselement] Det finns ett element \(0\in\Z\)
+			sådant att för alla \(a\in\Z\) gäller att \(0+a = a+0 = a\).
+		\item[Additiv invers] För alla \(a\in\Z\) finns ett element \(-a\in\Z\)
 			sådant att \(a + (-a) = (-a) + a = 0\).
 	\end{description}
 	För multiplikation gäller följande:
 	\begin{description}
-		\item[Kommutativitet] \(a \cdot b=b \cdot a\) för alla \(a,b\in\R\).
+		\item[Kommutativitet] \(a \cdot b=b \cdot a\) för alla \(a,b\in\Z\).
 		\item[Associtivitet] \((a \cdot b) \cdot c=a \cdot (b \cdot c)\) för
-			alla \(a,b,c\in\R\).
+			alla \(a,b,c\in\Z\).
 		\item[Multiplikativt identitetselement] Det finns ett element
-			\(1\in\R\) sådant att för alla \(a\in\R\) gäller att
+			\(1\in\Z\) sådant att för alla \(a\in\Z\) gäller att
 			\(1 \cdot a = a \cdot 1 = a\).
 %		\item[Multiplikativ invers] För alla \(0 \neq a\in\R\) finns ett
 %			element \(1/a\in\R\) sådant att
@@ -44,20 +45,21 @@
 	\end{description}
 	Utöver detta gäller även
 	\begin{description}
-		\item[Multiplikativ distribuitet över addition]
+		\item[Multiplikativ distributivitet över addition]
 			\(a \cdot (b+c) = (a \cdot b) + (a \cdot c)\) och
 			\((b+c) \cdot a = (b \cdot a) + (c \cdot a)\) för alla reella tal
-			\(a,b,c\in\R\).
+			\(a,b,c\in\Z\).
 	\end{description}
 \end{definition}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NÅGRA SATSER FÖR HELTALEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Några satser för heltalen}
-\noindent
-...
+%\section{Några satser för heltalen}
+%\noindent
+%...
 
 
 
@@ -65,12 +67,40 @@
 % PRIMTAL OCH DELBARTHET
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Primtal och delbarhet}
+\nocite{Laksov2005kou}
+\noindent
+...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DELBARTHET
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Delbarhet}
 \noindent
 ...
 
 \begin{definition}[Delbarhet]
 	...
 \end{definition}
+
+\begin{theorem}[Divisionsalgoritmen]
+	...
+\end{theorem}
+
+\begin{exercise}
+	\label{xrc:KvotenMindre}
+	Bevisa följande.
+	Låt \(a\) och \(b\) vara två heltal.
+	Kvoten \(q=a/b\) är strikt mindre än \(a\) om \(b>1\) är strikt större än
+	ett.
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PRIMTAL OCH SAMMANSATTA TAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Primtal och sammansatta tal}
+\noindent
+...
 
 \begin{definition}[Primtal och sammansatta tal]
 	...
@@ -84,23 +114,3 @@
 	...
 \end{proof}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HELTALSDIVISION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Heltalsdivision}
-\noindent
-...
-
-\begin{definition}
-\end{definition}
-
-\begin{theorem}\label{thm:KvotenMindre}
-	Låt \(a\) och \(b\) vara två heltal.
-	Kvoten \(q=a/b\) är strikt mindre än \(a\) om \(b>1\) är strikt större än
-	ett.
-\end{theorem}
-\begin{proof}
-	...
-\end{proof}
