@@ -21,6 +21,12 @@ etthundratjugotre.
 Ett talsystem\index{talsystem}, eller
 talbeteckningssystem\index{talbeteckningssystem}, tillhandahåller ett entydigt
 sätt att representera dessa abstrakta tal på.
+Detta görs genom olika tecken och teckenkombinationer.
+De tecken vi är vana vid i västkulturerna är siffrorna \(0\) till \(9\).
+Vi behöver här skilja på ett tal och en siffra.
+Siffror är tecken som används för att representera tal.
+Det vill säga, talet \(123\) består av de tre siffrorna \(1,2\) och \(3\).
+
 Genom historien har det använts många olika talsystem, varav några finns kvar
 än idag.
 I \tblref{tbl:OlikaEtthundratjugotre} ges några representationer av
@@ -261,7 +267,7 @@ Följande sats visar att sådant är fallet.
 	Om vi på samma vis delar \(q_1\) med \(b\) får vi en kvot \(q_2\) och en
 	restterm \(r_2\) sådana att \(q_1=q_2b+r_2\) och \(0\leq r_2 < b\).
 	Upprepas detta förfarande får vi att \(q_i=q_{i+1}b+r_{i+1}\), \(i\in\N\).
-	Från \thmref{thm:KvotenMindre} har vi att \(q_{i+1}<q_i\) eftersom att
+	Från \xrcref{xrc:KvotenMindre} har vi att \(q_{i+1}<q_i\) eftersom att
 	\(b>1\).
 %	Vi får då från \defref{def:Valordningsprincipen} att \(q_n=0\) för något
 %	\(n\in\N\).
@@ -303,9 +309,9 @@ representation är unik kan vi med säkerhet definiera ett positionssystem enligt
 följande.
 \begin{definition}[Positionssystem\footnote{\emph{Eng.} positional system,
 	place-value system}]
-	\index{talsystem!positionsvärdesystem}\index{positionsvärdesystem}
-	\index{talbas}\index{positionsvärdesystem!talbas}
-	\index{positionssystem|see{positionsvärdesystem}}
+	\index{talsystem!positionssystem}\index{positionssystem}
+	\index{talbas}\index{positionssystem!talbas}
+	\index{positionsvärdesystem|see{positionssystem}}
 	\label{def:Positionssystem}
 	Ett \emph{positionssystem}, eller positionsvärdesystem, har en
 	\emph{talbas} \(b \in \N \setminus \{0,1\}\),
@@ -443,7 +449,7 @@ Vi ska i detta avsnitt undersöka varför.
 
 Vi inleder först med en illustration av algoritmen genom följande exempel.
 \begin{example}
-	Vi vill addera talen \(123\) och \(253\).
+	Vi vill addera talen \(123_{10}\) och \(253_{10}\) i basen \(10\).
 	Vi skriver dem då ovanför varandra och får då steg \verb'a)' nedan.
 	\begin{verbatim}
      a)   1 2 3   b)   1 2 3  c)   1 2 3  d)   1 2 3
@@ -452,14 +458,18 @@ Vi inleder först med en illustration av algoritmen genom följande exempel.
                            6         7 6       3 7 6
 	\end{verbatim}
 	Vi fortsätter genom att addera siffrorna i den sista kolumnen, det vill
-	säga \(3\) och \(3\), och får då \(6\).
+	säga entalen.
+	Vi får då \(3\) och \(3\), och totalt har vi \(6\).
 	Detta tal skriver vi under raden och hamnar då i steg \verb'b)'.
 	Vi fortsätter på samma sätt i stegen \verb'c)' och \verb'd)'.
+	I steg \verb'c)' adderar vi tiotalen och i steg \verb'd)' adderar vi
+	hundratalen.
 	Summan av de två talen är talet som står under raden, det vill säga
 	\(123+253=376\).
 \end{example}
-\begin{example}
-	Vi vill nu addera talen \(123\) och \(999\).
+\begin{example}\label{ex:AdderaMedRest}
+	Vi vill nu addera talen \(123_{10}\) och \(999_{10}\), fortfarande i basen
+	\(10\).
 	Vi gör då som ovan och får steg \verb'a)' nedan.
 	\begin{verbatim}
                          1         1 1       1 1 1       1 1 1
@@ -469,34 +479,47 @@ Vi inleder först med en illustration av algoritmen genom följande exempel.
                            2         2 2       1 2 2     1 1 2 2
 	\end{verbatim}
 	Vi fortsätter genom att addera siffrorna i den sista kolumnen, det vill
-	säga \(3\) och \(9\), och får då \(12\).
-	Vi skriver entalet under raden och tiotalet ovanpå nästa kolumn med tal,
-	detta visas i steg \verb'b)'.
-	I steg \verb'c)' adderar vi kolumnen med talen \(1, 2\) och \(9\).
-	Vi får åter \(12\) och gör som i steg \verb'b)'.
-	I steg \verb'd)' när vi adderar \(1,1\) och \(9\) får vi \(11\).
-	Denna gång skriver vi tiotalet över den tomma kolumnen längst till höger.
+	säga entalen \(3\) och \(9\), och får då \(12\).
+	Eftersom att vi får \(12\) ental innebär detta att vi får ett tiotal och
+	två ental.
+	Tiotal adderas tillsammans med tiotal och vi skriver \(1\) ovanför kolumnen
+	med tiotal.
+	Vi hamnar då i steg \verb'b)'.
+	I steg \verb'c)' adderar vi kolumnen med talen \(1, 2\) och \(9\), det vill
+	säga alla tiotal.
+	Vi får åter \(12\) och gör som i steg \verb'b)' eftersom att \(12\) tiotal
+	innebär att vi har ett hundratal och två tiotal.
+	I steg \verb'c)' när vi adderar \(1,1\) och \(9\) får vi \(11\).
+	Detta innebär att vi får ett hundratal och ett tusental.
+	Eftersom att det inte fanns några tusental i de båda termerna skriver vi
+	tusentalet ovanför den tomma kolumnen till vänster, detta visas i steg
+	\verb'd)'.
 	I steg \verb'e)' adderar vi \(1,0\) och \(0\) och får \(1\) som skrivs
 	under raden.
 	Alltså får vi att \(123+999=1122\).
 \end{example}
 \begin{remark}
-	Notera att entalet är resten vid heltalsdivision med basen som nämnare och
-	tiotalet är kvoten vid samma division.
+	Notera att tiotalet ges av kvoten vid heltalsdivision med basen som
+	nämnare, dessutom ges entalet av resten vid denna heltalsdivision.
+%	Notera att entalet ges av resten vid heltalsdivision med basen som nämnare
+%	och tiotalet ges av heltalskvoten. %vid denna heltalsdivision.
 \end{remark}
 
-Vi vill nu titta på det generella fallet.
+Vi vill nu titta på det generella fallet med en godtycklig bas \(b>1\).
 När vi ovan adderar kolumnerna kan vi få ett en- eller tvåsiffrigt tal som
 resultat.
+Till exempel när vi i \exref{ex:AdderaMedRest} steg \verb'b)' adderar \(3\)
+och \(9\) får vi det tvåsiffriga talet \(12\).
 Om \(b>1\) är basen i ett talsystem, \(s<b\) och \(t<b\) är två siffror i detta
 talsystem.
 Då är summan \(0\leq s+t\leq 2(b-1)\).
-Det följer direkt av \thmref{thm:PositionssystemAllaUnika} att summorna
-\(s+t<b\) är ensiffriga.
-Följande lemma fastställer att \(b\leq s+t\leq 2(b-1)\) är tvåsiffrig.
+Om summan \(s+t\) är strikt mindre än \(b\) följer det av
+\thmref{thm:PositionssystemAllaUnika} att summan är ensiffrig.
+Följande lemma fastställer att om summan \(s+t\) är större än \(b\) och mindre
+än \(2(b-1)\) då är summan exakt tvåsiffrig.
 \begin{lemma}\label{lem:AdditionSiffror}
 	Ett naturligt tal \(x\) i intervallet \(b \leq x \leq 2(b-1)\) kan skrivas
-	som en summa \(d_1b^1 + d_2b^0\),
+	som en summa \(x = d_1b^1 + d_2b^0\),
 	där \(1 \leq d_1 \leq b-1\) och \(0 \leq d_2 \leq b-1\).
 \end{lemma}
 \begin{proof}
@@ -521,6 +544,20 @@ Följande lemma fastställer att \(b\leq s+t\leq 2(b-1)\) är tvåsiffrig.
 \begin{exercise}
 	Diskutera innebörden av detta lemma och dess bevis.
 \end{exercise}
+
+Innan vi går vidare till satsen som visar att denna additionsmetod fungerar
+måste vi ha lite notation för att underlätta formuleringarna.
+Låt \(q_b\) vara en funktion sådan att den ger kvoten vid heltalsdivisionen
+\(t/b\) och beteckna denna som \(q_b(t)\).
+Låt också \(r_b\) vara en funktion sådan att den ger resten vid
+heltalsdivisionen \(t/b\) och beteckna denna som \(r_b(t)\).
+Då har vi att \(t=q_b(t)\cdot b+r_b(t)\).
+\begin{example}
+	Vi har att \(q_5(7)=7/5=1\) och \(r_5(7)=7-q_5(7)\cdot 5=2\).
+\end{example}
+\begin{example}
+	Vi har att \(q_{10}(7)=7/10=0\) och \(r_{10}(7)=7-q_{10}(7)\cdot 10=7\).
+\end{example}
 
 Följande sats visar att denna additionsmetod fungerar för godtyckligt långa tal
 \(x=x_1x_2\cdots x_n\) och \(y=y_1y_2\cdots y_m\) representerade i samma talbas
