@@ -10,7 +10,8 @@
 \usepackage[swedish]{babel}
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{natbib}
-\bibliographystyle{kthnat}
+%\bibliographystyle{kthnat}
+\bibliographystyle{amsnat}
 \usepackage{setspace}
 \usepackage{nomencl}
 \usepackage{marginnote}
@@ -26,8 +27,9 @@
 
 \newtheorem{theorem}{Sats}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Följdsats}
+\newtheorem{corollary}[theorem]{Corollarium}
 \theoremstyle{definition}
+\newtheorem{axiom}[theorem]{Axiom}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Exempel}
 \newtheorem{exercise}[theorem]{Övning}
@@ -51,6 +53,7 @@
 %\newcommand{\defref}[1]{Definition \ref{#1}}
 
 \newcommand{\imp}[1]{\emph{#1}\marginnote{#1}}
+\newcommand{\maybeskip}[1][Fördjupningsavsnitt.]{\protect\footnote{#1}}
 
 \renewcommand{\qedsymbol}{Q.E.D.}
 \newcommand{\N}{\mathbb{N}}
