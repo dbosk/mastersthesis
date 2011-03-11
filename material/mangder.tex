@@ -1,58 +1,273 @@
 \chapter{Mängder}
-\nocite{Greger1971m}
+\label{ch:Mangder}
+\nocite{Greger1971m,KTHCirkel2005rt}
 \noindent
-...
+\lettrine{M}{ängder är kanske} det mest grundläggande begreppet inom matematik.
+Ja, till och med viktigare än talen.
+En mängd kan beskrivas som ett matematiskt objekt som är en samling av andra
+matematiska objekt.
+Med andra ord, en mängd kan ses som en abstrakt påse som vi kan stoppa
+matematiska saker i.
+Och likt en påse som kan innehålla andra påsar kan man även ha en mängd
+innehållandes andra mängder.
 
-\begin{definition}[Likhet]
-	...
-\end{definition}
+I slutet av 1800-talet tillkom mängdläran till matematiken.
+Äran för denna uppfinning tilldelas Georg Cantor (1845-1918).
+Cantor är också utan tvekan den som bidragit mest till utvecklingen av
+mängdteorin.
+Under sin livstid gjorde han en uttömmande utforskning av mängder och gav
+häpnansväckande resultat.
+Cantor fokuserade sina studier mot oändliga mängder och han fann bland annat
+att det finns fler än en oändlighet.
+Heltalen och de reella talen är båda oändligt många, men Cantor visade att de
+reella talen var fler än de hela talen.
+År 1877 ställde Cantor upp sin inom matematiken välkända hypotes kallad
+\emph{Konintuumhypotesen}\footnote{\emph{Eng.} continuum hypothesis.}.
+Cantors kontiuumhypotes säger följande.
+\begin{quote}
+	Det finns ingen mängd vars kardinalitet är strikt mellan dem för heltalen
+	och de reella talen.
+\end{quote}
+Med andra ord, det finns ingen oändlighet större än antalet heltal men mindre
+än antalet reella tal.
+Cantor kunde aldrig bevisa sin hypotes och faktum är att den fortfarande står
+obevisad, ingen har kunnat visa om den är sann eller falsk.
+År 1963 bevisade Paul Cohen (1934-) med hjälp av ett resultat från 1940 av Kurt
+Gödel (1906-1978) att Cantors kontinuumhypotes inte går att bevisa eller
+motbevisa inom mängdteorin själv utan att det krävs ett axiom som antingen
+godtar eller förkastar den.
 
-\begin{definition}[Mängd]
-	...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGREPPET MÄNGD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Begreppet mängd}
+\noindent
+%Vi låter begreppet \emph{mängd} vara ett så fundamentalt begrepp att vi inte
+%definierar det.
+\lettrine{D}{et är nu dags} att vi utforskar mängdbegreppet lite mer.
+Även om Cantors definition av mängd inte längre används, utan har ersatts av en
+uppsättning axiom för mängdteorin\footnote{Dessa axiom är kända under namnet
+Zermelo-Fraenkels axiom efter matematikerna Ernst Zermelo (1871-1953) och
+Abraham Fraenkel (1891-1965).}, är den tillräcklig för våra ändamål.
+
+\begin{definition}
+	En \emph{mängd} är en samling av objekt.
+	Objekt som \emph{tillhör} mängden sägs vara \emph{element} i mängden.
 \end{definition}
+En mängd kan ibland också kallas för \emph{klass} eller \emph{samling}.
+
+En mängd anses vara bestämd, eller \emph{väldefinierad}, endast om man för
+varje objekt kan avgöra om det ingår i mängden eller inte.
+Vi säger att ett objekt \emph{tillhör} eller \emph{ej tillhör} en mängd.
+Om \(M\) är en mängd och \(x\) är ett element i \(M\), då skriver vi detta som
+\(x\in M\).
+För ett objekt \(y\) som ej tillhör mängden \(M\) skriver vi \(y\notin M\).
+
+Om vi vill beskriva en mängd kan vi gå tillväga på olika sätt.
+Vi kan lista mängdens alla element och på så vis säga precis som utgör mängden.
+Detta kan bli problematiskt för väldigt stora mängder, vi kan därför nöja oss
+med en exakt beskrivning av vilka element som tillhör mängden.
+\begin{example}
+	Låt \(M\) vara en mängd innehållandes elementen \(A,B\) och \(C\).
+	Då skriver vi detta som \(M=\{A,B,C\}\).
+\end{example}
+\begin{example}
+	Låt \(N\) vara mängden av alla namn kortare än fem bokstäver.
+	Vi kan då skriva \[N=\{\text{alla namn kortare än fem bokstäver}\}\] eller
+	\[N=\{n : n\text{ är ett namn kortare än fem bokstäver}\}\] som utläses
+	\(N\) är mängden av alla \(n\) sådana att \(n\) är ett namn kortare än fem
+	bokstäver.
+\end{example}
+\begin{example}
+	Den tomma mängden som inte har några element betecknas med \(\emptyset\).
+	Vi har alltså att \(\emptyset=\{\}\).
+\end{example}
+
+Vi kan nu skapa mängder och tala om vilka element de innehåller, men hur kan vi
+jämföra två mängder?
+Hur vet vi om två mängder är lika?
+\begin{definition}
+	Vi säger att två mängder \(A\) och \(B\) är \emph{lika} om varje element i
+	\(A\) är ett element i \(B\) och varje element i \(B\) är ett element i
+	\(A\).
+	Om \(A\) och \(B\) är lika skriver vi \(A=B\), annars skriver vi \(A\neq
+	B\).
+\end{definition}
+\begin{exercise}
+	Undersök vad detta innebär, vilka mängder är egentligen lika?
+	Är \(\{1,2,3\}\) lika med \(\{1,1,3,3,2,3,2,1\}\)?
+\end{exercise}
+\begin{exercise}
+	I inledning sades att en mängd kan innehålla andra mängder.
+	En mängd \(X\) som tillhör en mängd \(M\) är då ett element som alla andra i
+	mängden \(M\).
+	Om \(X=\{1,2\}\) och \(M=\{X, 2, 3\}=\{\{1,2\},2,3\}\), vilka av följande
+	utsagor är sanna och vilka är falska: 
+	\(1\in M\), \(2\in M\) och \(3\in M\) samt \(\{1\}\in M\),
+	\(\{2\}\in M\) och \(\{1,2\}\in M\).
+\end{exercise}
+
+Vi fortsätter med ett annat viktigt begrepp.
+\begin{definition}
+	Två mängder \(A\) och \(B\) sägs vara \emph{disjunkta} om varje element i
+	\(A\) ej tillhör \(B\) och varje element i \(B\) ej tillhör \(A\).
+\end{definition}
+\begin{exercise}
+	Om \(A\) och \(B\) är mängder, betyder det samma sak att \(A\neq B\) som
+	att \(A\) och \(B\) är disjunkta?
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OPERATIONER PÅ MÄNGDER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Operationer på mängder}
+\label{sec:Mangdoperationer}
+\noindent
+\lettrine{E}{fter att ha} tittat på vad en mängd är och hur vi kan avgöra om
+två mängder är lika ska vi nu titta på hur vi kan skapa nya mängder genom att
+kombinera mängder som vi redan har.
 
 \begin{definition}[Union]
-	...
+	Låt \(A\) och \(B\) vara mängder.
+	Vi låter mängden av alla element i \(A\) och alla element i \(B\) kallas
+	för \emph{unionen} \(A\cup B\) av \(A\) och \(B\).
+	Alltså, \(A\cup B = \{x : x\in A\text{ eller }x\in B\}\).
 \end{definition}
 
 \begin{definition}[Snitt]
-	...
+	Låt \(A\) och \(B\) vara mängder.
+	Vi låter mängden \(A\cap B\) av alla element i \(A\) som också tillhör
+	\(B\) kallas för \emph{snittet} mellan \(A\) och \(B\).
+	Alltså, \(A\cap B = \{x : x\in A\text{ och }x\in B\}\).
 \end{definition}
 
-\begin{definition}[Skillnad]
-	...
+\begin{definition}[Differens]
+	Låt \(A\) och \(B\) vara mängder.
+	Vi låter mängden \(A\setminus B\) av alla element i \(A\) som inte tillhör
+	\(B\) kallas för \emph{differensen} mellan \(A\) och \(B\).
+	Alltså, \(A\setminus B = \{x : x\in A\text{ och }x\notin B\}\).
 \end{definition}
 
-\begin{theorem}[DeMorgans lagar]
-	...
-\end{theorem}
+\begin{definition}
+	Låt \(M\) och \(N\) vara mängder.
+	Mängden \(\{(m,n) : m\in M, n\in N\}\) av alla ordnade par med första
+	element i \(M\) och andra element i \(M\) 
+	kallas för den \emph{kartesiska produkten} och skrivs
+	\(M\times N\).
+\end{definition}
+Namnet kartesisk produkt kommer från den franske matematikern och filosofen
+René Descartes (1596-1650) vars latinska namn var Renatus Cartesius.
+Descartes matematiska studier gav upphov till denna typ av begrepp och därför
+är den i efterhand uppkallad efter honom.
 
-\begin{definition}[Delmängd]
-	...
+\begin{exercise}
+	Låt \(V\) vara mängden av alla värden i en kortlek, det vill säga
+	\(V=\{2,3,4,5,6,7,8,9,10,\text{knekt},\text{dam},\text{kung},\text{ess}\}\).
+	Låt också \(F\) vara mängden av färger i en kortlek, det vill säga
+	\(F=\{\spadesuit,\clubsuit,\heartsuit,\diamondsuit\}\).
+	Vad blir \(F\times V\) och vad skulle denna mängd kunna användas för att
+	representera?
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DELMÄNGDER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Delmängder}
+\label{sec:Delmangder}
+\noindent
+...
+
+%\begin{theorem}[DeMorgans lagar]
+%	...
+%\end{theorem}
+
+\begin{definition}
+	Låt \(A\) och \(B\) vara mängder.
+	Vi säger att \(A\) är en \emph{delmängd} av \(B\) om varje element i \(A\)
+	även är ett element i \(B\).
+	Vi skriver detta som \(A\subseteq B\).
+	Vi kan likvärdigt skriva \(B\supseteq A\) och säger då att \(B\)
+	\emph{inkluderar} \(A\).
+	Om dessutom \(A\neq B\) är \(A\) en \emph{äkta} eller \emph{proper
+	delmängd} av \(B\) och detta skrivs \(A\subset B\).
+\end{definition}
+\begin{exercise}
+	Vad skulle det innebära om \(A\) är en delmängd av \(B\) och \(B\) är en
+	delmängd av \(A\), det vill säga \(A\subseteq B\) och \(B\subseteq A\)?
+\end{exercise}
+Det är faktiskt så att det är en vanlig bevismetod inom matematiken att först
+visa \(A\subseteq B\) och sedan visa \(B\subseteq A\).
+
+\begin{definition}[Komplement]
+	Låt \(A\) vara en delmängd till mängden \(B\).
+	Vi kallar \(A^\complement = B\setminus A\) \emph{komplementet} till \(A\).
 \end{definition}
 
-\begin{definition}[Kardinalitet]
-	...
-\end{definition}
-
-\begin{definition}[Potensmängd]
-	...
-\end{definition}
+%\begin{definition}[Potensmängd]
+%	...
+%\end{definition}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RELATIONER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Relationer\maybeskip[Fördjupningsavsnitt, krävs för vissa kommande
-fördjupningsavsnitt.]}
+\section[Relationer]{Relationer\maybeskip}
 \label{sec:MangderRelationer}
 \noindent
 ...
 
+\begin{definition}
+	En \emph{binär relation} \(R\) på en mängd \(M\) är en mängd som innehåller
+	ordnade par \((x,y)\), där \(x\) och \(y\) är element i \(M\).
+	Om \((x,y)\) tillhör \(R\) skriver vi \(x R y\) som utläses \emph{\(x\) är
+	relaterat till \(y\) via \(R\)}.
+\end{definition}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EKVIVALENSKLASS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Ekvivalensklass}
+\subsection{Ekvivalensrelation och ekvivalensklass}
 \noindent
 ...
+
+\begin{definition}
+	En relation \(R\) på en mängd \(M\) som uppfyller att
+	\begin{enumerate}
+		\item för alla \(x\in M\) gäller att \(x R x\) (reflexivitet),
+		\item för alla \(x,y\in M\) gäller att om \(x R y\) då gäller även
+			\(y R x\) (symmetri),
+		\item för alla \(x,y,z\in M\) gäller att om \(x R y\) och \(y R z\)
+			då gäller även att \(x R z\) (transitivitet),
+	\end{enumerate}
+	kallas för \emph{ekvivalensrelation}.
+\end{definition}
+
+\begin{definition}
+	Låt \(R\) vara en ekvivalensrelation definierad på mängden \(M\).
+	Om \(a\) är ett element i \(M\), då kallar vi mängden
+	\(\{x\in M : x R a\}\) för \emph{ekvivalensklassen} för \(a\) och betecknar
+	denna som \([a]_R\).
+\end{definition}
+Om det är klart under vilken relation ekvivalensklassen gäller räcker det med
+att skriva \([a]\) istället för \([a]_R\).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AVBILDNINGAR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Avbildningar}
+%\noindent
+%...
+%
+%\begin{definition}[Kardinalitet]
+%	Om \(A\) och \(B\) är mängder säger vi att de har samma \emph{kardinalitet}
+%	om det finns en bijektiv avbildning mellan \(A\) och \(B\).
+%	Vi skriver då att \(\card A = \card B\).
+%	Om \(A\) har samma kardinalitet som mängden \(\{x\in\N : 0<x\leq n\}\) för
+%	något naturligt tal \(n\) skriver vi \(\card A = n\).
+%\end{definition}
 
