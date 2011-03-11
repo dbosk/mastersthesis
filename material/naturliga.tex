@@ -1,4 +1,5 @@
 \chapter{De naturliga talen}
+\label{ch:Naturliga}
 \nocite{Kline1990mtf3}
 \noindent
 \lettrine{D}{e naturliga talen} är de tal som vi använder för att ordna
@@ -15,8 +16,8 @@ skapat av människan.''}.
 Under 1800-talet blev matematikerna uppmärksamma på att det behövdes en
 stadigare grund att bygga matematiken på.
 Det gick inte längre att anta talen som självklara.
-Hittills hade de naturliga talen, heltalen (\chref{ch:Heltalen}) och de reella
-talen (\chref{ch:Reella}) ansetts vara självklara.
+Hittills hade de naturliga talen (detta kapitel), heltalen (\chref{ch:Heltalen})
+och de reella talen (\chref{ch:Reella}) ansetts vara självklara.
 Men nu började självklarheten att ifrågasättas.
 
 I detta kompendium kommer grunden att läggas först och sedan fortsätter vi
@@ -38,7 +39,8 @@ Vi ska nu i kommande avsnitt titta närmare på de axiom som ligger till grund
 för de naturliga talen.
 
 
-\section{Peanos axiom för de naturliga talen}
+\section[Peanos axiom för de naturliga talen]
+	{Peanos axiom för de naturliga talen\maybeskip}
 \noindent
 \lettrine{U}{nder 1800-talets} slut och början av 1900-talet grundades de delar
 av matematiken som använts sedan årtusenden tillbaka.
@@ -55,131 +57,217 @@ om än i lite annorlunda formulering.
 %men istället för att vara axiom blir de satser som kan härledas i mängdteorin.
 
 Vi ska nu titta på Peanos axiom för de naturliga talen.
-I axiomen kommer följande notation att användas.
-Vi låter \(S(n)\) beteckna efterföljaren till \(n\), \(S(S(n))\) är
-efterföljaren till efterföljaren till \(n\), och så vidare.
+Börja med att släppa taget om allt du tror dig känna till om matematiken.
+När du fortsätter efter denna mening ska din ''matematikvärld'' vara helt tom.
+Därefter kan du fylla den med axiomen alltefter de presenteras i texten.
+Vi börjar nu med det första axiomet.
 \begin{axiom}
-	\label{def:DedekindPeano}\label{def:NaturligaAxiom}
-	\index{naturliga tal}
-	För de \emph{naturliga talen} antas följande.
-	\begin{enumerate}
-		\item\label{ax:NaturligaAxiomNoll}
-			\(0\) är ett naturligt tal. 
-		\item\label{ax:NaturligaAxiomReflexivitet}
-			För alla naturliga tal \(n\) gäller att
-			%\(n\) är lika med sig själv.
-			\(n=n\).
-			%(Reflexivitet)
-		\item\label{ax:NaturligaAxiomSymmetri}
-			För alla naturliga tal \(a\) och \(b\) gäller att
-			om \(a=b\), då är \(b=a\).
-			%(Symmetri)
-		\item\label{ax:NaturligaAxiomTransitivitet}
-			För alla naturliga tal \(a,b\) och \(c\) gäller att
-			om \(a=b\) och \(b=c\) då är \(a=c\).
-			%(Transivitet)
-		\item\label{ax:NaturligaAxiomSlutenhet}
-			För alla \(a\) och \(b\) gäller att om \(a\) är ett naturligt tal
-			och \(a=b\) då är \(b\) också ett naturligt tal.
-			(Slutenhet under likhet)
-		\item\label{ax:NaturligaAxiomEfterfoljare}
-			För alla naturliga tal \(n\) gäller att efterföljaren \(S(n)\) är
-			ett naturligt tal.
-		\item\label{ax:NaturligaAxiomOandligt}
-			För alla naturliga tal \(n\) gäller att \(S(n)\neq 0\).
-		\item\label{ax:NaturligaAxiomInjektion}
-			För alla naturliga tal \(a\) och \(b\) gäller att om \(S(a)=S(b)\)
-			då är \(a=b\).
-		\item\label{ax:NaturligaAxiomInduktion}
-			Om \(M\) är en mängd sådan att \(0\) är ett element i \(M\), och
-			om det för alla naturliga tal \(n\) gäller att om \(n\) är ett
-			element i \(M\) då är även efterföljaren \(S(n)\) ett element i
-			\(M\).
-			Då innehåller \(M\) alla naturliga tal.
-	\end{enumerate}
+	\label{ax:NaturligaAxiomNoll}
+	\(0\) är ett naturligt tal. 
 \end{axiom}
-Vi inför också några välbekanta beteckningar.
-\begin{definition}
-	\label{def:NaturligaBeteckningar}
-	Låt
-	\begin{align*}
-		1&=S(0), \\
-		2&=S(1)=S(S(0)), \\
-		3&=S(2)=S(S(S(0))), \\
-		\vdots \\
-		n&=S(n-1)=\underbrace{S(S(S(\cdots(S}_n(0))))) = S^n(0),
-	\end{align*}
-	där \(n-1\) betecknar föregångaren till \(n\).
-\end{definition}
+Det första axiomet, \axref{ax:NaturligaAxiomNoll}, säger helt enkelt att det
+finns åtminstone ett naturligt tal.
+Det säger ingenting mer om \(0\) än att det är ett naturligt tal och
+vi vet alltså inte ännu vilka egenskaper som nollan besitter.
+Detta är allt som nu finns i vår matematikvärld -- ''noll är ett naturligt
+tal''.
+Vi går vidare till nästa axiom.
 
-Vad säger då dessa axiom?
-Det första axiomet säger helt enkelt att det finns åtminstone ett naturligt tal.
-Det säger ingenting mer om \(0\) än att det är ett naturligt tal.
-Vi vet inte ännu vilka egenskaper som nollan besitter.
-
-Axiomen \ref{ax:NaturligaAxiomReflexivitet}, \ref{ax:NaturligaAxiomSymmetri},
-\ref{ax:NaturligaAxiomTransitivitet} och \ref{ax:NaturligaAxiomSlutenhet}
-behandlar begreppet likhet.
-Axiom \ref{ax:NaturligaAxiomReflexivitet} säger att ett naturligt tal måste
-vara lika med sig självt.
-Denna egenskap kallas reflexivitet.
-Axiom \ref{ax:NaturligaAxiomSymmetri} säger att om ett naturligt tal är lika
-med ett annat, då måste även omvändningen gälla.
-Denna egenskap kallas symmetri.
-Axiom \ref{ax:NaturligaAxiomTransitivitet} säger att om vi får en kedja med
-likheter, då måste ändarna av kedjorna vara lika.
-Exempelvis, om \(a=b\) och \(b=c\) får vi att \(a=b=c\) och \(a=c\) måste då
-gälla.
-Denna egenskap kallas transivitet.
-Axiom \ref{ax:NaturligaAxiomSlutenhet} säger att om ett naturligt tal är lika
-meed någonting annat, måste detta annat också vara ett naturligt tal.
-Denna egenskap kallas slutenhet.
-
-Axiom \ref{ax:NaturligaAxiomEfterfoljare} säger att ett naturligt tals
+För ett naturligt tal \(n\), låter vi dess efterföljare betecknas med \(S(n)\).
+På samma sätt låter vi \(S(S(n))\) beteckna efterföljaren till efterföljaren
+till \(n\), och så vidare.
+\begin{axiom}
+	\label{ax:NaturligaAxiomEfterfoljare}
+	För alla naturliga tal \(n\) gäller att dess efterföljare \(S(n)\) är
+	ett naturligt tal.
+\end{axiom}
+Notera att vi vet ännu inte vad som menas med en efterföljare.
+Det enda vi vet är att alla naturliga tal har en efterföljare som är ett
+naturligt tal.
+Vi kan alltså fylla upp vår matematikvärld med en lång rad efterföljare och
+efterföljare till efterföljare och så vidare.
+\begin{axiom}
+	\label{ax:NaturligaAxiomOandligt}
+	För alla naturliga tal \(n\) gäller att \(S(n)\neq 0\).
+\end{axiom}
+\axref{ax:NaturligaAxiomEfterfoljare} säger att ett naturligt tals
 efterföljare alltid är ett naturligt tal.
-Axiom \ref{ax:NaturligaAxiomOandligt} säger att inget naturligt tal kan ha
+\axref{ax:NaturligaAxiomOandligt} säger att inget naturligt tal kan ha
 \(0\) som efterföljare.
 Dessa två axiom säger tillsammans att det finns oändligt många naturliga tal.
 Detta eftersom att om vi har ett naturligt tal kan vi alltid ta dess
-efterföljare, men oavsett hur många efterföljare vi tar kommer vi aldrig till
-\(0\).
+efterföljare, men oavsett hur många efterföljare vi tar kommer vi aldrig
+tillbaka dit vi startade vid \(0\).
+Låt oss gå vidare.
 
-Axiom \ref{ax:NaturligaAxiomInjektion} säger att om två tals efterföljare är
-lika, då måste talen själva vara lika.
+\begin{axiom}[Reflexivitet]
+	\label{ax:NaturligaAxiomReflexivitet}
+	För alla naturliga tal \(n\) gäller att \(n\) är lika med sig själv.
+	Detta betecknas \(n=n\).
+\end{axiom}
+Vi kan nu också konstatera i vår matematikvärld att \(0=0\), och vi vet att
+\(S(0)=S(0)\) och så vidare.
+\begin{axiom}[Symmetri]
+	\label{ax:NaturligaAxiomSymmetri}
+	För alla naturliga tal \(a\) och \(b\) gäller att om \(a\) är lika med
+	\(b\) då är även \(b\) lika med \(a\).
+	Det vill säga, om \(a=b\) då är \(b=a\).
+\end{axiom}
+\begin{axiom}[Transitivitet]
+	\label{ax:NaturligaAxiomTransitivitet}
+	För alla naturliga tal \(a,b\) och \(c\) gäller att
+	om \(a=b\) och \(b=c\) då är \(a=c\).
+\end{axiom}
+\begin{axiom}[Slutenhet under likhet]
+	\label{ax:NaturligaAxiomSlutenhet}
+	För alla \(a\) och \(b\) gäller att om \(a\) är ett naturligt tal
+	och \(a=b\) då är \(b\) också ett naturligt tal.
+\end{axiom}
+\axref{ax:NaturligaAxiomReflexivitet}, \ref{ax:NaturligaAxiomSymmetri},
+\ref{ax:NaturligaAxiomTransitivitet} och \ref{ax:NaturligaAxiomSlutenhet}
+behandlar begreppet likhet (\(=\)).
+\axref{ax:NaturligaAxiomReflexivitet} säger att ett naturligt tal måste
+vara lika med sig självt.
+Denna egenskap kallas reflexivitet\index{reflexivitet}.
+\axref{ax:NaturligaAxiomSymmetri} säger att om ett naturligt tal är lika
+med ett annat, då måste även omvändningen gälla.
+Denna egenskap kallas symmetri\index{symmetri}.
+\axref{ax:NaturligaAxiomTransitivitet} säger att om vi får en kedja med
+likheter, då måste ändarna av kedjorna vara lika.
+Exempelvis, om \(a=b\) och \(b=c\) får vi att \(a=b=c\) och \(a=c\) måste då
+gälla.
+Denna egenskap kallas transitivitet\index{transitivitet}.
+\axref{ax:NaturligaAxiomSlutenhet} säger att om ett naturligt tal är lika
+med någonting, då måste detta någonting också vara ett naturligt tal.
+Denna egenskap kallas slutenhet\index{slutenhet}, hur vi än använder likhet kan
+vi inte komma utanför de naturliga talen.
 
-Det sista axiomet beskriver mängden av alla naturliga tal.
+Nästa axiom är viktigt.
+\begin{axiom}
+	\label{ax:NaturligaAxiomInjektion}
+	För alla naturliga tal \(a\) och \(b\) gäller att om deras efterföljare är
+	lika måste även \(a\) och \(b\) vara lika.
+	Det vill säga, om \(S(a)=S(b)\) då är \(a=b\).
+\end{axiom}
+\axref{ax:NaturligaAxiomInjektion} säger att två olika tal kan inte ha samma
+efterföljare.
+Detta betyder att vi inte kan få exempelvis grenstruktur eller ''öglor''.
+Utan strukturen som måste uppstå är en linje där varje naturligt tal är en
+efterföljare till ett unikt annat naturligt tal -- med undantag för noll
+(\(0\)) som enligt \axref{ax:NaturligaAxiomOandligt} inte är efterföljare till
+något naturligt tal.
+
+Vi tittar nu på det sista axiomet.
+\begin{axiom}[Induktionsaxiomet]
+	\item\label{ax:NaturligaAxiomInduktion}
+	Om \(M\) är en mängd sådan att \(0\) är ett element i \(M\), och
+	om det för alla naturliga tal \(n\) gäller att om \(n\) är ett
+	element i \(M\) då är även efterföljaren \(S(n)\) ett element i
+	\(M\).
+	Då innehåller \(M\) alla naturliga tal.
+\end{axiom}
+Det sista axiomet, \axref{ax:NaturligaAxiomInduktion}, beskriver mängden av
+alla naturliga tal.
 Det säger att om \(0\) tillhör en mängd och efterföljaren till ett naturligt
 tal finns med i mängden om talet själv finns med, då innehåller mängden alla
 naturliga tal.
 Noll (\(0\)) är ett naturligt tal, alltså finns efterföljaren \(S(0)\) med i
 mängden.
-Eftersom att \(S(0)\) är ett naturligt tal, måste även \(S(S(0))\) vara med i
-mängden.
-Då säger vi att mängden innehåller alla naturliga tal.
+Eftersom att efterföljaren \(S(0)\) till \(0\) är ett naturligt tal, då måste
+även \(S(S(0))\) vara med i mängden.
+Då säger vi att mängden måste innehålla alla naturliga tal.
+Det är detta axiom som ligger till grund för bevismetoden induktion, därav
+axiomets namn.
+\begin{exercise}
+	Genom diskussion jämför induktionsaxiomet
+	\axref{ax:NaturligaAxiomInduktion} med hur induktionsbevis från
+	\chref{ch:Logik} genomförs.
+\end{exercise}
+
+Vi ska nu göra en definition som kommer att förenkla vår notation avsevärt.
+\begin{definition}
+	För alla naturliga tal \(a\), låt \(S^n(a)\) beteckna
+	\begin{equation*}
+		S^n(a) = \underbrace{S(S(S(\cdots S}_n(a)
+	\end{equation*}
+	där \(n\) betecknar antalet \(S\).
+	Låt speciellt \(S^0(a)=a\).
+\end{definition}
+
+Vi avslutar detta avsnitt med att införa några välbekanta beteckningar.
+\begin{definition}
+	\label{def:NaturligaBeteckningar}
+	Låt
+	\begin{align*}
+		1&=S(0)=S^1(0), \\
+		2&=S(1)=S(S(0))=S^2(0), \\
+		3&=S(2)=S(S(S(0)))=S^3(0), \\
+		\vdots \\
+		n&=S(n-1)=\underbrace{S(S(S(\cdots(S}_n(0))))) = S^n(0),
+	\end{align*}
+	där \(n-1\) betecknar föregångaren till \(n\).
+\end{definition}
+\begin{remark}
+	Märk väl att \(1,2\) och \(3\) enbart utgör symboler för
+	\(S(0),S(S(0))\) respektive \(S(S(S(0)))\).
+	Vi vet alltså inte hur dessa förhåller sig till varandra genom addition och
+	multiplikation eftersom vi inte vet vad addition och multiplikation är
+	ännu.
+	Vi vet inte ens om dessa objekt som symbolerna representerar går att räkna
+	med ännu.
+	Alltså utgör dessa bara en oordnad ansamling av symboler.
+\end{remark}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % VON NEUMANNS KONSTRUKTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{von Neumanns konstruktion av de naturliga talen\maybeskip}
-\label{sec:vonNeumannNaturliga}
-\noindent
-... (i mån av tid.)
+%\section[von Neumanns konstruktion av de naturliga talen]
+%	{von Neumanns konstruktion av de naturliga talen\maybeskip}
+%\label{sec:vonNeumannNaturliga}
+%\noindent
+%... (i mån av tid.)
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDUKTIONSBEVIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section[Induktionsbevis]{Induktionsbevis\maybeskip}
+%\noindent
+%\lettrine{D}{et är nu} dags att bevisa induktionsprincipen för bevis som vi tog
+%upp i \chref{ch:Logik}.
+%...
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ARITMETIK
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Aritmetik}
+\section[Aritmetik]{Aritmetik\maybeskip}
 \index{aritmetik}
 \noindent
-\lettrine{A}{ritmetik kan} beskrivas som läran om att kombinera tal.
+\lettrine{O}{rdet aritmetik kommer} från grekiskans
+% TODO fixa fulhack för grekiska arithmoz
+\(\alpha\rho\iota\theta\mu o\zeta\), som betyder tal.
+Aritmetiken kan beskrivas som läran om att kombinera tal.
 De delar av aritmetiken vi ska behandla i detta avsnitt är operationerna
 addition (\(+\)) och multiplikation (\(\cdot\)).
 Det vill säga, vi ska i detta avsnitt bestämma hur man räknar med de naturliga
 talen.
+
+Innan vi går vidare till att titta på addition och multiplikation behöver vi en
+definition.
+% TODO fixa definition av binär operation
+\begin{definition}
+	\index{binär operation}
+	En \emph{binär operation}\index{binär operation} \(\diamond\) på en mängd
+	\(M\) är en funktion \(\diamond:M\times M\rightarrow M\) som tar två
+	element \(x\) och \(y\) i \(M\) och parar dessa med ett element
+	\(\diamond(x,y)\) i \(M\).
+	Vanligtvis betecknas \(\diamond(x,y)\) med \(x\diamond y\).
+	Det vill säga, \((x,y)\mapsto x+y\).
+\end{definition}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ADDITION
@@ -196,6 +284,7 @@ svårförståelig, men vi ska diskutera den efteråt.
 \begin{definition}[Addition]
 	\label{def:NaturligaAddition}
 	\index{addition}\index{naturliga tal!addition}
+	\index{\(+\)}
 	På de naturliga talen definieras en binär operation \(+\) kallad
 	\emph{addition} som
 	\begin{align}
@@ -274,16 +363,18 @@ Vi kommer att stöta på ett till identitetselement i nästa avsnitt.
 Multiplikation är den andra aritmetiska operationen vi ska titta på i detta
 kapitel.
 Även definitionen av multiplikation är den Peano gav år 1889.
-Dessutom bygger även den på rekursion precis som definitionen för addition.
+Dessutom bygger även den på rekursion, precis som definitionen för addition.
 \begin{definition}[Multiplikation]
 	\label{def:NaturligaMultiplikation}
 	\index{multiplikation}\index{naturliga tal!multiplikation}
+	\index{\(\cdot\)}
 	På de naturliga talen definieras en binär operation \emph{multiplikation}
 	(\(\cdot\)) som
 	\begin{align}
 		a\cdot 0 &= 0 \\
 		a\cdot S(b) &= a+(a\cdot b)
 	\end{align}
+	Multiplikationen \(a\cdot b\) skrivs vanligen som \(ab\).
 \end{definition}
 \begin{exercise}
 	Vilket element är identitetselementet för multiplikation av de naturliga
@@ -299,14 +390,24 @@ Dessutom bygger även den på rekursion precis som definitionen för addition.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EGENSKAPER FÖR ADDITION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Additionens algebraiska egenskaper}
+\section[Additionens algebraiska egenskaper]
+	{Additionens algebraiska egenskaper\maybeskip}
 \noindent
-\lettrine{I}{nnan vi tittar} på additionens aritmetiska egenskaper behöver vi
-några hjälpsatser.
-Vi börjar med en mycket enkel hjälpsats som säger att om man adderar ett till
-ett tal får man dess efterföljare.
+\lettrine{O}{rdet algebra kommer} från arabiskans \emph{al-jabr} genom Muhammad
+ibn M\={u}s\={a} al-Khw\={a}rizm\={\i}s (ca. 780-ca. 850) bok \emph{Al-Kit\={a}b
+al-mukhta\d{s}ar f\={\i} h\={\i}s\={a}b al-\u{g}abr wa'l-muq\={a}bala}, på
+svenska \emph{Den sammanfattande boken om beräkning genom komplettering och
+balansering}\footnote{Egen översättning från ''The Compendious Book on
+Calculation by Completion and Balancing''.}.
+Algebra kan beskrivas som matematikens studium av operationer och regler.
+Vi ska nu titta närmare på hur den aritmetiska operationen addition beter sig.
+
+Innan vi tittar på additionens algebraiska egenskaper behöver vi några
+hjälpsatser.
+Vi börjar med en mycket enkel hjälpsats som säger att om man adderar talet ett
+till ett tal får man dess efterföljare.
 \begin{lemma}\label{lem:NaturligaAdderaEtt}
-	Om \(a\) är ett naturligt tal är \(a+1\) dess efterföljare.
+	Om \(a\) är ett naturligt tal, då är \(a+1\) dess efterföljare.
 \end{lemma}
 \begin{proof}
 	Om vi tittar på additionen \(a+1\) har vi \(a+1=a+S(0)\).
@@ -329,7 +430,7 @@ ett tal får man dess efterföljare.
 		a+2=S(S(a))=(a+1)+1.
 	\end{equation*}
 \end{example}
-Vi kan nu formulera en vidareutveckling resultatet i exemplet genom följande
+Vi kan nu formulera en vidareutveckling av resultatet i exemplet genom följande
 hjälpsats.
 \begin{lemma}
 	\label{lem:NaturligaAdderaN}
@@ -339,7 +440,7 @@ hjälpsats.
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Vi har enligt \defref{def:NaturligaAxiom} att \(n=S^n(0)\).
+	Vi har enligt \defref{def:NaturligaBeteckningar} att \(n=S^n(0)\).
 	Då har vi att \(a+n=a+S^n(0)\).
 	Enligt \eqref{eq:AdditionRekursion} är \(a+S^n(0) = S(a+S^{n-1}(0))\).
 	Men enligt \eqref{eq:AdditionRekursion} är \(a+S^{n-1}(0)=S(a+S^{n-2}(0))\).
@@ -355,7 +456,7 @@ Spelar det någon roll om vi adderar först \(1\) och \(2\) och sedan adderar
 \(3\)?
 Följande sats besvarar just den frågan.
 \begin{theorem}[Associativitet]
-	\label{thm:NaturligaAssociativitet}
+	\label{thm:NaturligaAssociativitet}\label{thm:NaturligaAdditionAssociativ}
 	\index{associativitet}\index{naturliga tal!associativitet}
 	Om \(a,b\) och \(c\) är naturliga tal, då gäller att \(a+(b+c)=(a+b)+c\).
 \end{theorem}
@@ -380,6 +481,7 @@ Följande sats besvarar just den frågan.
 	\eqref{eq:NaturligaAssociativ2} är lika och således har vi även att
 	\[a+(b+c)=(a+b)+c.\]
 \end{proof}
+
 \begin{example}
 	Vi vill addera talen \(1,2\) och \(3\) genom \(1+2+3\).
 	Enligt \thmref{thm:NaturligaAssociativitet} spelar det ingen roll om vi
@@ -415,6 +517,7 @@ eller om vi adderar \(2\) med \(1\)?
 	Eftersom att \eqref{eq:NaturligaKommutativ1} och
 	\eqref{eq:NaturligaKommutativ2} är lika måste vi ha \(a+b=b+a\).
 \end{proof}
+
 \begin{example}
 	Vi vill addera talen \(1\) och \(2\).
 	Enligt \thmref{thm:NaturligaKommutativitet} spelar det ingen roll om vi gör
@@ -427,7 +530,8 @@ eller om vi adderar \(2\) med \(1\)?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EGENSKAPER FÖR MULTIPLIKATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Multiplikationens algebariska egenskaper}
+\section[Multiplikationens algebariska egenskaper]
+	{Multiplikationens algebariska egenskaper\maybeskip}
 \noindent
 \lettrine{P}{recis som för} addition undrar vi nu hur multiplikation beter sig.
 Spelar det någon roll i vilken ordning vi multiplicerar naturliga tal?
@@ -439,7 +543,8 @@ associativiteten och kommutativiteten som vi gjorde för addition.
 	\label{thm:NaturligaDistributivitet}
 	\index{distributivitet}\index{naturliga tal!distributivitet}
 	Om \(a,b\) och \(c\) är naturliga tal gäller att
-	\(a\cdot(b+c) = a\cdot b + a\cdot c.\)
+	\(a\cdot(b+c) = a\cdot b + a\cdot c\) och \((a+b)\cdot c = a\cdot c +
+	b\cdot c\).
 \end{theorem}
 \begin{proof}
 	Vi har först från \defref{def:NaturligaMultiplikation} att
@@ -452,9 +557,10 @@ associativiteten och kommutativiteten som vi gjorde för addition.
 	Då har vi att
 	\begin{align*}
 		\underbrace{a+a+\cdots+a}_{b}
-			&= \underbrace{a+a+\cdots+a}_{b}\cdot S(0) \\
-			&= \underbrace{a+a+\cdots+a}_{b-1}\cdot S(1) \\
-			&= \underbrace{a+a+\cdots+a}_{b-2}\cdot S(2) \\
+			&= \underbrace{a+a+\cdots+a}_{b-1}+a\cdot S(0) \\
+			&= \underbrace{a+a+\cdots+a}_{b-2}+a\cdot S(1) \\
+			&= \underbrace{a+a+\cdots+a}_{b-3}+a\cdot S(2) \\
+			& \vdots \\
 			&= a\cdot b.
 	\end{align*}
 	Vi har på samma sätt att
@@ -466,8 +572,23 @@ associativiteten och kommutativiteten som vi gjorde för addition.
 		a\cdot (b+c) = \underbrace{a+a+\cdots+a}_b+\underbrace{a+a+\cdots+a}_c
 			= a\cdot b + a\cdot c,
 	\end{equation*}
-	vilket visar satsen.
+	vilket visar första delen av satsen.
+
+	Om vi tittar på \((a+b)\cdot c\) så får vi att
+	\begin{equation*}
+		(a+b)\cdot c = \underbrace{(a+b)+(a+b)+\cdots+(a+b)}_c.
+	\end{equation*}
+	Eftersom att additionen är associativ och kommutativ så kan vi byta plats
+	på termerna och får då
+	\begin{equation}
+		\underbrace{(a+b)+(a+b)+\cdots+(a+b)}_c =
+		\underbrace{a+a+\cdots+a}_c+\underbrace{b+b+\cdots+b}_c.
+	\end{equation}
+	På samma sätt som ovan får vi att detta är \(a\cdot c + b\cdot c\).
+	Alltså har vi visat att \((a+b)\cdot c = a\cdot c + b\cdot c\).
+	Då har vi visat satsen.
 \end{proof}
+
 \begin{exercise}
 	Visa att \(a\cdot (b_1+b_2+\cdots+b_n) = a\cdot b_1 + a\cdot b_2 + \cdots +
 	a\cdot b_n\).
@@ -478,6 +599,7 @@ vidare till att undersöka om multiplikationen har de associativa och
 kommutativa egenskaperna som additionen har.
 Vi börjar med associativiteten.
 \begin{theorem}[Associativitet]
+	\label{thm:NaturligaMultiplikationAssociativ}
 	\index{associativitet}\index{naturliga tal!associativitet}
 	Om \(a\) och \(b\) är naturliga tal, då gäller att \(a\cdot(b\cdot
 	c)=(a\cdot b)\cdot c\).
@@ -486,12 +608,12 @@ Vi börjar med associativiteten.
 	Vi tittar först på \(a\cdot (b\cdot c)\) och får enligt definitionen för
 	multiplikation att
 	\begin{equation*}
-		\label{eq:NaturligaMultAssoc1}
 		a\cdot (b\cdot c) = a\cdot (\underbrace{b+b+\cdots+b}_c).
 	\end{equation*}
 	Eftersom att multiplikationen är distributiv
 	(\thmref{thm:NaturligaDistributivitet}) får vi att
 	\begin{equation}
+		\label{eq:NaturligaMultAssoc1}
 		a\cdot (\underbrace{b+b+\cdots +b}_c) = \underbrace{a\cdot b+a\cdot
 			b+\cdots+a\cdot b}_c.
 	\end{equation}
@@ -512,12 +634,95 @@ Vi börjar med associativiteten.
 	Om \(a\) och \(b\) är naturliga tal, då gäller att \(a\cdot b=b\cdot a\).
 \end{theorem}
 \begin{proof}
-	...
+	Beviset använder induktion.
+	Låt \(a\) vara ett naturligt tal.
+	Vi vill visa att \(a\cdot n = n\cdot a\) för alla naturliga tal \(n\).
+	För \(n=0\) är det klart att multiplikationen är kommutativ.
+	För \(n=1\) har vi att
+	\begin{equation}
+		\label{eq:MultKommutativ1}
+		a\cdot 1 = a+a\cdot 0 = a.
+	\end{equation}
+	Vi har också att
+	\begin{equation*}
+		1\cdot a = \underbrace{1+1+\cdots+1}_a
+	\end{equation*}
+	Enligt \lemref{lem:NaturligaAdderaEtt} och att additionen är associativ
+	(\thmref{thm:NaturligaAdditionAssociativ}) får vi att
+	\begin{equation}
+		\label{eq:MultKommutativ2}
+		\underbrace{1+1+\cdots+1}_a = S^a(0) = a.
+	\end{equation}
+	Eftersom att \eqref{eq:MultKommutativ1} och \eqref{eq:MultKommutativ2} är
+	lika måste alltså \(a\cdot 1 = 1\cdot a\).
+
+	Antag att multiplikationen är kommutativ för alla \(n\) mindre än \(k\).
+	Vi har då att \(a\cdot k = k\cdot a\).
+	Vi vill nu visa att då måste multiplikationen vara kommutativ för
+	\(n=k+1\).
+	Eftersom att multiplikation är distributiv över addition
+	(\thmref{thm:NaturligaDistributivitet}) har vi att \(a\cdot (k+1) = a\cdot
+	k + a\cdot 1\).
+	Vi har redan konstaterat att \(a\cdot k = k\cdot a\) och att \(a\cdot 1 =
+	1\cdot a\), och alltså är \(a\cdot (k+1) = a\cdot k + a\cdot 1 = k\cdot a +
+	1\cdot a\).
+	Vi har från distributiviteten igen att \(k\cdot a + 1\cdot a = (k+1)\cdot
+	a\).
+	Alltså är multiplikationen kommutativ även för \(n=k+1\) och den måste
+	därför vara kommutativ för alla naturliga tal.
 \end{proof}
+\begin{exercise}
+	Vilka likheter finns mellan beviset ovan och induktionsaxiomet för de
+	naturliga talen?
+\end{exercise}
 
 \begin{exercise}
 	Visa att \((a+b)(c+d) = ac+ad+bc+bd\).
 \end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ALGEBRAISKA EGENSKAPER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algebraiska egenskaper för de naturliga talen}
+\label{sec:HeltalensAlgebraiskaEgenskaper}
+\noindent
+\lettrine{D}{et är nu dags} att sammanfatta de algebraiska egenskaperna för de
+naturliga talen.
+Vi har i tidigare avsnitt visat att de naturliga talen har följande egenskaper.
+
+\theoremstyle{plain}
+\newtheorem*{AlgebraicPropertiesNatural}{Algebraiska egenskaper för de
+	naturliga talen}
+\begin{AlgebraicPropertiesNatural}
+	\nocite{Bartle2000itr,Grillet2007aa}
+	\label{def:HeltalenEgenskaper}
+	På mängden \(\N\) av hela tal definieras två binära operationer,
+	addition (\(+\)) och multiplikation (\(\cdot\)).
+	För addition gäller följande:
+	\begin{description}
+		\item[Kommutativitet] \(a+b=b+a\) för alla \(a,b\in\N\).
+		\item[Associtivitet] \((a+b)+c=a+(b+c)\) för alla \(a,b,c\in\N\).
+		\item[Additivt identitetselement] Det finns ett element \(0\in\N\)
+			sådant att för alla \(a\in\N\) gäller att \(0+a = a+0 = a\).
+	\end{description}
+	För multiplikation gäller följande:
+	\begin{description}
+		\item[Kommutativitet] \(a \cdot b=b \cdot a\) för alla \(a,b\in\N\).
+		\item[Associtivitet] \((a \cdot b) \cdot c=a \cdot (b \cdot c)\) för
+			alla \(a,b,c\in\N\).
+		\item[Multiplikativt identitetselement] Det finns ett element
+			\(1\in\N\) sådant att för alla \(a\in\N\) gäller att
+			\(1 \cdot a = a \cdot 1 = a\).
+	\end{description}
+	Utöver detta gäller även
+	\begin{description}
+		\item[Multiplikativ distributivitet över addition]
+			\(a \cdot (b+c) = (a \cdot b) + (a \cdot c)\) och
+			\((b+c) \cdot a = (b \cdot a) + (c \cdot a)\) för alla reella tal
+			\(a,b,c\in\N\).
+	\end{description}
+\end{AlgebraicPropertiesNatural}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -525,8 +730,160 @@ Vi börjar med associativiteten.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Potenser}
 \noindent
-...
+\lettrine{D}{et kan bli} tröttsamt i längden att skriva ut många faktorer i en
+produkt.
+För additionen kunde vi istället för att skriva \(a+a+\cdots+a\)
+multiplicera \(a\) med antalet \(a\)-termer i summan, på så vis behöver vi inte
+skriva ut alla \(a\)-termer utan det räcker med att vi vet vilken term och hur
+många vi ska addera.
+Vi vill naturligtvis kunna göra liknande för multiplikation.
+Istället för att skriva ut alla faktorer \(b\)-faktorer i en produkt \(b\cdot
+b\cdots b\) räcker det med att vi skriver faktorn och antalet av denna
+faktor.
+Detta åstadkommer vi med potenser som definieras enligt följande.
+\begin{definition}
+	Låt \(a\) och \(n\) vara naturliga tal.
+	Då skriver vi produkten \(a\cdot a\cdots a\) med \(n\) faktorer som
+	\(a^n\).
+	Alltså,
+	\begin{equation*}
+		\underbrace{a\cdot a\cdots a}_n = a^n.
+	\end{equation*}
+	Vi kallar \(a^n\) för en \emph{\(a\)-potens} med \emph{exponenten} \(n\).
+\end{definition}
 
+\begin{example}
+	Vi har produkten \(2\cdot 2\cdot 2\) som består av tre termer som alla är
+	\(2\).
+	Vi kan då skriva produkten som en \(2\)-potens, nämligen \(2^3\).
+\end{example}
+
+\begin{example}
+	Talet \(72\) kan skrivas som produkten \(8\cdot 9=2\cdot 2\cdot 2\cdot
+	3\cdot 3\).
+	Om vi använder potensform får vi att \(72=2^3\cdot 3^2=2^3 3^2\).
+\end{example}
+
+\begin{example}
+	Talet \(4\) kan skrivas som en \(4\)-potens, nämligen \(4^1\).
+	Det kan också skrivas som en \(2\)-potens, nämligen \(4=2\cdot 2=2^2\).
+\end{example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESULTAT OM POTENSER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Några resultat om potenser}
+\noindent
+Vi ska nu titta på några enkla resultat som följer av vår definition av
+potenser.
+En första fråga kan vara, vad händer om vi adderar två potenser?
+\begin{example}
+	\label{ex:AdderaPotenser}
+	Vi vill addera potenserna \(a^n\) och \(b^m\) där \(a\) och \(b\) är
+	naturliga tal och \(n\) och \(m\) är naturliga tal skilda från noll.
+	Om vi adderar dem får vi
+	\begin{equation*}
+		a^n + b^m = \underbrace{a\cdot a\cdots a}_n + \underbrace{b\cdot
+		b\cdots b}_m.
+	\end{equation*}
+	Vi kan inte komma särskilt mycket längre och vi kan konstatera att detta
+	var ett föga intressant resultat.
+\end{example}
+
+Om vi istället testar att multiplicera två potenser.
+\begin{example}
+	\label{ex:MultipliceraPotenser}
+	Vi vill multiplicera potenserna \(a^n\) och \(b^m\) där \(a\) och \(b\) är
+	naturliga tal och \(n\) och \(m\) är naturliga tal skilda från noll.
+	Vi får då att
+	\begin{equation*}
+		a^n\cdot b^m = a^nb^m = \underbrace{a\cdot a\cdots a}_n\cdot
+		\underbrace{b\cdot b\cdots b}_m.
+	\end{equation*}
+	Detta verkar mer lovande, vad händer om \(a=b\)?
+
+	Om \(a=b\) får vi att
+	\begin{equation}
+		\label{eq:MultipliceraPotenser}
+		a^nb^m = a^na^m = \underbrace{a\cdot a\cdots a}_n\cdot\underbrace{a\cdot
+		a\cdots a}_m = \underbrace{a\cdot a\cdots a}_{n+m} = a^{n+m}.
+	\end{equation}
+\end{example}
+
+Detta är ett intressant resultat och vi sammanfattar det som följande sats.
+\begin{theorem}
+	\label{thm:AdderaExponenter}
+	Om \(a\), \(n\neq 0\) och \(m\neq 0\) är naturliga tal, då är \(a^na^m =
+	a^{n+m}.\)
+\end{theorem}
+\begin{proof}
+	Satsen följer direkt från \eqref{eq:MultipliceraPotenser}.
+\end{proof}
+
+\begin{example}
+	Vi vill multiplicera potenserna \(2^3\) och \(2^5\).
+	Vi får då enligt \thmref{thm:AdderaExponenter} att
+	\begin{equation*}
+		2^32^5 = 2^{3+5} = 2^8.
+	\end{equation*}
+	Om vi kontrollerar ser vi att \(2^3=8\) multiplicerat med \(2^5=32\)
+	faktiskt är \(2^8=256\).
+\end{example}
+
+Eftersom att det fungerar att addera exponenterna ter det sig naturligt att
+fråga om vi även kan multiplicera exponenterna och vad det skulle betyda.
+\begin{example}
+	Om \(a\), \(n\neq 0\) och \(m\neq 0\) är naturliga tal kan vi skapa
+	potensen \(a^{n\cdot m} = a^{nm}\).
+	Vi vet att \[nm = \underbrace{n+n+\cdots+n}_m\] och alltså att
+	\begin{equation}
+		\label{eq:MultipliceraExponenter1}
+		a^{nm}=a^{\underbrace{n+n+\cdots+n}_m}=\underbrace{a^na^n\cdots a^n}_m.
+	\end{equation}
+	Men vi har nyss definierat potenser för att förenkla skrivandet av sådana
+	produkter.
+	Alltså får vi att
+	\begin{equation}
+		\label{eq:MultipliceraExponenter2}
+		a^na^n\cdots a^n = (a^n)^m.
+	\end{equation}
+\end{example}
+Vi sammanfattar resultatet i följande sats.
+\begin{theorem}
+	\label{thm:MultipliceraExponenter}
+	Om \(a\), \(b\), \(n\neq 0\), \(m\neq 0\) och \(p\neq 0\) är naturliga tal,
+	då är \((a^nb^m)^p=a^{np}b^{mp}\).
+\end{theorem}
+\begin{proof}
+	Om vi tittar på vad \((a^nb^m)^p\) faktiskt betyder, så finner vi att
+	\begin{equation*}
+		(a^nb^m)^p = \underbrace{(a^nb^m)(a^nb^m)\cdots (a^nb^m)}_p.
+	\end{equation*}
+	Eftersom att multiplikation är associativ och kommutativ får vi att
+	\begin{equation*}
+		\underbrace{(a^nb^m)(a^nb^m)\cdots (a^nb^m)}_p =
+		\underbrace{a^na^n\cdots a^n}_p \underbrace{b^mb^m\cdots b^m}_p =
+		(a^n)^p(b^m)^p = a^{np}b^{mp}.
+	\end{equation*}
+	Och alltså är \((a^nb^m)^p = a^{np}b^{mp}\).
+\end{proof}
+
+Vi avslutar avsnittet med ett exempel som nyttjar de båda satserna.
+\begin{example}
+	Vi vill multiplicera \(4^3\) och \(12^2\).
+	Vi vet att \(4=2\cdot 2\) och alltså \(4=2^2\), samt att \(12=3\cdot
+	4=3\cdot 2^2\).
+	Om vi använder detta och tittar på vad vi hade från början, \(4^3\) är
+	alltså \((2^2)^3=2^{2\cdot 3}=2^6\).
+	\(12^2\) blir alltså \((3\cdot 2^2)^2\) och således \(12^2=3^{1\cdot
+	2}2^{2\cdot 2}=3^22^4\).
+	Om vi multiplicerar dem får vi
+	\begin{equation*}
+		(\underbrace{2^6}_{4^3}\cdot \underbrace{3^22^4}_{12^2}) =
+		2^62^43^2 = 2^{6+4}3^2 = 2^{10}3^2.
+	\end{equation*}
+\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -534,27 +891,85 @@ Vi börjar med associativiteten.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Likhet och olikhet}
 \noindent
-...
+\lettrine{D}{et sista begreppet} vi ska introducera i detta kapitel är
+olikheter.
+Vi har redan sett likhet, som vi betecknade med \(=\) och utläste \emph{är lika
+med}.
+Likheter är väldigt intressanta, men det finns många saker som inte är lika.
+Exempelvis har vi de naturliga talen, de är oändligt många och inget av dem är
+lika med något annat.
+Därför definierar vi här en annan relation på de naturliga talen.
 
-\begin{definition}[Ordning]
-	...
+\begin{definition}[Olikhet]
+	\index{olikhet}\index{naturliga tal!olikhet}
+	\index{<}\index{\(\leq\)}\index{>}\index{\(\geq\)}
+	Låt \(a\) och \(b\) vara naturliga tal.
+	Då säger vi att \(a\) \emph{är mindre än} \(b\) om det finns ett naturligt
+	tal \(n>0\) större än noll sådant att \(a+n=b\), vi skriver detta som
+	\(a<b\).
+	Vi kan också säga att \(b\) \emph{är större än} \(a\) och beteckna detta
+	genom \(b>a\).
+	Om vi tillåter att \(n\) kan vara noll, då skriver vi \(a\leq b\)
+	respektive \(b\geq a\).
+	Vi utläser dessa som \(a\) \emph{är mindre än eller lika med} \(b\)
+	respektive \(b\) \emph{är större än eller lika med} \(a\).
 \end{definition}
 
+\begin{example}
+	Vi kan nu säga att \(0<1<2<3\) och så vidare.
+	Alltså har vi nu infört en form av ordning av de naturliga talen.
+\end{example}
+
+\begin{example}
+	Låt \(x\) vara ett naturligt tal sådant att \(0<x\) och \(x<5\), det vill
+	säga \(0<x<5\).
+	Alltså menar vi att \(x\) kan vara något av talen \(1,2,3\) eller \(4\).
+\end{example}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% NÅGRA SATSER FÖR DE NATURLIGA TALEN
+% VÄLORDNINGSPRINCIPEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Några satser för de naturliga talen}
+%\subsection{Välordningsprincipen}
 %\noindent
 %...
 %
 %\begin{theorem}[Välordningsegenskapen hos de naturliga talen]
 %	\label{def:Valordningsprincipen}
 %	\index{välordningsegenskapen}\index{naturliga tal!välordningsegenskapen}
-%	Om \(M\subseteq\N\) är en delmängd till de naturliga talen och om
-%	\(M\neq\emptyset\), då existerar ett \(m\in M\) sådant att \(m\leq k\) för
-%	alla \(k\in M\).
+%	Om en mängd \(M\subseteq\N\) är en delmängd till de naturliga talen och om
+%	\(M\neq\emptyset\) ej är den tomma mängden, då existerar ett element
+%	\(m\in M\) i \(M\) sådant att \(m\leq k\) är mindre än \(k\) för alla
+%	\(k\in M\) i \(M\).
 %\end{theorem}
 %\begin{proof}
 %	...
 %\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AVSLUTANDE REFLEKTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[Avslutande reflektion]{Avslutande reflektion\maybeskip}
+\noindent
+\lettrine{S}{om en avslutande} reflektion till detta kapitel ges följande
+övningsuppgifter.
+Tanken med dessa övningar är att reflektera över matematikens existens, hur den
+förhåller sig till verkligheten etc.
+
+\begin{exercise}
+	Diskutera förhållandet mellan matematiken och verkligheten.
+	En inledande fråga i diskussionen kan vara:
+	Grundar sig matematiken i verkligheten eller är den oberoende av
+	verkligheten?
+	Diskutera.
+\end{exercise}
+
+\begin{exercise}
+	a) Om matematiken är oberoende av verkligheten, hur kan den användas
+	för att utforska och förutsäga verkligheten? Och om verkligheten såg
+	annorlunda ut, skulle matematiken se likadan ut?
+
+	b) Om matematiken grundar sig i verkligheten, hur kan den användas för att
+	förutsäga verkligheten när den behöver verkligheten för att visas vara sann?
+\end{exercise}
