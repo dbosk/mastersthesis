@@ -1,13 +1,17 @@
 %\RequirePackage[swedish]{babel}
-\documentclass[a4paper,reqno,draft,twoside]{amsbook}
-%\documentclass[a4paper,reqno,final,twoside]{amsbook}
+%\documentclass[a4paper,reqno,draft,twoside]{amsbook}
+\documentclass[a4paper,reqno,final,twoside]{amsbook}
 
+\usepackage{fixltx2e}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{graphicx}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{lettrine}
 \usepackage[swedish]{babel}
+%\usepackage[polutonikogreek,swedish]{babel}
+%\usepackage[or]{teubner}
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{natbib}
 %\bibliographystyle{kthnat}
@@ -20,14 +24,14 @@
 \ifdraft{
 	\usepackage{fancyhdr}
 %	\usepackage{showlabels}
-	\includeonly{naturliga,heltalen,talsystem}
+	\includeonly{mangder,naturliga,heltalen,talsystem}
 }{
 	\usepackage[a4paper,rmargin=6cm,lmargin=3cm,bmargin=3.5cm]{geometry}
 }
 
 \newtheorem{theorem}{Sats}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollarium}
+\newtheorem{corollary}[theorem]{Korollarium}
 \theoremstyle{definition}
 \newtheorem{axiom}[theorem]{Axiom}
 \newtheorem{definition}[theorem]{Definition}
@@ -35,6 +39,7 @@
 \newtheorem{exercise}[theorem]{Övning}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Anmärkning}
+%\newtheorem*{note}[theorem]{Notera}
 
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
@@ -44,13 +49,13 @@
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\tblref}[1]{Tabell \ref{#1}}
 \newcommand{\figref}[1]{Figur \ref{#1}}
+\newcommand{\axref}[1]{Axiom \ref{#1}}
 \newcommand{\defref}[1]{Definition \ref{#1}}
 \newcommand{\thmref}[1]{Sats \ref{#1}}
 \newcommand{\lemref}[1]{Lemma \ref{#1}}
-\newcommand{\corref}[1]{Följdsats \ref{#1}}
+\newcommand{\corref}[1]{Korollarium \ref{#1}}
 \newcommand{\exref}[1]{Exempel \ref{#1}}
 \newcommand{\xrcref}[1]{Övning \ref{#1}}
-%\newcommand{\defref}[1]{Definition \ref{#1}}
 
 \newcommand{\imp}[1]{\emph{#1}\marginnote{#1}}
 \newcommand{\maybeskip}[1][Fördjupningsavsnitt.]{\protect\footnote{#1}}
@@ -64,13 +69,7 @@
 \newcommand{\U}{\mathcal{U}}
 \newcommand{\V}{\mathcal{V}}
 \DeclareMathOperator{\card}{card}
-%\newcommand{\card}{\textnormal{card}\,}
-% \implies is already defined by AMS
-%\newcommand{\implies}{\Longrightarrow}
 \newcommand{\equivalent}{\Longleftrightarrow}
-% \land and \lor already defined by AMS
-%\newcommand{\land}{\wedge}
-%\newcommand{\lor}{\vee}
 
 \makenomenclature
 \makeindex
@@ -99,7 +98,7 @@
 }
 \date{\today}
 \author{Daniel Bosk}
-\address{Sandgatan 6, 86035 Söråker}
+\address{Sandgatan 6, 860\,35 Söråker}
 \email{\url{dbosk@kth.se}}
 \urladdr{\url{http://www.bosk.se/}}
 %\thanks{...}
@@ -116,9 +115,11 @@
 \include{intro}
 \include{logik}
 \include{mangder}
+%\include{funktioner}
 \include{naturliga}
 \include{heltalen}
-\include{reella}
+\include{talteori}
+%\include{reella}
 \include{talsystem}
 
 \backmatter
@@ -134,4 +135,5 @@
 }{}
 \include{kursplanering}
 
+\clearpage
 \end{document}
