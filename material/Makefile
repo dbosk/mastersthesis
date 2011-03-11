@@ -3,7 +3,8 @@
 DOCUMENTS=	kompendium.pdf
 DOCUMENT?=	kompendium
 SOURCES=	kompendium kursplanering intro frontmatter backmatter \
-			heltalen naturliga reella logik mangder talsystem preface
+			heltalen naturliga reella logik mangder talsystem preface \
+			funktioner talteori
 PAPER?=		a4
 
 TEX=		latex
@@ -66,7 +67,7 @@ clean:
 		${DOCUMENT}.nlo \
 		${DOCUMENT}.lof \
 		${DOCUMENT}.lot \
-		*.core *.o *~ *.out 
+		*.core *.o *~ *.out missfont.log
 clean-all:
 	@for d in ${SOURCES}; do \
 		${MAKE} DOCUMENT=$$d clean; \
@@ -85,4 +86,4 @@ view: ${DOCUMENT}.pdf
 run: view
 
 todo:
-	@grep -e TODO -e todo -e XXX * | grep -v '^Makefile:'
+	@grep -e TODO -e todo -e 'XXX ' * | grep -v '^Makefile:'
