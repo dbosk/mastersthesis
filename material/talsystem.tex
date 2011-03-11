@@ -107,11 +107,9 @@ Systemet består alltså av två tecken, ett tecken som har värdet ett och ett
 tecken som har värdet fem.
 Se \figref{fig:Strecktal}.
 
-\begin{figure}[h]
+\begin{figure}[b]
 	\caption{Tecknen i ett enkelt teckenvärdessystem.}
-	% TODO fixa figur för streckteckensystemet
-	%\includegraphics{}
-	Ingen figur ännu ...
+	\includegraphics[width=4cm]{strecktal.png}
 	\label{fig:Strecktal}
 \end{figure}
 
@@ -160,8 +158,7 @@ Talen 1-10 ges i \tblref{tbl:RomerskaTal} och några andra större tal finns i
 	\label{tbl:RomerskaTal}
 \end{table}
 
-\begin{table}[h]
-	\caption{Några tal skrivna med det romerska talsystemet.}
+\begin{table}[t]
 	\begin{tabular}{lll}
 		\hline\hline
 		\(2011\) & MMXI & \(1000+1000+10+1\) \\
@@ -169,17 +166,19 @@ Talen 1-10 ges i \tblref{tbl:RomerskaTal} och några andra större tal finns i
 		\(1998\) & MCMXCVIII & \(1000+(1000-100)+(100-10)+5+1+1+1\) \\
 		\(587\) & DLXXXVII & \(500+50+10+10+10+5+1+1\) \\
 		\(487\) & CDLXXXVII & \((500-100)+50+10+10+10+5+1+1\) \\
-		\hline\hline
+		\hline\hline\\
 	\end{tabular}
+	\caption{Några tal skrivna med det romerska talsystemet.}
 	\label{tbl:RomerskaTal2}
 \end{table}
 
-Som kan ses i \tblref{tbl:RomerskaTal2} är det endast tecknet med direkt lägre
-värde som används vid subtraktion.
+Som kan ses i \tblref{tbl:RomerskaTal2} är det eftersträvansvärt att så få
+tecken som möjligt används vid subtraktion.
 Exempelvis kan tänkas att \(487\) är \(500\) minus \(13\) och därför skulle
-kunna skrivas som XIIID, men sådant är alltså inte fallet.
-Det är istället C, eller \(100\), som används för subtraktion för D, eller
-\(500\), och sedan läggs tecknen för \(87\) till som vanligt.
+kunna skrivas som XIIID.
+Det blir dock enklare att se om man istället använder C, eller \(100\), för
+subtraktionen av D, eller \(500\), och sedan lägger till tecknen för \(87\)
+som vanligt.
 
 \begin{exercise}\label{xrc:RaknaMedRomerskaTal}
 	Undersök och diskutera hur enkelt det är att räkna med och
@@ -253,11 +252,12 @@ detta sätt?
 Följande sats visar att sådant är fallet.
 \begin{theorem}\label{thm:PositionssystemAllaUnika}
 	Låt \(b>1\) vara ett naturligt tal större än ett.
-	Då kan varje naturligt tal \(x\in\N\) skrivas som
+	För varje naturligt tal \(x\in\N\) existerar ett naturligt tal \(n>0\)
+	strikt större än noll och naturliga tal \(d_i<b\), där \(1\leq i\leq n\),
+	strikt mindre än \(b\) sådana att \(x\) kan skrivas som
 	\begin{equation*}
-		d_1b^{n-1} + d_2b^{n-2} + \cdots + d_{n-1}b^1 + d_nb^0
+		x = d_1b^{n-1} + d_2b^{n-2} + \cdots + d_{n-1}b^1 + d_nb^0.
 	\end{equation*}
-	med heltal \(0 \leq d_i < b\) för alla \(1\leq i\leq n\).
 	Denna presentation är unik upp till ordningen av termerna.
 \end{theorem}
 \begin{proof}
@@ -269,8 +269,6 @@ Följande sats visar att sådant är fallet.
 	Upprepas detta förfarande får vi att \(q_i=q_{i+1}b+r_{i+1}\), \(i\in\N\).
 	Från \xrcref{xrc:KvotenMindre} har vi att \(q_{i+1}<q_i\) eftersom att
 	\(b>1\).
-%	Vi får då från \defref{def:Valordningsprincipen} att \(q_n=0\) för något
-%	\(n\in\N\).
 	Vi får då från välordningsprincipen för de naturliga talen att \(q_n=0\)
 	för något \(n\in\N\).
 	Vi nu sätter ihop dessa resultat enligt följande idé.
@@ -284,24 +282,42 @@ Följande sats visar att sådant är fallet.
 	Om vi låter \(d_1=r_n, d_2=r_{n-1}, \ldots, d_{n-1}=r_2, d_n=r_1\) ser vi
 	att vi får en summa på korrekt form.
 
-	Antag att det även finns ett tal \(y\neq x\) skilt från \(x\) men med
-	samma representation.
-	Då har vi att
+	Antag att det för ett naturligt tal \(x\) finns två olika representationer
+	\(c_1c_2\cdots c_n\) och \(d_1d_2\cdots d_m\), båda med basen \(b\).
+	Detta innebär att
 	\begin{equation*}
-		y = r_nb^{n-1}+\cdots+r_2b^1+r_1.
+		c_1b^{n-1}+c_2b^{n-2}+\cdots+c_nb^0 =
+		x =
+		d_1b^{m-1}+d_2b^{m-2}+\cdots+d_mb^0.
 	\end{equation*}
-	Men
-	\begin{equation*}
-		x = r_nb^{n-1}+\cdots+r_2b^1+r_1 = y,
-	\end{equation*}
-	vilket är en motsägelse eftersom att vi antagit \(x\neq y\).
-	Alltså kan inget sådant tal \(y\) existera och representationen måste
-	därför vara unik.
+	% TODO bevisa unikhet/unicitet för representationer
+	...
+
+%	Antag att det även finns ett tal \(y\neq x\) skilt från \(x\) men med
+%	samma representation.
+%	Då har vi att
+%	\begin{equation*}
+%		y = r_nb^{n-1}+\cdots+r_2b^1+r_1.
+%	\end{equation*}
+%	Men
+%	\begin{equation*}
+%		x = r_nb^{n-1}+\cdots+r_2b^1+r_1 = y,
+%	\end{equation*}
+%	vilket är en motsägelse eftersom att vi antagit \(x\neq y\).
+%	Alltså kan inget sådant tal \(y\) existera och representationen måste
+%	därför vara unik.
 \end{proof}
 
 \begin{exercise}
 	Diskutera innebörden av denna sats och dess bevis.
 \end{exercise}
+
+\begin{example}
+	Det kan nu vara av intresse med ett exempel där representationen ej är unik.
+	Ett tydligt exempel är det romerska talsystemet där \(99\) skulle kunna
+	representeras av både IC och XCIX.
+	Representationen för tal i det romerska systemet är alltså inte unik.
+\end{example}
 
 Eftersom att vi enligt \thmref{thm:PositionssystemAllaUnika} kan representera
 alla naturliga tal i en godtycklig bas \(b>1\) större än ett och att denna
@@ -566,7 +582,7 @@ Följande sats visar att denna additionsmetod fungerar för godtyckligt långa tal
 	Låt \(x=x_1x_2\cdots x_n\) och \(y=y_1y_2\cdots y_m\) vara två tal
 	representerade i ett positionssystem med basen \(b>1\),
 	\(x_i\) och \(y_i\) vara identiskt noll för \(i<1\) och \(N=\max\{n,m\}\).
-	Låt också \(q_b(t)=t/b\) vara kvoten och \(r_b(t)=t\%b\) vara resten vid
+	Låt också \(q_b(t)=t/b\) vara kvoten och \(r_b(t)\) vara resten vid
 	heltalsdivisionen \(t/b\).
 	Summan \(x+y\) kan då fås genom 
 	\begin{multline}\label{eq:AdditionsEkvation}
