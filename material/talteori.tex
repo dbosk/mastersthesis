@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Talteori}
 \label{ch:Talteori}
-\nocite{Laksov2005kou}
+\nocite{Laksov2005kou,Bartle2000itr}
 \noindent
 ...
 
@@ -42,9 +42,43 @@
 	...
 \end{definition}
 
+Följande sats har varit känd under väldigt lång tid, den är idag känds som
+Euklides sats.
+Eventuellt var satsen känd även tidigare, men den skrevs ned av Euklides av
+Alexandria (levde ca. 300 f.Kr.) i den nionde boken av \emph{Elementa}.
+Euklides \emph{Elementa} bestod av totalt 13 böcker och användes som lärobok
+i matematik ända fram till 1900-talet.
+\begin{theorem}[Euklides sats]
+	Det finns oändligt många primtal.
+\end{theorem}
+\begin{proof}
+	Om vi antar att det finns ändligt många primtal, då kan vi anta att
+	\(S=\{p_1,p_2,\ldots,p_n\}\) är mängden av alla primtal.
+	Vi låter då \(m=p_1\cdots p_n\) vara produkten av alla primtal, vi låter
+	\(q=m+1\).
+	Eftersom att \(q>p_i\) för alla \(i\) kan inte \(q\) vara ett element i
+	\(S\), och därför är \(q\) inte ett primtal.
+	Då finns det ett primtal \(p\) som delar \(q\).
+	Eftersom att \(p\) är ett primtal måste \(p=p_j\) för något \(j\), och
+	alltså måste \(p\) dela \(m\).
+	Men om \(p\) delar både \(m\) och \(q=m+1\), då måste \(p\) även dela
+	\(q-m=1\).
+	Då detta är omöjligt får vi en motsägelse och det måste alltså finnas
+	oändligt många primtal.
+\end{proof}
+
+Följande sats, aritmetikens fundamentalsats, visades i princip av Euklides.
+I den sjunde boken finns två satser som tillsammans kan visa aritmetikens
+fundamentalsats.
+Den visades dock först i sin helhet av Carl Friedrich Gauss (1777-1855) i sin
+bok \emph{Disquisitiones Arithmeticae}, som är latin för \emph{utforskning av
+tal}.
+Han skrev boken 1798 när han var 20 år gammal och den publicerades 1801.
+Den handlar om talteori och sammanfattar tidigare resultat men introducerar
+även nya, aritmetikens fundamentalsats var ett av dem.
 \begin{theorem}[Aritmetikens fundamentalsats]
-	Ett heltal \(n\in\Z\) kan skrivas som en unik produkt av primtal och en
-	enhet\footnote{I mängden av heltal finns enheterna \(-1\) och \(1\).}.
+	Ett heltal \(n\in\Z\) kan skrivas som en unik produkt av primtal och \(1\)
+	eller \(-1\).
 \end{theorem}
 \begin{proof}
 	...
