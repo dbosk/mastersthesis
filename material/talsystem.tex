@@ -107,9 +107,9 @@ Systemet består alltså av två tecken, ett tecken som har värdet ett och ett
 tecken som har värdet fem.
 Se \figref{fig:Strecktal}.
 
-\begin{figure}[b]
-	\caption{Tecknen i ett enkelt teckenvärdessystem.}
+\begin{figure}[t]
 	\includegraphics[width=4cm]{strecktal.png}
+	\caption{Tecknen i ett enkelt teckenvärdessystem.}
 	\label{fig:Strecktal}
 \end{figure}
 
@@ -123,13 +123,6 @@ Tecknen och deras betydelse i det romerska talsystemet ges i
 		\hline\hline
 		I & V & X & L & C & D & M \\
 		1 & 5 & 10 & 50 & 100 & 500 & 1000 \\
-%		I & 1 \\
-%		V & 5 \\
-%		X & 10 \\
-%		L & 50 \\
-%		C & 100 \\
-%		D & 500 \\
-%		M & 1000 \\
 		\hline\hline
 	\end{tabular}
 	\label{tbl:RomerskaSiffror}
@@ -260,7 +253,48 @@ Följande sats visar att sådant är fallet.
 	\end{equation*}
 	Denna presentation är unik upp till ordningen av termerna.
 \end{theorem}
+För att kunna bevisa detta behöver vi först följande lemma.
+\begin{lemma}
+	\label{lem:NollEndastOmLika}
+	Låt \(b>0\) vara ett naturligt tal större än noll, \(m\) och \(n\)
+	naturliga tal och \(c=c_1b^{n-1}+c_2b^{n-2}+\cdots+c_{n-1}b+c_n\), där
+	\(0<c_1<b\) och \(0\leq c_i<b\) för \(i=2,3,\ldots,n\), och
+	\(d=d_1b^{m-1}+d_2b^{m-2}+\cdots+d_{m-1}b+d_m\), där \(0<d_1<b\) och \(0\leq
+	d_j<b\) för \(j=2,3,\ldots,m\).
+	Då gäller att \(c-d=0\) endast om \(n=m\) och \(c_i=d_i\) för
+	\(i=1,2,3,\ldots,n\).
+\end{lemma}
 \begin{proof}
+	Låt oss anta att \(n=m+k\) för något naturligt tal \(k\).
+	Vi har då att
+	\begin{equation*}
+		c-d=c_1b^{n-1}+\cdots+c_{k-1}b^{n-k+1}+(c_k-d_0)b^m+\cdots+(c_n-d_m) =
+		0.
+	\end{equation*}
+	Men \(c_1b^{n-1}\neq 0\) och alltså måste \(n=m\).
+
+	Då har vi att
+	\begin{equation*}
+		c-d = (c_1-d_1)b^{n-1}+\cdots+(c_{n-1}-d_{n-1})b+(c_n-d_n) = 0.
+	\end{equation*}
+	Låt oss anta att \(c_n-d_n\neq 0\), om inte delar vi med \(b\) tills att vi
+	får en nollskild term utan en faktor \(b\).
+	Då får vi att
+	\begin{equation}
+		\label{eq:NollEndastOmLika}
+		(c_0-d_0)b^n+\cdots+(c_{n-1}-d_{n-1})b = -(c_n-d_n).
+	\end{equation}
+	Eftersom att vänsterledet i \eqref{eq:NollEndastOmLika} är delbart med
+	\(b\) måste även högerledet vara detta eftersom att de är lika.
+	Men eftersom att \(c_i<b\) och \(d_i<b\) har vi att
+	\(-b<c_i-d_i<b\) för \(i=0,1,2,\ldots,n\).
+	Alltså är \(-(c_n-d_n)\) delbar med \(b\) endast om \(-(c_n-d_n)=0\) vilket
+	är en motsägelse.
+	Då måste alla termer \(c_i-d_i=0\) för \(i=1,2,3,\ldots,n\).
+\end{proof}
+
+Nu är vi redo att visa satsen.
+\begin{proof}[Bevis \thmref{thm:PositionssystemAllaUnika}]
 	Vi börjar med att visa att summan existerar.
 	Om vi delar \(x\) med \(b\) får vi en kvot \(q_1\) och en restterm
 	\(r_1\) sådana att \(x=q_1b+r_1\) och \(0\leq r_1<b\).
@@ -290,8 +324,14 @@ Följande sats visar att sådant är fallet.
 		x =
 		d_1b^{m-1}+d_2b^{m-2}+\cdots+d_mb^0.
 	\end{equation*}
-	% TODO bevisa unikhet/unicitet för representationer
-	...
+	Då måste
+	\begin{equation*}
+		c_1b^{n-1}+c_2b^{n-2}+\cdots+c_n - d_1b^{m-1}+d_2b^{m-2}+\cdots+d_m =
+		0,
+	\end{equation*}
+	men enligt \lemref{lem:NollEndastOmLika} kan detta ej vara sant och vi har
+	en motsägelse.
+	Alltså måste det vara samma representation.
 
 %	Antag att det även finns ett tal \(y\neq x\) skilt från \(x\) men med
 %	samma representation.
