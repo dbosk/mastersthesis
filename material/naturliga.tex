@@ -9,9 +9,9 @@ Talen är \(0,1,2,3,\ldots\) och mängden av naturliga tal brukar betecknas
 Det vill säga \(\N=\{0,1,2,3,\ldots\}\).
 Det är dessa tal som människan använt längst i historien.
 Det är också därför de genom historien ansetts så självklara att Leopold
-Kronecker (1823-1891) sade att ''God made the integers; all else is the work
-of man''\footnote{Översättning: ''Gud skapade heltalen; allt annat är
-skapat av människan.''}.
+Kronecker (1823-1891) sade ''Die ganzen Zahlen hat der liebe Gatt gemacht,
+alles andere ist Menschenwerk'', på svenska ''Gud skapade heltalen; allt annat
+är människans verk.''
 
 Under 1800-talet blev matematikerna uppmärksamma på att det behövdes en
 stadigare grund att bygga matematiken på.
@@ -73,33 +73,27 @@ Detta är allt som nu finns i vår matematikvärld -- ''noll är ett naturligt
 tal''.
 Vi går vidare till nästa axiom.
 
+\begin{axiom}
+	\label{ax:NaturligaAxiomEfterfoljare}
+	För alla naturliga tal \(n\) existerar en efterföljare betecknad \(S(n)\)
+	som är ett naturligt tal.
+\end{axiom}
 För ett naturligt tal \(n\), låter vi dess efterföljare betecknas med \(S(n)\).
 På samma sätt låter vi \(S(S(n))\) beteckna efterföljaren till efterföljaren
 till \(n\), och så vidare.
-\begin{axiom}
-	\label{ax:NaturligaAxiomEfterfoljare}
-	För alla naturliga tal \(n\) gäller att dess efterföljare \(S(n)\) är
-	ett naturligt tal.
-\end{axiom}
 Notera att vi vet ännu inte vad som menas med en efterföljare.
 Det enda vi vet är att alla naturliga tal har en efterföljare som är ett
 naturligt tal.
 Vi kan alltså fylla upp vår matematikvärld med en lång rad efterföljare och
 efterföljare till efterföljare och så vidare.
 \begin{axiom}
-	\label{ax:NaturligaAxiomOandligt}
-	För alla naturliga tal \(n\) gäller att \(S(n)\neq 0\).
+	\label{ax:NaturligaAxiomEjCirkular}
+	För alla naturliga tal \(n\) gäller att \(0\) inte är dess efterföljare.
 \end{axiom}
-\axref{ax:NaturligaAxiomEfterfoljare} säger att ett naturligt tals
-efterföljare alltid är ett naturligt tal.
-\axref{ax:NaturligaAxiomOandligt} säger att inget naturligt tal kan ha
-\(0\) som efterföljare.
-Dessa två axiom säger tillsammans att det finns oändligt många naturliga tal.
-Detta eftersom att om vi har ett naturligt tal kan vi alltid ta dess
-efterföljare, men oavsett hur många efterföljare vi tar kommer vi aldrig
-tillbaka dit vi startade vid \(0\).
-Låt oss gå vidare.
-
+Vi kommer att återkomma till dessa två axiom.
+Men låt oss först gå vidare med vad vi menar med likhet och att två naturliga
+tal är lika.
+Vi betecknar likhet med tecknet \(=\).
 \begin{axiom}[Reflexivitet]
 	\label{ax:NaturligaAxiomReflexivitet}
 	För alla naturliga tal \(n\) gäller att \(n\) är lika med sig själv.
@@ -120,8 +114,8 @@ Vi kan nu också konstatera i vår matematikvärld att \(0=0\), och vi vet att
 \end{axiom}
 \begin{axiom}[Slutenhet under likhet]
 	\label{ax:NaturligaAxiomSlutenhet}
-	För alla \(a\) och \(b\) gäller att om \(a\) är ett naturligt tal
-	och \(a=b\) då är \(b\) också ett naturligt tal.
+	För alla naturliga tal \(a\) gäller att om \(a=b\) för något \(b\) då måste
+	\(b\) också vara ett naturligt tal.
 \end{axiom}
 \axref{ax:NaturligaAxiomReflexivitet}, \ref{ax:NaturligaAxiomSymmetri},
 \ref{ax:NaturligaAxiomTransitivitet} och \ref{ax:NaturligaAxiomSlutenhet}
@@ -141,8 +135,12 @@ Denna egenskap kallas transitivitet\index{transitivitet}.
 med någonting, då måste detta någonting också vara ett naturligt tal.
 Denna egenskap kallas slutenhet\index{slutenhet}, hur vi än använder likhet kan
 vi inte komma utanför de naturliga talen.
+Vi vet nu hur begreppet likhet och \(=\) ska fungera och vad det betyder.
 
-Nästa axiom är viktigt.
+Vi ska nu gå tillbaka till \axref{ax:NaturligaAxiomEfterfoljare} och
+\axref{ax:NaturligaAxiomEjCirkular}.
+Vi ska dock först introducera ytterligare ett axiom som vi vill kombinera dessa
+två axiom.
 \begin{axiom}
 	\label{ax:NaturligaAxiomInjektion}
 	För alla naturliga tal \(a\) och \(b\) gäller att om deras efterföljare är
@@ -154,8 +152,23 @@ efterföljare.
 Detta betyder att vi inte kan få exempelvis grenstruktur eller ''öglor''.
 Utan strukturen som måste uppstå är en linje där varje naturligt tal är en
 efterföljare till ett unikt annat naturligt tal -- med undantag för noll
-(\(0\)) som enligt \axref{ax:NaturligaAxiomOandligt} inte är efterföljare till
+(\(0\)) som enligt \axref{ax:NaturligaAxiomEjCirkular} inte är efterföljare till
 något naturligt tal.
+\axref{ax:NaturligaAxiomEfterfoljare} säger att ett naturligt tals
+efterföljare alltid är ett naturligt tal och att en sådan alltid existerar.
+\axref{ax:NaturligaAxiomEjCirkular} säger att inget naturligt tal kan ha
+\(0\) som efterföljare.
+Dessa två axiom säger tillsammans med \axref{ax:NaturligaAxiomInjektion} att
+det finns oändligt många naturliga tal.
+Detta eftersom att om vi har ett naturligt tal kan vi alltid ta dess
+efterföljare, men oavsett hur många efterföljare vi tar kommer vi aldrig
+tillbaka dit vi startade vid \(0\).
+Vi vet att inget naturligt tal kan ha \(0\) som efterföljare, men \(S(0)\) då?
+Om vi låter \(S(S(0)\) ha \(S(0)\) så får vi en ögla trots att det inte har
+\(0\) som efterföljare.
+Därför behöver vi \axref{ax:NaturligaAxiomInjektion} som säger att då måste
+\(S(S(0))\) och \(0\) vara samma naturliga tal -- vilket inte är sant och
+alltså kan vi inte få några öglor.
 
 Vi tittar nu på det sista axiomet.
 \begin{axiom}[Induktionsaxiomet]
@@ -185,27 +198,25 @@ axiomets namn.
 \end{exercise}
 
 Vi ska nu göra en definition som kommer att förenkla vår notation avsevärt.
+Denna definition använder faktiskt induktionsprincipen från induktionsaxiomet.
 \begin{definition}
-	För alla naturliga tal \(a\), låt \(S^n(a)\) beteckna
-	\begin{equation*}
-		S^n(a) = \underbrace{S(S(S(\cdots S}_n(a)
-	\end{equation*}
-	där \(n\) betecknar antalet \(S\).
-	Låt speciellt \(S^0(a)=a\).
+	\label{def:Efterfoljarpotenser}
+	Låt \(S^0(0) = 0\).
+	Om \(S^n(0)\) är definierad för något naturligt tal \(n\), då låter vi
+	\(S^{S(n)}(0) = S(S^n(0))\).
 \end{definition}
-
-Vi avslutar detta avsnitt med att införa några välbekanta beteckningar.
+Dessutom ska vi införa några välbekanta beteckningar.
 \begin{definition}
 	\label{def:NaturligaBeteckningar}
 	Låt
 	\begin{align*}
-		1&=S(0)=S^1(0), \\
-		2&=S(1)=S(S(0))=S^2(0), \\
-		3&=S(2)=S(S(S(0)))=S^3(0), \\
+		1 &= S(0) = S^1(0), \\
+		2 &= S(1) = S(S(0)) = S^2(0), \\
+		3 &= S(2) = S(S(S(0))) = S^3(0), \\
 		\vdots \\
-		n&=S(n-1)=\underbrace{S(S(S(\cdots(S}_n(0))))) = S^n(0),
+		n &= S^n(0).
 	\end{align*}
-	där \(n-1\) betecknar föregångaren till \(n\).
+	Låt dessutom \(\N=\{0,1,2,3,\ldots\}\) vara mängden av alla naturliga tal.
 \end{definition}
 \begin{remark}
 	Märk väl att \(1,2\) och \(3\) enbart utgör symboler för
@@ -217,6 +228,17 @@ Vi avslutar detta avsnitt med att införa några välbekanta beteckningar.
 	med ännu.
 	Alltså utgör dessa bara en oordnad ansamling av symboler.
 \end{remark}
+\begin{example}
+	Vi ska titta närmare på det naturliga talet \(3=S^3(0)\).
+	Vi har att \(0=S^0(0)\) och \(1=S(0)\), men då måste \(S(0)=S(S^0(0))\).
+	Enligt \defref{def:Efterfoljarpotenser} är detta samma sak som
+	\(S^{S(0)}(0)=S^1(0)\).
+	Vi har också att \(2=S(S(0))\).
+	På samma sätt som tidigare får vi att \(S(S(0))=S(S^1(0))\) och vi kan nu
+	fortsätta med att konstatera att detta är lika med \(S^{S(1)}(0)=S^2(0)\).
+	Vi kan nu använda detta resultat för att se att \(3=S(S(S(0)))\) faktiskt
+	är \(S^3(0)\).
+\end{example}
 
 
 
@@ -246,9 +268,9 @@ Vi avslutar detta avsnitt med att införa några välbekanta beteckningar.
 \section[Aritmetik]{Aritmetik\maybeskip}
 \index{aritmetik}
 \noindent
-\lettrine{O}{rdet aritmetik kommer} från grekiskans
-% TODO fixa fulhack för grekiska arithmoz
-\(\alpha\rho\iota\theta\mu o\zeta\), som betyder tal.
+\lettrine{O}{rdet aritmetik kommer} från grekiskans \emph{\ibygr{a)riqmo)s}},
+som betyder tal, och \emph{\ibygr{a)riqmhtikh)}}, som betyder konsten att
+räkna\nocite{OED}.
 Aritmetiken kan beskrivas som läran om att kombinera tal.
 De delar av aritmetiken vi ska behandla i detta avsnitt är operationerna
 addition (\(+\)) och multiplikation (\(\cdot\)).
@@ -257,15 +279,14 @@ talen.
 
 Innan vi går vidare till att titta på addition och multiplikation behöver vi en
 definition.
-% TODO fixa definition av binär operation
 \begin{definition}
 	\index{binär operation}
 	En \emph{binär operation}\index{binär operation} \(\diamond\) på en mängd
-	\(M\) är en funktion \(\diamond:M\times M\rightarrow M\) som tar två
+	\(M\) är en funktion \(\diamond:M\times M\to M\) som tar två
 	element \(x\) och \(y\) i \(M\) och parar dessa med ett element
 	\(\diamond(x,y)\) i \(M\).
 	Vanligtvis betecknas \(\diamond(x,y)\) med \(x\diamond y\).
-	Det vill säga, \((x,y)\mapsto x+y\).
+	Det vill säga, \((x,y)\mapsto x\diamond y\).
 \end{definition}
 
 
@@ -279,20 +300,29 @@ definition.
 Den första av de aritmetiska operationerna vi ska ta upp är addition.
 Den definition vi använder oss av i detta kompendium är samma definition som
 gavs av Peano år 1889.
-Till en början kan definitionen kanske upplevas lite underlig och
-svårförståelig, men vi ska diskutera den efteråt.
+Peanos definition av addition bygger även den på induktionsprincipen och kan
+därför till en början kanske upplevas lite underlig och svårförståelig, men vi
+ska diskutera den efteråt.
 \begin{definition}[Addition]
 	\label{def:NaturligaAddition}
 	\index{addition}\index{naturliga tal!addition}
+	\index{summa}\index{term}
 	\index{\(+\)}
-	På de naturliga talen definieras en binär operation \(+\) kallad
-	\emph{addition} som
-	\begin{align}
+	För varje par av naturliga tal \(a\) och \(b\) existerar en unik
+	\emph{summa} \(a+b\) som är ett naturligt tal.
+	%Det vill säga \((a,b)\in\N\times\N\) och \(a+b\in\N\), och alltså
+	%\(+:\N\times\N\to\N\) där \((a,b)\mapsto a+b\).
+	Delarna \(a\) och \(b\) av en summa kallas för summans \emph{termer}.
+	Vi definierar först
+	\begin{equation}
 		\label{eq:AdditionNoll}
-		a+0 &= a, \\
+		a+0 = a.
+	\end{equation}
+	Om summan \(a+b\) är definierad låter vi
+	\begin{equation}
 		\label{eq:AdditionRekursion}
-		a+S(b) &= S(a+b).
-	\end{align}
+		a+S(b) = S(a+b).
+	\end{equation}
 \end{definition}
 Den första delen av definitionen är tämligen enkel.
 Allt \eqref{eq:AdditionNoll} säger är att om vi adderar noll till ett tal så får
@@ -326,11 +356,19 @@ Det visas lättast med ett exempel.
 	senare kommer vi fram till något som adderas med noll och då måste vi veta
 	vad det är.
 	Utöver detta vi vet också att \(2=S(S(0))\), om vi sätter in detta får vi
-	\(S(S(S(S(S(0)))))\) som vi betecknar med \(5\).
+	\(S(S(S(S(S(0)))))\) som vi enligt definition betecknar med \(5\).
 	Alltså är \(2+3=5\).
 \end{example}
 Denna typ av återupprepande användning av sig själv kallas för
 \emph{rekursion}\index{rekursion}.
+
+Om vi studerar additionen, skapandet av summan, ser vi att \(+\) är en binär
+operation på mängden av naturliga tal.
+Additionsoperatorn \(+\) kan definieras som en funktion \(+:\N\times\N\to\N\)
+där varje par av element \((a,b)\) avbildas på ett element \(a+b\), summan av
+\(a\) och \(b\), som vi finner genom \defref{def:NaturligaAddition}.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IDENTITETSELEMENT
@@ -342,7 +380,8 @@ egenskap ett namn.
 Detta gör vi i följande definition.
 \begin{definition}
 	\index{identitetselement}%\index{enhet}
-	Givet en mängd med en definierad binär operation \(\diamond\).
+	Givet en mängd \(M\) med en definierad binär operation \(\diamond:M\times
+	M\to M\).
 	Ett element \(e\) kallas \emph{identitetselement} om det för alla element
 	\(x\) i mängden uppfyller att \(x\diamond e=e\diamond x=x\).
 \end{definition}
@@ -367,24 +406,78 @@ Dessutom bygger även den på rekursion, precis som definitionen för addition.
 \begin{definition}[Multiplikation]
 	\label{def:NaturligaMultiplikation}
 	\index{multiplikation}\index{naturliga tal!multiplikation}
+	\index{produkt}\index{faktor}
 	\index{\(\cdot\)}
-	På de naturliga talen definieras en binär operation \emph{multiplikation}
-	(\(\cdot\)) som
-	\begin{align}
-		a\cdot 0 &= 0 \\
-		a\cdot S(b) &= a+(a\cdot b)
-	\end{align}
-	Multiplikationen \(a\cdot b\) skrivs vanligen som \(ab\).
+	För varje par av naturliga tal \(a\) och \(b\) existerar en unik
+	\emph{produkt} \(a\cdot b\) som är ett naturligt tal.
+	%Det vill säga \((a,b)\in\N\times\N\) och \(a\cdot b\in\N\), och alltså
+	%\(\cdot :\N\times\N\to\N\) där \((a,b)\mapsto a\cdot b\).
+	Delarna \(a\) och \(b\) av en produkt kallas för produkten \emph{faktorer}.
+	Vi definierar först
+	\begin{equation}
+		a\cdot 0 = 0.
+	\end{equation}
+	Om produkten \(a\cdot b\) är definierad låter vi
+	\begin{equation}
+		a\cdot S(b) = a+(a\cdot b).
+	\end{equation}
+	Produkten \(a\cdot b\) skrivs vanligen som \(ab\).
 \end{definition}
+
+Likt additionen är även multiplikationen, eller skapandet av produkten, en
+binär operation \(\cdot:\N\times\N\to\N\) där \((a,b)\mapsto a\cdot b\) enligt
+\defref{def:NaturligaMultiplikation}.
+
 \begin{exercise}
 	Vilket element är identitetselementet för multiplikation av de naturliga
 	talen?
-	Bevisa att så är fallet.
+	Visa att så är fallet.
 \end{exercise}
 \begin{exercise}
-	Bevisa att om \(a\) och \(n\) är naturliga tal, då är \[a\cdot n =
-	\underbrace{a+a+\cdots+a}_n.\]
+	Bevisa att om \(a\) och \(b\) är naturliga tal, då är \[a\cdot b =
+	\underbrace{a+a+\cdots+a}_b.\]
 \end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIKHET OCH OLIKHET
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Likhet och olikhet}
+\noindent
+\lettrine{D}{et är nu dags} att introducera ett sätt att jämföra tal som ej är
+lika.
+Vi har redan sett likhet, som vi betecknade med \(=\) och utläste \emph{är lika
+med}.
+Likheter är väldigt intressanta, men det finns många saker som inte är lika.
+Exempelvis har vi de naturliga talen, de är oändligt många och inget av dem är
+lika med något annat.
+Därför definierar vi här en annan relation på de naturliga talen.
+
+\begin{definition}[Olikhet]
+	\index{olikhet}\index{naturliga tal!olikhet}
+	\index{<}\index{\(\leq\)}\index{>}\index{\(\geq\)}
+	Låt \(a\) och \(b\) vara naturliga tal.
+	Då säger vi att \(a\) är \emph{mindre än eller lika med} \(b\) om det finns
+	ett naturligt tal \(n\) sådant att \(a+n=b\), vi skriver detta som
+	\(a\leq b\).
+	Vi kan också säga att \(b\) är \emph{större än eller lika med} \(a\) och
+	beteckna detta genom \(b>a\).
+	Om vi ej tillåter \(n\) att vara noll, då skriver vi \(a<b\)
+	respektive \(b\geq a\).
+	Vi utläser dessa som \(a\) är \emph{strikt mindre än} \(b\)
+	respektive \(b\) är \emph{strikt större än} \(a\).
+\end{definition}
+
+\begin{example}
+	Vi kan nu säga att \(0<1<2<3\) och så vidare.
+	Alltså har vi nu infört en form av ordning av de naturliga talen.
+\end{example}
+
+\begin{example}
+	Låt \(x\) vara ett naturligt tal sådant att \(0<x\) och \(x<5\), det vill
+	säga \(0<x<5\).
+	Alltså menar vi att \(x\) kan vara något av talen \(1,2,3\) eller \(4\).
+\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -399,6 +492,7 @@ al-mukhta\d{s}ar f\={\i} h\={\i}s\={a}b al-\u{g}abr wa'l-muq\={a}bala}, på
 svenska \emph{Den sammanfattande boken om beräkning genom komplettering och
 balansering}\footnote{Egen översättning från ''The Compendious Book on
 Calculation by Completion and Balancing''.}.
+Ordet \emph{al-jabr} betyder ordagrant \emph{återställande}.
 Algebra kan beskrivas som matematikens studium av operationer och regler.
 Vi ska nu titta närmare på hur den aritmetiska operationen addition beter sig.
 
@@ -410,7 +504,7 @@ till ett tal får man dess efterföljare.
 	Om \(a\) är ett naturligt tal, då är \(a+1\) dess efterföljare.
 \end{lemma}
 \begin{proof}
-	Om vi tittar på additionen \(a+1\) har vi \(a+1=a+S(0)\).
+	Om vi tittar på additionen \(a+1\) har vi per definition att \(a+1=a+S(0)\).
 	Från \eqref{eq:AdditionRekursion} får vi att \(a+S(0)=S(a+0)\).
 	Vi har från \eqref{eq:AdditionNoll} att \(a+0=a\).
 	Vi får då att
@@ -436,14 +530,16 @@ hjälpsats.
 	\label{lem:NaturligaAdderaN}
 	Om \(a\) och \(n\) är naturliga tal gäller att
 	\begin{equation}
-		a+n=\underbrace{S(S(S(\cdots(S}_{n}(a)))))=S^n(a).
+		a+n=S^n(a).
 	\end{equation}
 \end{lemma}
 \begin{proof}
 	Vi har enligt \defref{def:NaturligaBeteckningar} att \(n=S^n(0)\).
 	Då har vi att \(a+n=a+S^n(0)\).
-	Enligt \eqref{eq:AdditionRekursion} är \(a+S^n(0) = S(a+S^{n-1}(0))\).
-	Men enligt \eqref{eq:AdditionRekursion} är \(a+S^{n-1}(0)=S(a+S^{n-2}(0))\).
+	Enligt \eqref{eq:AdditionRekursion} är \(a+S^n(0) = S(a+S^{n-1}(0))\), där
+	\(n-1\) får beteckna det naturliga tal sådant att \(S(n-1)=n\).
+	Men enligt \eqref{eq:AdditionRekursion} är \(a+S^{n-1}(0)=S(a+S^{n-2}(0))\),
+	där \(n-2\) är det naturliga tal sådant att \(S^2(n-2)=n\).
 	Vi har alltså att \[a+n=S(S(a+S^{n-2}(0)))=S^2(a+S^{n-2}(0)).\]
 	Således har vi \(S^k(a+S^{n-k}(0))\) för \(k\leq n\).
 	När \(k=n\) får vi \(S^n(a+S^{n-n}(0)) = S^n(a+0) = S^n(a)\).
@@ -530,7 +626,7 @@ eller om vi adderar \(2\) med \(1\)?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EGENSKAPER FÖR MULTIPLIKATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section[Multiplikationens algebariska egenskaper]
+\section[Multiplikationens algebraiska egenskaper]
 	{Multiplikationens algebariska egenskaper\maybeskip}
 \noindent
 \lettrine{P}{recis som för} addition undrar vi nu hur multiplikation beter sig.
@@ -737,18 +833,15 @@ multiplicera \(a\) med antalet \(a\)-termer i summan, på så vis behöver vi inte
 skriva ut alla \(a\)-termer utan det räcker med att vi vet vilken term och hur
 många vi ska addera.
 Vi vill naturligtvis kunna göra liknande för multiplikation.
-Istället för att skriva ut alla faktorer \(b\)-faktorer i en produkt \(b\cdot
+Istället för att skriva ut alla \(b\)-faktorer i en produkt \(b\cdot
 b\cdots b\) räcker det med att vi skriver faktorn och antalet av denna
 faktor.
+Då skriver vi produkten \(b\cdot b\cdots b\) med \(n\) faktorer som \(a^n\).
 Detta åstadkommer vi med potenser som definieras enligt följande.
 \begin{definition}
 	Låt \(a\) och \(n\) vara naturliga tal.
-	Då skriver vi produkten \(a\cdot a\cdots a\) med \(n\) faktorer som
-	\(a^n\).
-	Alltså,
-	\begin{equation*}
-		\underbrace{a\cdot a\cdots a}_n = a^n.
-	\end{equation*}
+	Låt \(a^1=a^{S(0)}=a\).
+	Om \(a^n\) är definierad låter vi \(a^{S(n)}=a\cdot a^n\).
 	Vi kallar \(a^n\) för en \emph{\(a\)-potens} med \emph{exponenten} \(n\).
 \end{definition}
 
@@ -756,6 +849,8 @@ Detta åstadkommer vi med potenser som definieras enligt följande.
 	Vi har produkten \(2\cdot 2\cdot 2\) som består av tre termer som alla är
 	\(2\).
 	Vi kan då skriva produkten som en \(2\)-potens, nämligen \(2^3\).
+	Enligt definitionen är \(2^3=2\cdot 2^2=2\cdot 2\cdot 2^1 = 2\cdot 2\cdot
+	2\).
 \end{example}
 
 \begin{example}
@@ -835,7 +930,7 @@ Eftersom att det fungerar att addera exponenterna ter det sig naturligt att
 fråga om vi även kan multiplicera exponenterna och vad det skulle betyda.
 \begin{example}
 	Om \(a\), \(n\neq 0\) och \(m\neq 0\) är naturliga tal kan vi skapa
-	potensen \(a^{n\cdot m} = a^{nm}\).
+	potensen \(a^{nm}\).
 	Vi vet att \[nm = \underbrace{n+n+\cdots+n}_m\] och alltså att
 	\begin{equation}
 		\label{eq:MultipliceraExponenter1}
@@ -886,45 +981,6 @@ Vi avslutar avsnittet med ett exempel som nyttjar de båda satserna.
 \end{example}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LIKHET OCH OLIKHET
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Likhet och olikhet}
-\noindent
-\lettrine{D}{et sista begreppet} vi ska introducera i detta kapitel är
-olikheter.
-Vi har redan sett likhet, som vi betecknade med \(=\) och utläste \emph{är lika
-med}.
-Likheter är väldigt intressanta, men det finns många saker som inte är lika.
-Exempelvis har vi de naturliga talen, de är oändligt många och inget av dem är
-lika med något annat.
-Därför definierar vi här en annan relation på de naturliga talen.
-
-\begin{definition}[Olikhet]
-	\index{olikhet}\index{naturliga tal!olikhet}
-	\index{<}\index{\(\leq\)}\index{>}\index{\(\geq\)}
-	Låt \(a\) och \(b\) vara naturliga tal.
-	Då säger vi att \(a\) \emph{är mindre än} \(b\) om det finns ett naturligt
-	tal \(n>0\) större än noll sådant att \(a+n=b\), vi skriver detta som
-	\(a<b\).
-	Vi kan också säga att \(b\) \emph{är större än} \(a\) och beteckna detta
-	genom \(b>a\).
-	Om vi tillåter att \(n\) kan vara noll, då skriver vi \(a\leq b\)
-	respektive \(b\geq a\).
-	Vi utläser dessa som \(a\) \emph{är mindre än eller lika med} \(b\)
-	respektive \(b\) \emph{är större än eller lika med} \(a\).
-\end{definition}
-
-\begin{example}
-	Vi kan nu säga att \(0<1<2<3\) och så vidare.
-	Alltså har vi nu infört en form av ordning av de naturliga talen.
-\end{example}
-
-\begin{example}
-	Låt \(x\) vara ett naturligt tal sådant att \(0<x\) och \(x<5\), det vill
-	säga \(0<x<5\).
-	Alltså menar vi att \(x\) kan vara något av talen \(1,2,3\) eller \(4\).
-\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
