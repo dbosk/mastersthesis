@@ -42,10 +42,29 @@
 	...
 \end{definition}
 
-Följande sats har varit känd under väldigt lång tid, den är idag känds som
+Följande sats, aritmetikens fundamentalsats, visades i princip av Euklides av
+Alexandria (levde omkring 300 f.Kr.).
+I den sjunde boken av hans \emph{Elementa} finns två satser som tillsammans
+kan visa aritmetikens fundamentalsats.
+Den visades dock först i sin helhet av Carl Friedrich Gauss (1777-1855) i sin
+bok \emph{Disquisitiones Arithmeticae}, som är latin för \emph{utforskning av
+tal}.
+Gauss skrev boken 1798 när han var 20 år gammal och den publicerades 1801.
+Den handlar om talteori och sammanfattar tidigare resultat men introducerar
+även nya, aritmetikens fundamentalsats var ett av dem.
+\begin{theorem}[Aritmetikens fundamentalsats]
+	\label{thm:AritmetikensFundamentalsats}
+	Ett heltal \(n\in\Z\) kan skrivas som en unik produkt av primtal och \(1\)
+	eller \(-1\).
+\end{theorem}
+\begin{proof}
+	...
+\end{proof}
+
+Följande sats har varit känd under väldigt lång tid, den är idag känd som
 Euklides sats.
-Eventuellt var satsen känd även tidigare, men den skrevs ned av Euklides av
-Alexandria (levde ca. 300 f.Kr.) i den nionde boken av \emph{Elementa}.
+Eventuellt var satsen känd även tidigare, men den skrevs ned av Euklides i
+den nionde boken av \emph{Elementa}.
 Euklides \emph{Elementa} bestod av totalt 13 böcker och användes som lärobok
 i matematik ända fram till 1900-talet.
 \begin{theorem}[Euklides sats]
@@ -54,8 +73,11 @@ i matematik ända fram till 1900-talet.
 \begin{proof}
 	Om vi antar att det finns ändligt många primtal, då kan vi anta att
 	\(S=\{p_1,p_2,\ldots,p_n\}\) är mängden av alla primtal.
-	Vi låter då \(m=p_1\cdots p_n\) vara produkten av alla primtal, vi låter
-	\(q=m+1\).
+	Vi tittar på ett heltal \(m\).
+	Enligt aritmetikens fundamentalsats,
+	\thmref{thm:AritmetikensFundamentalsats}, kan vi välja detta \(m\) sådant
+	att \(m=p_1\cdots p_n\) är produkten av alla primtal.
+	Vi låter dessutom \(q=m+1\).
 	Eftersom att \(q>p_i\) för alla \(i\) kan inte \(q\) vara ett element i
 	\(S\), och därför är \(q\) inte ett primtal.
 	Då finns det ett primtal \(p\) som delar \(q\).
@@ -67,20 +89,4 @@ i matematik ända fram till 1900-talet.
 	oändligt många primtal.
 \end{proof}
 
-Följande sats, aritmetikens fundamentalsats, visades i princip av Euklides.
-I den sjunde boken finns två satser som tillsammans kan visa aritmetikens
-fundamentalsats.
-Den visades dock först i sin helhet av Carl Friedrich Gauss (1777-1855) i sin
-bok \emph{Disquisitiones Arithmeticae}, som är latin för \emph{utforskning av
-tal}.
-Han skrev boken 1798 när han var 20 år gammal och den publicerades 1801.
-Den handlar om talteori och sammanfattar tidigare resultat men introducerar
-även nya, aritmetikens fundamentalsats var ett av dem.
-\begin{theorem}[Aritmetikens fundamentalsats]
-	Ett heltal \(n\in\Z\) kan skrivas som en unik produkt av primtal och \(1\)
-	eller \(-1\).
-\end{theorem}
-\begin{proof}
-	...
-\end{proof}
 

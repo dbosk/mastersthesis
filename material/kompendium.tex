@@ -1,7 +1,6 @@
 %\RequirePackage[swedish]{babel}
 %\documentclass[a4paper,reqno,draft,twoside]{amsbook}
 \documentclass[a4paper,reqno,final,twoside]{amsbook}
-
 \usepackage{fixltx2e}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -9,22 +8,23 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{lettrine}
-\usepackage[swedish]{babel}
-%\usepackage[polutonikogreek,swedish]{babel}
-%\usepackage[or]{teubner}
-\usepackage{amssymb,amsmath,amsthm}
+\usepackage[german,english,ibycus,swedish]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[amsmath,hyperref,thmmarks]{ntheorem}
 \usepackage{natbib}
-%\bibliographystyle{kthnat}
-\bibliographystyle{amsnat}
 \usepackage{setspace}
 \usepackage{nomencl}
 \usepackage{marginnote}
+\usepackage{subfig}
 %\usepackage{enumerate}
+\usepackage{verbatim}
 \usepackage{ifdraft}
 \ifdraft{
 	\usepackage{fancyhdr}
 %	\usepackage{showlabels}
-	\includeonly{mangder,naturliga,heltalen,talsystem}
+%	\includeonly{intro,logik,mangder,naturliga,heltalen,talsystem}
 }{
 	\usepackage[a4paper,rmargin=6cm,lmargin=3cm,bmargin=3.5cm]{geometry}
 }
@@ -58,7 +58,8 @@
 \newcommand{\xrcref}[1]{Övning \ref{#1}}
 
 \newcommand{\imp}[1]{\emph{#1}\marginnote{#1}}
-\newcommand{\maybeskip}[1][Fördjupningsavsnitt.]{\protect\footnote{#1}}
+%\newcommand{\maybeskip}[1][Fördjupningsavsnitt.]{\protect\footnote{#1}}
+\newcommand{\maybeskip}[1][Fördjupningsavsnitt.]{\relax}
 
 \renewcommand{\qedsymbol}{Q.E.D.}
 \newcommand{\N}{\mathbb{N}}
@@ -69,6 +70,9 @@
 \newcommand{\U}{\mathcal{U}}
 \newcommand{\V}{\mathcal{V}}
 \DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\tnot}{icke}
+\DeclareMathOperator{\tor}{eller}
+\DeclareMathOperator{\tand}{och}
 \newcommand{\equivalent}{\Longleftrightarrow}
 
 \makenomenclature
@@ -105,7 +109,7 @@
 
 \frontmatter
 \include{frontmatter}
-\include{preface}
+%\include{preface}
 
 \mainmatter
 \ifdraft{
@@ -118,7 +122,7 @@
 %\include{funktioner}
 \include{naturliga}
 \include{heltalen}
-\include{talteori}
+%\include{talteori}
 %\include{reella}
 \include{talsystem}
 
@@ -133,7 +137,7 @@
 \ifdraft{
 	\doublespacing
 }{}
-\include{kursplanering}
+%\include{kursplanering}
 
 \clearpage
 \end{document}

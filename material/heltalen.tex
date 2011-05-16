@@ -40,8 +40,7 @@ Vi ska i detta kapitel tillföra denna egenskap till additionen för de naturliga
 talen.
 Resultatet är vad som kallas de hela talen, och mängden av de hela talen
 betecknas\footnote{Anledningen till att de betecknas med \(\Z\) är tyskans
-\emph{Zahlen} som betyder tal (pluralis, jämför engelskans \emph{numbers}).}
-\(\Z\).
+\emph{Zahlen} som betyder tal.} \(\Z\).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,46 +63,39 @@ ordnade par av naturliga tal.
 
 Låt oss nu införa en relation \(\sim\) på denna mängd.
 Om \((a,b)\) och \((c,d)\) är ordnade par av naturliga tal, det vill säga
-element i mängden \(M\), då vi vill att \((a,b)\sim (c,d)\) ska vara sant
+element i mängden \(M\), då vill vi att \((a,b)\sim (c,d)\) ska vara sant
 precis när \(a+d=b+c\).
 Denna relation \(\sim\) är faktiskt en ekvivalensrelation.
-\begin{proof}
-	Vi kollar att relationen uppfyller axiomen i
-	\defref{def:Ekvivalensrelation} för en ekvivalensrelation.
-	Vi har att \((a,b)\sim (a,b)\) eftersom att \(a+b=b+a\), och alltså är den
-	reflexiv.
-	Om \((a,b)\sim (c,d)\) då är \(a+d=b+c\) och alltså \((c,d)\sim (a,b)\)
-	eftersom att \(c+b=b+c\) och \(d+a=a+d\) och alltså \(c+b=d+a\).
-	Således är relationen symmetrisk.
-	Om \((a,b)\sim (c,d)\) och \((c,d)\sim (e,f)\), då har vi först att
-	\begin{equation}
-		\label{eq:VisaHeltalensEkvivalensrelation1}
-		a+d = b+c
-	\end{equation}
-	och sedan att
-	\begin{equation}
-		\label{eq:VisaHeltalensEkvivalensrelation2}
-		c+f=d+e.
-	\end{equation}
-	Om vi drar bort \(a\) från \eqref{eq:VisaHeltalensEkvivalensrelation1} får
-	vi att \(d=b+c-a\), om vi drar bort \(b\) från samma ekvation får vi
-	\(a+d-b=c\).
-	Om vi använder dessa resultat i \eqref{eq:VisaHeltalensEkvivalensrelation2}
-	får vi
-	\begin{equation*}
-		(a+d-b)+f = (b+c-a)+e.
-	\end{equation*}
-	Om vi tar bort parenteserna och flyttar om termerna får vi
-	\begin{align*}
-		a+d-b+f &= b+c-a+e, \\
-		(a+b)+a+d-b+f &= (a+b)+b+c-a+e, \\
-		a+a+d+f &= b+b+c+e. \\
-	\end{align*}
-	Men \(a+d=b+c\) enligt \eqref{eq:VisaHeltalensEkvivalensrelation1}, alltså
-	får vi att \(a+f=b+e\) och således att \((a,b)\sim (e,f)\).
-	Eftersom att relationen då även är transitiv är relationen en
-	ekvivalensrelation.
-\end{proof}
+För att visa detta kollar vi att relationen uppfyller axiomen i
+\defref{def:Ekvivalensrelation} för en ekvivalensrelation.
+Additionen är kommutativ och eftersom att \(a+b=b+a\) har vi
+\((a,b)\sim (a,b)\), och följdaktligen är den reflexiv.
+Om \((a,b)\sim (c,d)\) då är \(a+d=b+c\) och således 
+\begin{align*}
+	c+b &= b+c,\\
+	d+a &= a+d \text{ och } \\
+	c+b &= d+a.
+\end{align*}
+Den sista ekvationen ger precis \((c,d)\sim (a,b)\).
+Relationen måste då vara symmetrisk.
+Om \((a,b)\sim (c,d)\) och \((c,d)\sim (e,f)\), då har vi först att
+\begin{equation}
+	\label{eq:VisaHeltalensEkvivalensrelation1}
+	a+d = b+c
+\end{equation}
+och sedan att
+\begin{equation}
+	\label{eq:VisaHeltalensEkvivalensrelation2}
+	c+f=d+e.
+\end{equation}
+Detta ger
+\begin{equation*}
+	a+d+f = b+c+f = b+d+e.
+\end{equation*}
+Eftersom att additionen är kommutativ får vi \(a+f+d = b+e+d\) och
+följdaktligen att \(a+f = b+e\) som betyder att \((a,b)\sim (e,f)\).
+Eftersom att relationen då även är transitiv är relationen en
+ekvivalensrelation.
 
 Vi betecknar ekvivalensklasserna på följande sätt:
 Om \((a,b)\) är ett element i \(M\), då är
@@ -112,7 +104,8 @@ Det vill säga, \([(a,b)]\) innehåller alla talpar i \(M\) som uppfyller
 ekvivalensrelationen med talparet \((a,b)\).
 \begin{example}
 	Vi har att \((0,0)\sim (1,1)\) eftersom att \(0+1 = 0+1\).
-	Alltså har vi \([(0,0)]=[(1,1)]\) och \((1,1)\in [(0,0)]\).
+	Följdaktligen har vi \([(0,0)]=[(1,1)]\) och \((1,1)\in [(0,0)]\), men
+	naturligtvis även \((0,0)\in [(0,0)]\).
 \end{example}
 \begin{remark}
 	Kom ihåg att det inte spelar någon roll om vi väljer \((0,0)\) eller
@@ -121,8 +114,8 @@ ekvivalensrelationen med talparet \((a,b)\).
 	ekvivalensklass.
 \end{remark}
 \begin{example}
-	Vi har däremot \((0,0)\nsim (1,0)\) eftersom att \(0+0\neq 0+1\).
-	Alltså har vi \((1,0)\notin [(0,0)]\).
+	Vi har däremot \((0,0)\nsim (1,0)\) eftersom att \(0+0\neq 0+1\),
+	och följdaktligen \((1,0)\notin [(0,0)]\).
 \end{example}
 
 Låt oss nu definiera en binär operation \(+\) som vi kallar för addition och en
@@ -131,28 +124,29 @@ ekvivalensklasser hos \(M\).
 Vi låter \([(a,b)]+[(c,d)] = [(a+c, b+d)]\) och \([(a,b)]\cdot [(c,d)] =
 [(ac+bd, ad+bc)]\).
 Vi måste dock visa att dessa är väldefinierade.
-\begin{proof}[Väldefinierad addition]
-	Om \((a,b)\sim (a^\prime, b^\prime)\) och \((c,d)\sim (c^\prime,
-	d^\prime)\), då vill vi visa att \((a+c, b+d)\sim (a^\prime+c^\prime,
-	b^\prime+d^\prime)\).
-	Vi har från \((a,b)\sim (a^\prime,b^\prime)\) att \(a+b^\prime =
-	b+a^\prime\) och från \((c,d)\sim (c^\prime,d^\prime)\) att
-	\(c+d^\prime=d+c^\prime\).
-	Om vi adderar vänsterleden i de båda ekvationerna, då måste detta vara lika
-	med summan av högerleden.
-	Alltså, \((a+b^\prime) + (c+d^\prime) = (b+a^\prime) + (d+c^\prime)\).
-	Om tar bort parenteserna och byter plats på termerna får vi att
-	\begin{equation*}
-		a+c+b^\prime+d^\prime = b+d+a^\prime+c^\prime,
-	\end{equation*}
-	och alltså måste \((a+c,b+d)\sim (a^\prime+c^\prime, b^\prime+d^\prime)\).
-\end{proof}
+%\begin{proof}[Väldefinierad addition]
+Om \((a,b)\sim (a^\prime, b^\prime)\) och \((c,d)\sim (c^\prime,
+d^\prime)\), då vill vi visa att \((a+c, b+d)\sim (a^\prime+c^\prime,
+b^\prime+d^\prime)\).
+Vi har från \((a,b)\sim (a^\prime,b^\prime)\) att \(a+b^\prime =
+b+a^\prime\) och från \((c,d)\sim (c^\prime,d^\prime)\) att
+\(c+d^\prime=d+c^\prime\).
+Om vi adderar vänsterleden i de båda ekvationerna, då måste detta vara lika
+med summan av högerleden.
+Det vill säga, \((a+b^\prime) + (c+d^\prime) = (b+a^\prime) +
+(d+c^\prime)\).
+Eftersom att additionen är associativ och kommutativ får vi att
+\begin{equation*}
+	a+c+b^\prime+d^\prime = b+d+a^\prime+c^\prime,
+\end{equation*}
+och således måste \((a+c,b+d)\sim (a^\prime+c^\prime, b^\prime+d^\prime)\).
+%\end{proof}
 %\begin{proof}[Väldefinierad multiplikation]
 	% TODO visa väldef multiplikation
 %	multiplicera ekvivalensekvationerna med varandra likt de adderades i ovan.
 %\end{proof}
 \begin{exercise}
-	Visa att multiplikationen är väldefinierad.
+	Visa att multiplikationen också är väldefinierad.
 \end{exercise}
 
 \begin{example}
@@ -171,47 +165,36 @@ Vi måste dock visa att dessa är väldefinierade.
 	\end{equation*}
 \end{example}
 
-Vi har nu tal med egenskaperna att de innehåller de naturliga talen och vi kan
-addera dem för att få identitetselementet.
+Vi har nu objekt med egenskaperna att de beter sig som de naturliga talen, men
+vi kan även addera dem för att få identitetselementet.
 Identitetselementet för addition måste vara ekvivalensklassen \([(0,0)]\).
-\begin{proof}
-	Eftersom att \([(a,b)]+[(0,0)] = [(a+0,b+0)] = [(a,b)]\) och
-	\([(0,0)]+[(a,b)] = [(0+a,0+b)] = [(a,b)]\) måste \([(0,0)]\)
-	vara identitetselementet för addition.
-\end{proof}
+Eftersom att \([(a,b)]+[(0,0)] = [(a+0,b+0)] = [(a,b)]\) och
+\([(0,0)]+[(a,b)] = [(0+a,0+b)] = [(a,b)]\) måste \([(0,0)]\)
+vara identitetselementet för addition.
 
-Inversen till \([(a,b)]\) är \([(b,a)]\).
-\begin{proof}
-	Inversen till \([(a,b)]\) är \([(b,a)]\) eftersom att
-	\([(a,b)]+[(b,a)]=[(a+b,b+a)]=[(a+b,a+b)]\).
-	Eftersom att \(0+(a+b)=0+(a+b)\) har vi enligt ekvivalensrelationen att
-	\((0,0)\sim (a+b,a+b)\) och alltså måste de tillhöra samma ekvivalensklass.
-	Detta innebär att \([(a,b)]\) och \([(b,a)]\) måste vara varandras inverser.
-\end{proof}
-Alltså har varje tal åtminstone en invers, vilket var vad vi önskade.
-Låt oss beteckna inversen för heltalet \(a\) med \(-a\).
+\begin{exercise}
+	Hur skulle de naturliga talen kunna representeras med dessa objekt?
+\end{exercise}
+
+Den additiva inversen till \([(a,b)]\) är \([(b,a)]\) eftersom att
+\([(a,b)]+[(b,a)]=[(a+b,b+a)]=[(a+b,a+b)]\).
+Eftersom att \(0+(a+b)=0+(a+b)\) har vi enligt ekvivalensrelationen att
+\((0,0)\sim (a+b,a+b)\) och därför måste de tillhöra samma ekvivalensklass.
+Detta innebär att \([(a,b)]\) och \([(b,a)]\) måste vara varandras inverser
+under addition.
 
 \begin{exercise}
 	Kan ett tal ha fler än en invers?
 \end{exercise}
 
-Låt oss nu införa följande enklare beteckningar.
-\begin{definition}
-	Låt \(0\) beteckna ekvivalensklassen \([(0,0)]\).
-	Låt \(1\) beteckna ekvivalensklassen \([(1,0)]\), \(2\) beteckna
-	\([(2,0)]\), och \(a\) beteckna \([(a,0)]\).
-\end{definition}
-De nya beteckningarna och ekvivalensklasserna visas i
-\figref{fig:HeltalensEkvivalensklasser}.
-
-\begin{exercise}
-	I \exref{ex:HeltalAddition}, vilka tal adderades och vilket blev resultatet?
-\end{exercise}
-\begin{exercise}
-	I \exref{ex:HeltalMultiplikation}, vilka tal multiplicerades och vilket
-	blev resultatet?
-\end{exercise}
-
+%Låt oss nu införa följande enklare beteckningar.
+%\begin{definition}
+%	Låt \(0\) beteckna ekvivalensklassen \([(0,0)]\).
+%	Låt \(1\) beteckna ekvivalensklassen \([(1,0)]\), \(2\) beteckna
+%	\([(2,0)]\), och \(a\) beteckna \([(a,0)]\) för alla naturliga tal \(a\).
+%	Låt dessutom \(-a\) beteckna den additiva inversen \([(0,a)]\) till
+%	\([(a,0)]\).
+%\end{definition}
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=8cm]{Integers_Representation.png}
@@ -226,15 +209,19 @@ Vi börjar med att definiera vad de hela talen är.
 	\index{heltal}
 	Låt \(M=\N\times\N\) vara mängden av alla naturliga talpar och \(\sim\)
 	vara ekvivalensrelationen på mängden \(M\) sådan att \((a,b)\sim (c,d)\)
-	är uppfylld för element \((a,b)\) och \((c,d)\) i \(M\) om \(a+d=b+c\).
+	är uppfylld för elementen \((a,b)\) och \((c,d)\) i \(M\) om \(a+d=b+c\).
 
 	Låt \(\Z = M/\!\sim = \{[(a,b)] : (a,b)\in M\}\) vara mängden av alla
 	ekvivalensklasser för \(M\) under ekvivalensrelationen \(\sim\).
 	Varje element \(n\) i \(\Z\) kallar vi ett \emph{heltal}.
 
 	Låt också \(0\) beteckna \([(0,0)]\in\Z\), \(1\) beteckna \([(1,0)]\in\Z\)
-	och \(a\) beteckna \([(a,0)]\).
+	och \(a\) beteckna \([(a,0)]\in\Z\) för alla naturliga tal \(a\).
+	Beteckna också den additiva inversen \([(0,a)]\in\Z\) till \([(a,0)]\) med
+	\(-a\).
 \end{definition}
+De nya beteckningarna och ekvivalensklasserna visas i
+\figref{fig:HeltalensEkvivalensklasser}.
 
 När vi nu vet vad ett heltal är kan det vara passande att införa aritmetiska
 operationer för dem.
@@ -245,6 +232,13 @@ Vi börjar med additionen, vi tar multiplikationen senare.
 	operation på \(\Z\), kallad \emph{addition}, sådan att
 	\(x+y=[(a,b)]+[(c,d)]\) är lika med \([(a+c,b+d)]\).
 \end{definition}
+\begin{exercise}
+	I \exref{ex:HeltalAddition}, vilka tal adderades och vilket blev resultatet?
+\end{exercise}
+\begin{exercise}
+	I \exref{ex:HeltalMultiplikation}, vilka tal multiplicerades och vilket
+	blev resultatet?
+\end{exercise}
 
 Nu när vi kan addera heltal är det lämpligt att vi tittar på hur vi kan jämföra
 dem annat än med likhet.
@@ -254,7 +248,7 @@ förvånande att vi gör detsamma för heltalen.
 	\index{olikhet}
 	Låt \(x=[(a,b)]\) och \(y=[(c,d)]\) vara heltal.
 	Vi säger att \(x\) \emph{är mindre än} \(y\), betecknat \(x<y\), om
-	\(a+d<b+c\) enlingt relationen \(<\) på de naturliga talen.
+	\(a+d<b+c\) enligt relationen \(<\) för de naturliga talen.
 	Vi kan också säga att \(y\) \emph{är större än} \(x\) och skriver då
 	\(y>x\).
 	Vi säger att \(x\) \emph{är mindre än eller lika med} \(y\) om \(a+d\leq
@@ -288,24 +282,37 @@ Nu till inverserna.
 	adderar den additiva inversen för \(b\) till \(a\).
 \end{remark}
 
+\begin{exercise}
+	Visa att ett nollskilt naturligt tal är ett positivt tal.
+\end{exercise}
+
+\begin{exercise}
+	Visa att den additiva inversen för ett nollskilt naturligt tal är ett
+	negativt tal.
+\end{exercise}
+
 Den andra aritmetiska operationen, multiplikation, ger vi i den sista
 definitionen.
 \begin{definition}[Multiplikation]
 	\index{multiplikation}\index{heltal!multiplikation}
 	Låt \(x=[(a,b)]\) och \(y=[(c,d)]\) vara heltal och \(\cdot\) en binär
 	operation på \(\Z\), kallad \emph{multiplikation}, sådan att
-	\(xy=[(a,b)]\cdot [(c,d)]\) är lika med \([(ac+bd,ab+bc)]\).
+	\(x\cdot y=[(a,b)]\cdot [(c,d)]\) är lika med \([(ac+bd,ad+bc)]\).
+	Vi skriver ofta \(xy\) istället för \(x\cdot y\).
 \end{definition}
 
-Vi ska nu visa att lemma som vi kommer att behöva i kommande avsnitt.
+Vi ska nu visa ett lemma som vi kommer att behöva i kommande avsnitt.
 Lemmat talar om att produkten av ett helt tal och noll blir noll.
 \begin{lemma}
 	\label{lem:IngenNolldelare}
-	För alla heltal \(a\) gäller att \(a\cdot 0 = 0\).
+	För alla heltal \(a\) gäller att \(a\cdot 0 = 0\cdot a = 0\).
 \end{lemma}
 \begin{proof}
-	Vi har per definition att \(a=[(a,0)]\), så \(a\cdot 0 = [(a,0)]\cdot
-	[(0,0)] = [(a\cdot 0 + 0\cdot 0, a\cdot 0 + 0\cdot 0)] = [(0,0)] = 0\).
+	Antag att \(a = [(b,c)]\) där \(b\) och \(c\) är naturliga tal.
+	Vi har per definition att \(a\cdot 0 = [(b,c)]\cdot [(0,0)] =
+	[(b\cdot 0 + c\cdot 0, a\cdot 0 + c\cdot 0)] = [(0,0)] = 0\).
+	På samma sätt får vi att \(0\cdot a = [(0,0)]\cdot [(b,c)] = [(0\cdot b +
+	0\cdot c, 0\cdot c + 0\cdot b)] = [(0,0)] = 0\).
 \end{proof}
 
 \begin{exercise}
@@ -324,7 +331,9 @@ Lemmat talar om att produkten av ett helt tal och noll blir noll.
 	Är multiplikationen distributiv över additionen för de hela talen?
 \end{exercise}
 \begin{exercise}
-	De naturliga talens ordning är \(0<1<2<3<\ldots\), och så vidare.
+	De naturliga talens ordning är \(0<1<2<3<\ldots\), enligt relationen \(<\)
+	definierad för de naturliga talen.
+	Gäller denna ordning även för relationen \(<\) definierad för hela tal?
 	Hur ordnas de hela talen?
 \end{exercise}
 
@@ -387,7 +396,7 @@ Dessa är desamma som för de naturliga talen förutom tillägget om att varje tal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algebraiska egenskaper för de negativa talen}
 \noindent
-\lettrine{V}{i är redan} bekanta med de naturliga talen, och alltså med den
+\lettrine{V}{i är redan} bekanta med de naturliga talen, och därmed också den
 delen av de hela talen som motsvarar de naturliga talen.
 Därför ska vi i detta avsnitt fokusera på de nya talen, de heltal \(a<0\) som
 är mindre än noll -- eller de negativa talen.
@@ -400,14 +409,14 @@ Vi formulerar detta som en sats.
 	\label{thm:FaktoriseraNegativaTal}
 	Låt \(a\) vara ett heltal.
 	Då är \(a\) multiplicerat med \(-1\) inversen \(-a\) till \(a\).
-	Alltså, \((-1)\cdot a = -a\).
+	Det vill säga, \((-1)\cdot a = -a\).
 \end{theorem}
 \begin{proof}
 	Vi har att \(1+(-1) = 0\).
 	Om vi multiplicerar noll med ett tal får vi enlingt
 	\lemref{lem:IngenNolldelare} fortfarande noll.
-	Alltså får vi att \(a(1+(-1))=0\) eftersom att vi då multiplicerar \(a\)
-	med noll.
+	Följdaktligen får vi att \(a(1+(-1))=0\) eftersom att vi då multiplicerar
+	\(a\) med noll.
 	Eftersom att multiplikation är distributiv över addition får vi då att
 	\begin{equation*}
 		a(1+(-1)) = 1\cdot a + (-1)a = a + (-1)a = 0.
@@ -433,8 +442,13 @@ följdsats till föregående.
 	Eftersom att \(-1\) är ett heltal följer det från
 	\thmref{thm:FaktoriseraNegativaTal} att om vi multiplicerar det med \(-1\)
 	får vi dess invers.
-	Inversen för \(-1\) är \(1\) och alltså har vi att \((-1)(-1)=1\).
+	Inversen för \(-1\) är \(1\) och således har vi att \((-1)(-1)=1\).
 \end{proof}
+
+\begin{exercise}
+	Om \(a\) och \(b\) är heltal, gäller då att \((-a)(-b) = ab\) för alla
+	heltal \(a\) och \(b\)?
+\end{exercise}
 
 Låt oss avsluta med ett exempel om addition av två negativa tal.
 \begin{example}
@@ -443,7 +457,7 @@ Låt oss avsluta med ett exempel om addition av två negativa tal.
 	Eftersom att vi adderar två lika termer kan vi skriva additionen som
 	multiplikationen \(2\cdot (-1) = (-1)+(-1)\).
 	Vi vet från \thmref{thm:FaktoriseraNegativaTal} att ett heltal
-	multiplicerat med \(-1\) är dess invers, alltså får vi \((-1)+(-1)=2\cdot
+	multiplicerat med \(-1\) är dess invers, då får vi \((-1)+(-1)=2\cdot
 	(-1) = -2\).
 \end{example}
 \begin{example}
@@ -473,16 +487,15 @@ Vi ska nu införa potenser för de hela talen, likt de vi införde för de
 naturliga talen.
 Vi definierar potenser enligt följande definition.
 \begin{definition}
-	Låt \(a\) vara ett heltal och låt \(n\) vara ett naturligt tal.
-	Vi skriver då
-	\begin{equation*}
-		\underbrace{a\cdot a\cdots a}_n
-	\end{equation*}
-	som \(a^n\) och utläser det som en \(a\)-\emph{potens} med
-	\emph{exponenten} \(n\).
+	Låt \(a\) vara ett heltal.
+	Vi definierar att \(a^1=a\).
+	Om \(a^{n}\) är definierat för något naturligt tal \(n\), då är
+	\(a^{n+1} = a\cdot a^n\).
+	Vi utläser \(a^n\) som en \(a\)-\emph{potens} med \emph{exponenten} \(n\).
 \end{definition}
 
 \begin{exercise}
 	Utforska potenser för de hela talen.
-	Vad finns det för intressanta resultat?
+	Finns det några intressanta resultat om dessa potenser?
+	%Gäller resultaten vi visat för de naturliga talen?
 \end{exercise}

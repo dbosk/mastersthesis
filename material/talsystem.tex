@@ -11,8 +11,10 @@ går att räkna med på olika sätt.
 Men vad är egentligen ett tal?
 
 Ett tal är inom matematiken ett \emph{abstrakt objekt} som följer givna regler,
-exempelvis de för heltalen givna reglerna som vi behandlade i
-\chref{ch:Heltalen}.
+%exempelvis de för heltalen givna reglerna som vi behandlade i
+%\chref{ch:Heltalen}.
+som vi sett i kapitlen om de naturliga (\chref{ch:Naturliga}) och de hela talen
+(\chref{ch:Heltalen}).
 Är då \(123\) ett tal?
 Nej, \(123\) är bara en \emph{representation} av talet vi \emph{benämner}
 etthundratjugotre.
@@ -25,7 +27,8 @@ Detta görs genom olika tecken och teckenkombinationer.
 De tecken vi är vana vid i västkulturerna är siffrorna \(0\) till \(9\).
 Vi behöver här skilja på ett tal och en siffra.
 Siffror är tecken som används för att representera tal.
-Det vill säga, talet \(123\) består av de tre siffrorna \(1,2\) och \(3\).
+Det vill säga, talet \(123\) representeras av sammansättningen av de tre
+siffrorna \(1,2\) och \(3\).
 
 Genom historien har det använts många olika talsystem, varav några finns kvar
 än idag.
@@ -72,10 +75,10 @@ värde.
 \begin{example}\label{ex:PositionensBetydelse}
 	I \(111\) betyder den första ettan \(100\) medan den andra ettan
 	betyder \(10\) och den sista betyder \(1\).
-	Det vill säga, samma siffra har olika betydelse beroende på var i
-	representationen som den befinner sig.
+	Det vill säga, samma siffra har olika betydelse beroende på vilken position
+	den har i representationen som den befinner sig i.
 \end{example}
-Positionssystemen behandlas i detalj i kommande avsnitt.
+Positionssystemen behandlas i detalj i ett kommande avsnitt.
 
 Det romerska talsystemet är däremot inte ett positionssystem, utan är en
 modifikation av typen \emph{teckenvärdessystem}.
@@ -97,13 +100,13 @@ tecknets värde.
 I ett mycket enkelt teckenvärdessystem, som används idag, representerar ett
 streck talet ett, två streck representerar talet två, och så vidare till och
 med talet fyra.
-Alltså har samma tecken samma värde och upprepningar adderas tillsammans för
-att få talet de representerar.
+Det vill säga, samma tecken har alltid samma värde och upprepningar adderas
+tillsammans för att få talet de representerar.
 Talet fem representeras däremot med fyra streck, som ovan, och ett femte streck
 snett över de fyra andra strecken.
 Detta bildar ett nytt tecken även om det är logiskt uppbyggt från tidigare
 tecken.
-Systemet består alltså av två tecken, ett tecken som har värdet ett och ett
+Systemet består således av två tecken, ett tecken som har värdet ett och ett
 tecken som har värdet fem.
 Se \figref{fig:Strecktal}.
 
@@ -199,18 +202,18 @@ har olika betydelse eller värde beroende på vilken position tecknet innehar.
 Systemet har en \emph{talbas}.
 Det decimala talsystemet har basen \(10\) och varje position motsvarar en
 unik \(10\)-potens.
-Siffran på denna position ger multipeln för denna potens.
+Siffran på denna position ger koefficienten för denna potens.
 
 \begin{example}\label{ex:DecimaltPosistionssystem}
 	Det decimala talsystemet har basen \(10\).
 	Talet etthundratjugotre representeras i detta system som \(123\).
-	Vi har alltså
+	Vi har då
 	\[1\cdot10^2 + 2\cdot10^1 + 3\cdot10^0 = 100 + 20 + 3 = 123.\]
 \end{example}
 \begin{example}\label{ex:BinartPositionssystem}
 	Det binära talsystemet har basen \(2\).
 	Således representeras talet etthundratjugotre som \(1111011\).
-	Vi har alltså
+	Vi har då
 	\[1\cdot2^6 + 1\cdot2^5 + 1\cdot 2^4 + 1\cdot2^3 + 0\cdot2^2 +
 	1\cdot2^1 + 1\cdot2^0 = 123.\]
 \end{example}
@@ -219,7 +222,7 @@ Siffran på denna position ger multipeln för denna potens.
 	dessa har värdena \(0, 1, 2, \ldots, b-1\).
 	För att representera ett tal används summor av \(b\)-potenser där siffrans
 	position avgör exponenten.
-	Siffrans värde avgör multipeln för, det vill säga hur många av, den
+	Siffrans värde avgör koefficienten för, det vill säga hur många av, den
 	specifika \(b\)-potensen som ska adderas.
 	Det vill säga talet vars värde beräknas som
 	\[
@@ -271,7 +274,7 @@ För att kunna bevisa detta behöver vi först följande lemma.
 		c-d=c_1b^{n-1}+\cdots+c_{k-1}b^{n-k+1}+(c_k-d_0)b^m+\cdots+(c_n-d_m) =
 		0.
 	\end{equation*}
-	Men \(c_1b^{n-1}\neq 0\) och alltså måste \(n=m\).
+	Men \(c_1b^{n-1}\neq 0\) och då måste \(n=m\).
 
 	Då har vi att
 	\begin{equation*}
@@ -288,7 +291,7 @@ För att kunna bevisa detta behöver vi först följande lemma.
 	\(b\) måste även högerledet vara detta eftersom att de är lika.
 	Men eftersom att \(c_i<b\) och \(d_i<b\) har vi att
 	\(-b<c_i-d_i<b\) för \(i=0,1,2,\ldots,n\).
-	Alltså är \(-(c_n-d_n)\) delbar med \(b\) endast om \(-(c_n-d_n)=0\) vilket
+	Då är \(-(c_n-d_n)\) delbar med \(b\) endast om \(-(c_n-d_n)=0\), vilket
 	är en motsägelse.
 	Då måste alla termer \(c_i-d_i=0\) för \(i=1,2,3,\ldots,n\).
 \end{proof}
@@ -306,7 +309,7 @@ Nu är vi redo att visa satsen.
 	Vi får då från välordningsprincipen för de naturliga talen att \(q_n=0\)
 	för något \(n\in\N\).
 	Vi nu sätter ihop dessa resultat enligt följande idé.
-	Vi hade först att \(x=q_1b+r_1\), men \(q_1=q_2b+r_2\) och alltså är
+	Vi hade först att \(x=q_1b+r_1\), men \(q_1=q_2b+r_2\) och följdaktligen är
 	\[x=(q_2b+r_2)b+r_1.\]
 	Eftersom att \(q_i=q_{i+1}b+r_{i+1}\) får vi att
 	\begin{align*}
@@ -331,7 +334,7 @@ Nu är vi redo att visa satsen.
 	\end{equation*}
 	men enligt \lemref{lem:NollEndastOmLika} kan detta ej vara sant och vi har
 	en motsägelse.
-	Alltså måste det vara samma representation.
+	Då måste det vara samma representation.
 
 %	Antag att det även finns ett tal \(y\neq x\) skilt från \(x\) men med
 %	samma representation.
@@ -356,7 +359,7 @@ Nu är vi redo att visa satsen.
 	Det kan nu vara av intresse med ett exempel där representationen ej är unik.
 	Ett tydligt exempel är det romerska talsystemet där \(99\) skulle kunna
 	representeras av både IC och XCIX.
-	Representationen för tal i det romerska systemet är alltså inte unik.
+	Representationen för tal i det romerska systemet är därmed inte unik.
 \end{example}
 
 Eftersom att vi enligt \thmref{thm:PositionssystemAllaUnika} kan representera
@@ -391,9 +394,9 @@ följande.
 	Det hexadecimala talsystemet har basen \(b=16\).
 	När ett talsystem har basen \(b>10\) används vanligtvis bokstäver från
 	alfabetet som siffror för värdena \(10\), \(11\) och så vidare.
-	Det hexadecimala talsystemet använder alltså vanligtvis
+	Det hexadecimala talsystemet använder vanligtvis
 	siffrorna \[S=\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\},\] där \(A=10\),
-	\(B=11\) och så vidare.
+	\(B=11\), \dots, \(F=15\).
 \end{example}
 
 För att kunna urskilja vilken talbas ett tal representeras med brukar basen
@@ -404,7 +407,7 @@ Det blir då lättare att förstå \(123_{10} = 1111011_2\) som betyder att \(123\)
 i bas 10 skrivs som \(1111011\) i bas 2.
 Vanligtvis, när basen är självklar, brukar den utelämnas.
 I de första 9 åren i grundskolan är det uteslutande det decimala talsystemet
-som används och alltså har det aldrig varit nödvändigt att där specificera att
+som används och det har därför aldrig varit nödvändigt att där specificera att
 basen varit 10.
 
 \begin{exercise}\label{xrc:GiltigaTalbaser}
@@ -438,7 +441,7 @@ basen varit 10.
 \lettrine{E}{ftersom att} \thmref{thm:PositionssystemAllaUnika} säger att alla
 naturliga tal kan representeras i alla baser innebär detta att samma tal har
 en unik representation i varje bas.
-Det kan alltså vara intressant att se ett tals olika representationer i olika
+Det kan då vara intressant att se ett tals olika representationer i olika
 baser.
 Hur detta basbyte går till och att det fungerar framgår av beviset för satsen.
 Metoden illustreras här med nedan givna exempel.
@@ -453,10 +456,12 @@ Metoden illustreras här med nedan givna exempel.
 		3 &= 1\cdot 2 + 1 \\
 		1 &= 0\cdot 2 + 1
 	\end{align*}
-	Alltså får vi
+	Då får vi
 	\begin{multline}
-		(((((((0+1)\cdot2 + 1)\cdot2 + 1)\cdot2 + 1)\cdot2 + 1) + 0)\cdot2 + 1)
-			\cdot2 + 1 \\
+%		(((((((0+1)\cdot2 + 1)\cdot2 + 1)\cdot2 + 1)\cdot2 + 1) + 0)\cdot2 + 1)
+%			\cdot2 + 1 \\
+		1 + 2\cdot (1 + 2\cdot (0 + 2\cdot (1 + 2\cdot (1 + 2\cdot (1 + 2\cdot
+			(1 + 0)))))) \\
 		= 1\cdot 2^6 + 1\cdot 2^5 + 1\cdot 2^4 + 1\cdot^3 + 0\cdot 2^2 +
 			1\cdot 2^1 + 1\cdot 2^0 \\
 		= 1111011_2 = 123_{10}.
@@ -468,11 +473,11 @@ Metoden illustreras här med nedan givna exempel.
 		123 &= 7\cdot16 + 11 \\
 		7 &= 0\cdot16 + 7
 	\end{align*}
-	Alltså får vi siffrorna \(7\) och \(B\) samt att
+	Således får vi siffrorna \(7\) och \(B\) samt att
 	\begin{equation*}
 		(0+7)\cdot16 + 11 = 7\cdot16^1 + 11\cdot16^0 = 7B_{16} = 123_{10}.
 	\end{equation*}
-	Detta betyder att \(7B_{16} = 123_{10}\) och alltså är \(7B\) hexadecimalt
+	Detta betyder att \(7B_{16} = 123_{10}\) och därför är \(7B\) hexadecimalt
 	samma tal som 123 är decimalt.
 \end{example}
 
@@ -552,7 +557,7 @@ Vi inleder först med en illustration av algoritmen genom följande exempel.
 	\verb'd)'.
 	I steg \verb'e)' adderar vi \(1,0\) och \(0\) och får \(1\) som skrivs
 	under raden.
-	Alltså får vi att \(123+999=1122\).
+	Då får vi att \(123+999=1122\).
 \end{example}
 \begin{remark}
 	Notera att tiotalet ges av kvoten vid heltalsdivision med basen som
@@ -588,13 +593,14 @@ Följande lemma fastställer att om summan \(s+t\) är större än \(b\) och mindre
 	Om vi tittar på fallet \(x=b\) får vi vid heltalsdivision kvoten \(x/b = 1\)
 	och resttermen \(0\).
 	Det vill säga, vi har \(d_1=1\), \(d_2=0\) och således \(x=1\cdot b+0\).
-	Alltså måste vi ha minst två termer.
+	Då måste vi ha minst två termer.
 
 	Om vi tittar på fallet \(x=2(b-1)\) ser vi att \(2(b-1)=b+(b-2)\).
 	Heltalsdivisionen \(x/b\) ger då kvoten \(b/b=1\) och resttermen \(b-2\).
-	Vi har således \(d_1=1\), \(d_2=b-2\) och alltså \(x=1\cdot b+(b-2)\).
+	Vi har således \(d_1=1\), \(d_2=b-2\) och följdaktligen
+	\(x=1\cdot b+(b-2)\).
 
-	Alltså har vi exakt två termer.
+	Då har vi exakt två termer.
 \end{proof}
 
 \begin{exercise}
@@ -661,7 +667,7 @@ Följande sats visar att denna additionsmetod fungerar för godtyckligt långa tal
 		r_b(x_{i+k}+y_i)b^{n-k-i}.
 	\end{equation*}
 	Om \(x_{i+k}+y_i<b\) har vi att \(q_b(x_{i+k}+y_i)=0\) och
-	\(r_b(x_{i+k}+y_i)=x_{i+k}+y_i\) och alltså får vi även med det andra
+	\(r_b(x_{i+k}+y_i)=x_{i+k}+y_i\) och då får vi även med det andra
 	fallet.
 
 	Vi ser i \eqref{eq:AdditionsEkvation} att båda dessa termer finns med.

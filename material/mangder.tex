@@ -3,16 +3,17 @@
 \nocite{Greger1971m,KTHCirkel2005rt}
 \noindent
 \lettrine{M}{ängder är kanske} det mest grundläggande begreppet inom matematik.
-Ja, till och med viktigare än talen.
+Ja, kanske till och med mer grundläggande än talen.
 En mängd kan beskrivas som ett matematiskt objekt som är en samling av andra
 matematiska objekt.
 Med andra ord, en mängd kan ses som en abstrakt påse som vi kan stoppa
 matematiska saker i.
-Och likt en påse som kan innehålla andra påsar kan man även ha en mängd
-innehållandes andra mängder.
+Och likt en påse som kan innehålla andra påsar kan även en mängd
+innehålla andra mängder.
 
 I slutet av 1800-talet tillkom mängdläran till matematiken.
-Äran för denna uppfinning tilldelas Georg Cantor (1845-1918).
+% upptäkt eller uppfinning
+Äran för denna upptäkt tilldelas Georg Cantor (1845-1918).
 Cantor är också utan tvekan den som bidragit mest till utvecklingen av
 mängdteorin.
 Under sin livstid gjorde han en uttömmande utforskning av mängder och gav
@@ -72,8 +73,9 @@ Om \(M\) är en mängd och \(x\) är ett element i \(M\), då skriver vi detta som
 För ett objekt \(y\) som ej tillhör mängden \(M\) skriver vi \(y\notin M\).
 
 Om vi vill beskriva en mängd kan vi gå tillväga på olika sätt.
-Vi kan lista mängdens alla element och på så vis säga precis som utgör mängden.
-Detta kan bli problematiskt för väldigt stora mängder, vi kan därför nöja oss
+Vi kan lista mängdens alla element och på så vis säga precis vad som utgör
+mängden.
+Detta kan bli problematiskt för mycket stora mängder, vi kan därför nöja oss
 med en exakt beskrivning av vilka element som tillhör mängden.
 \begin{example}
 	Låt \(M\) vara en mängd innehållandes elementen \(A,B\) och \(C\).
@@ -85,10 +87,15 @@ med en exakt beskrivning av vilka element som tillhör mängden.
 	\[N=\{n : n\text{ är ett namn kortare än fem bokstäver}\}\] som utläses
 	\(N\) är mängden av alla \(n\) sådana att \(n\) är ett namn kortare än fem
 	bokstäver.
+	Denna mängd är väldefinierad för vi kan enkelt avgöra om ett element
+	tillhör mängden eller inte.
+	Om ett objekt ej är ett namn, då tillhör det heller inte mängden.
+	Om ett objekt är ett namn och om det också är kortare än fem bokstäver
+	tillhör det mängden, annars inte.
 \end{example}
 \begin{example}
 	Den tomma mängden som inte har några element betecknas med \(\emptyset\).
-	Vi har alltså att \(\emptyset=\{\}\).
+	Vi har följdaktligen att \(\emptyset=\{\}\).
 \end{example}
 
 %Vi kan också tänka oss mängder som ringar som omsluter elementen som tillhör
@@ -106,8 +113,7 @@ Hur vet vi om två mängder är lika?
 \begin{definition}
 	\label{def:Mangdlikhet}\index{mängd!likhet}\index{likhet}
 	Vi säger att två mängder \(A\) och \(B\) är \emph{lika} om varje element i
-	\(A\) är ett element i \(B\) och varje element i \(B\) är ett element i
-	\(A\).
+	\(A\) även tillhör \(B\) och varje element i \(B\) även tillhör \(A\).
 	Om \(A\) och \(B\) är lika skriver vi \(A=B\), annars skriver vi \(A\neq
 	B\).
 \end{definition}
@@ -133,7 +139,7 @@ Vi fortsätter med ett annat viktigt begrepp.
 \begin{definition}
 	\label{def:Disjunkt}\index{disjunkt}
 	Två mängder \(A\) och \(B\) sägs vara \emph{disjunkta} om varje element i
-	\(A\) ej är element i \(B\).
+	\(A\) ej är ett element i \(B\).
 \end{definition}
 \begin{exercise}
 	Om \(A\) och \(B\) är mängder, betyder det samma sak att \(A\neq B\) som
@@ -163,7 +169,7 @@ kombinera mängder som vi redan har.
 	Låt \(A\) och \(B\) vara mängder.
 	Vi låter mängden \(A\cup B\) av alla element i \(A\) och alla element i
 	\(B\) kallas för \emph{unionen} av \(A\) och \(B\).
-	Alltså, \(A\cup B = \{x : x\in A\text{ eller }x\in B\}\).
+	Det vill säga, \(A\cup B = \{x : x\in A\tor x\in B\}\).
 \end{definition}
 
 %\begin{figure}[h]
@@ -183,7 +189,7 @@ kombinera mängder som vi redan har.
 	Låt \(A\) och \(B\) vara mängder.
 	Vi låter mängden \(A\cap B\) av alla element i \(A\) som också tillhör
 	\(B\) kallas för \emph{snittet} mellan \(A\) och \(B\).
-	Alltså, \(A\cap B = \{x : x\in A\text{ och }x\in B\}\).
+	Det vill säga, \(A\cap B = \{x : x\in A\tand x\in B\}\).
 \end{definition}
 
 %\begin{figure}[h]
@@ -209,7 +215,7 @@ kombinera mängder som vi redan har.
 	Låt \(A\) och \(B\) vara mängder.
 	Vi låter mängden \(A\setminus B\) av alla element i \(A\) som inte tillhör
 	\(B\) kallas för \emph{differensen} mellan \(A\) och \(B\).
-	Alltså, \(A\setminus B = \{x : x\in A\text{ och }x\notin B\}\).
+	Det vill säga, \(A\setminus B = \{x : x\in A\tand x\notin B\}\).
 \end{definition}
 
 %\begin{figure}[h]
@@ -228,8 +234,8 @@ kombinera mängder som vi redan har.
 \begin{definition}
 	\label{def:KartesiskProdukt}\index{kartesisk produkt}
 	Låt \(M\) och \(N\) vara mängder.
-	Mängden \(\{(m,n) : m\in M, n\in N\}\) av alla ordnade par med första
-	element i \(M\) och andra element i \(M\) 
+	Mängden \(\{(m,n) : m\in M\tand n\in N\}\) av alla ordnade par med första
+	element i \(M\) och andra element i \(N\) 
 	kallas för den \emph{kartesiska produkten} av \(M\) och \(N\) och skrivs
 	\(M\times N\).
 \end{definition}
@@ -268,12 +274,14 @@ Vi ger därför följande definition.
 	\label{def:Delmangd}\index{delmängd}
 	Låt \(A\) och \(B\) vara mängder.
 	Vi säger att \(A\) är en \emph{delmängd} av \(B\) om varje element i \(A\)
-	även är ett element i \(B\).
-	Vi skriver detta som \(A\subseteq B\).
-	Vi kan likvärdigt skriva \(B\supseteq A\) och säger då att \(B\)
-	\emph{inkluderar} \(A\).
+	även tillhör \(B\).
+	Vi skriver detta som \(A\subseteq B\) och utläser det som att \emph{\(A\)
+	är inkluderad i \(B\)}.
+	Vi kan likvärdigt skriva \(B\supseteq A\) och utläser detta som att
+	\emph{\(B\) inkluderar \(A\)}.
 	Om dessutom \(A\neq B\) är \(A\) en \emph{äkta} eller \emph{proper
-	delmängd} av \(B\) och detta skrivs \(A\subset B\).
+	delmängd} av \(B\) och detta skrivs \(A\subset B\) respektive
+	\(B\supset A\).
 \end{definition}
 
 %\begin{figure}[h]
@@ -285,17 +293,17 @@ Vi ger därför följande definition.
 \begin{exercise}
 	Vad skulle det innebära om \(A\) är en delmängd av \(B\) och \(B\) är en
 	delmängd av \(A\), det vill säga \(A\subseteq B\) och \(B\subseteq A\)?
-	(Är detta ens möjligt?)
+	Är detta ens möjligt?
+	Det är faktiskt så att det är en vanlig bevismetod inom matematiken att
+	först visa \(A\subseteq B\) och sedan visa \(B\subseteq A\).
 \end{exercise}
-Det är faktiskt så att det är en vanlig bevismetod inom matematiken att först
-visa \(A\subseteq B\) och sedan visa \(B\subseteq A\).
 
-Vi fortsätter med en annan definition med stor koppling till
-delmängdsbegreppet.
+Vi fortsätter med en annan definition med koppling till delmängdsbegreppet.
 \begin{definition}
 	\label{def:Komplement}\index{komplement}
 	Låt \(A\) vara en delmängd till mängden \(B\).
-	Vi kallar \(A^\complement = B\setminus A\) \emph{komplementet} till \(A\).
+	Vi kallar mängden \(A^\complement = B\setminus A\) för \emph{komplementet}
+	till \(A\) i mängden \(B\).
 \end{definition}
 
 %\begin{figure}[h]
@@ -313,18 +321,19 @@ delmängdsbegreppet.
 	Då har vi att \(A\subseteq M\), det vill säga \(A\) är en delmängd till
 	\(M\), och faktiskt \(A\subset M\), det vill säga \(A\) är en äkta delmängd
 	till \(M\).
-	Vi har dessutom att \(A^\complement = M\setminus A = \{3\}\).
+	Vi har dessutom att komplementet till \(A\) är \(A^\complement =
+	M\setminus A = \{3\}\).
 \end{example}
 
 Nu när vi har delmängder till en mängd \(M\), då kan det vara skönt att ha ett
 enkelt notationssätt för mängden av alla delmängder till \(M\).
 Denna mängd som innehåller alla delmängder till \(M\) som element kallas
-potensmängd och definieras härnäst.
+\emph{potensmängd} och definieras härnäst.
 \begin{definition}
 	\label{def:Potensmangd}\index{potensmängd}
 	Låt \(M\) vara en mängd.
 	Vi kallar mängden av alla delmängder till \(M\) för \emph{potensmängden}
-	till \(M\).
+	av \(M\).
 	Vi betecknar potensmängden till \(M\) som \(\powerset(M)\).
 \end{definition}
 \begin{exercise}
@@ -346,19 +355,40 @@ mängder.
 
 \begin{definition}
 	\label{def:BinarRelation}\index{relation}\index{binär relation}
-	En \emph{binär relation} \(R\) på en mängd \(M\) är en mängd som innehåller
-	ordnade par \((x,y)\), där \(x\) och \(y\) är element i \(M\).
-	Om \((x,y)\) tillhör \(R\) skriver vi \(x R y\) som utläses \emph{\(x\) är
-	relaterat till \(y\) via \(R\)}.
+	En \emph{binär relation} \(R\) på en mängd \(M\) är en delmängd till den
+	kartesiska produkten \(M\times M\).
+	Om \((x,y)\in M\times M\) tillhör \(R\) skriver vi \(x R y\) som utläses
+	\emph{\(x\) är relaterat till \(y\) via \(R\)}.
 \end{definition}
 
-Enligt denna definition skulle alltså likhetsrelationen mellan mängder vara en
+\begin{remark}
+	Mängden \(R\) är följdaktligen en delmängd till den kartesiska produkten
+	\(M\times M\).
+\end{remark}
+
+Enligt denna definition skulle likhetsrelationen mellan mängder vara en
 relation på mängden av alla mängder och två mängder i denna mängd är relaterade
 om de uppfyller kraven i \defref{def:Mangdlikhet}.
+Vi ska titta på ett mindre abstrakt exempel.
+\begin{example}
+	Låt \(S\) vara mängden av alla personer som är skrivna på en adress i
+	Sverige.
+	Två personer \(p\in S\) och \(q\in S\) är relaterade via relationen \(G\)
+	om de bor på samma gata.
+	Om \(p\) bor på ''Gatuvägen 1, 123\,45 Kommunen'' och \(q\) bor på
+	''Gatuvägen 3, 123\,45 Kommunen'', då gäller att \(p G q\) eftersom att
+	båda bor på ''Gatuvägen''.
+
+	Vi kan då också beskriva \(G\) på följande vis.
+	Låt \(V_i\) vara mängden av alla personer som är skriva på någon väg \(i\).
+	Då är \(G\) unionen av \(V_i\times V_i\) för alla vägar \(i\) i Sverige.
+\end{example}
 
 \begin{exercise}
 	Använd mängderna som definieras i \xrcref{xrc:Kortlek} och definiera en
-	relation för dessa.
+	relation för någon dessa.
+	Inspiration: Du kan utgå från ditt favoritkortspel och definiera en eller
+	flera lämpliga relationer mellan kort eller mängder av kort.
 \end{exercise}
 
 
@@ -388,19 +418,20 @@ tidigare.
 \end{definition}
 \begin{exercise}
 	Undersök vilka relationer du känner till som är reflexiva, symmetriska och
-	transitiva.
+	transitiva, och följdaktligen är ekvivalensrelationer.
 \end{exercise}
 
 En ekvivalensrelation \emph{partitionerar} en mängd \(M\) i disjunkta
-delmängder kallade partitioner, dessa partitioner utgörs av något som brukar
-kallas för ekvivalensklasser som är disjunkta delmängder av mängden \(M\).
+delmängder kallade partitioner.
+Dessa partitioner utgörs av något som brukar
+kallas för ekvivalensklasser. %, som är disjunkta delmängder av mängden \(M\).
 \begin{definition}
 	\label{def:Ekvivalensklass}\index{ekvivalensklass}
 	\index{ekvivalensrelation!ekvivalensklass}
 	Låt \(R\) vara en ekvivalensrelation definierad på mängden \(M\).
 	Om \(a\) är ett element i \(M\), då kallar vi mängden
 	\(\{x\in M : x R a\}\) för \emph{ekvivalensklassen} för \(a\) och betecknar
-	denna som \([a]_R\), \(a\) sägs vara \emph{representanten} för
+	denna som \([a]_R\), elementet \(a\) sägs vara en \emph{representant} för
 	ekvivalensklassen.
 \end{definition}
 Om det är klart under vilken relation ekvivalensklassen gäller räcker det med
@@ -417,22 +448,22 @@ mängden genom att partitionera den.
 	Är detta en ekvivalensrelation?
 	Om \(x\) är en berguv (\emph{Bubo bubo}), då måste \(x A x\) eftersom att
 	\(x\) tillhör samma fågelart som sig själv.
-	Alltså är relationen reflexiv.
+	Således är relationen reflexiv.
 	Om \(x\) är en berguv och om \(x A y\), då måste även \(y\) vara en berguv
-	och alltså \(y A x\).
-	Alltså är relationen symmetrisk.
+	och följdaktligen \(y A x\).
+	Relationen är därför symmetrisk.
 	Om \(x\) är en berguv och \(x A y\), då måste \(y\) vara en berguv.
 	Om dessutom \(y A z\) måste \(z\) också vara en berguv.
 	Eftersom både \(x\) och \(z\) är berguvar gäller att \(x A z\).
-	Alltså är relationen transitiv.
-	Relationen uppfyller alltså kraven för en ekvivalensrelation och måste
+	Då är relationen transitiv.
+	Relationen uppfyller kraven för en ekvivalensrelation och måste
 	därför vara en ekvivalensrelation.
 
 	Eftersom att relationen \(A\) är en ekvivalensrelation innebär det att den
 	partitionerar mängden \(F\) av alla fåglar.
 	Varje partition, eller ekvivalensklass, är en mängd av alla fåglar inom
 	samma art.
-	Exempelvis mängden av alla berguvar.
+	Exempelvis är mängden av alla berguvar en ekvivalensklass.
 \end{example}
 
 %\begin{figure}[t]
@@ -442,9 +473,10 @@ mängden genom att partitionera den.
 %\end{figure}
 
 Mängden av alla ekvivalensklasser hos \(M\) under relationen \(\sim\)
-brukar betecknas \(M/\!\sim\) och kallas för \emph{kvotmängden} av \(M\)
-och \(\sim\).
-Om \(m\in M\) då \([m]_\sim\in M/\!\sim\).
+brukar betecknas \(M/\!\sim\) och kallas för \emph{kvotmängden av \(M\)
+och \(\sim\)}\index{kvotmängd}.
+Om \(m\) är ett element i \(M\), då är \([m]_\sim\) ett element i kvotmängden
+\(M/\!\sim\).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -462,16 +494,18 @@ Vi börjar med att definiera vad en funktion är.
 \begin{definition}
 	\label{def:Avbildning}\index{avbildning}\index{funktion}
 	Låt \(A\) och \(B\) vara mängder.
-	En \emph{funktion}, eller \emph{avbildning}, \(f:A\to B\) tilldelar till
-	varje \(a\in A\) ett välbestämt \(b\in B\).
+	En \emph{funktion}, eller \emph{avbildning}, \(f\colon A\to B\) tilldelar
+	till varje \(a\in A\) ett välbestämt \(b\in B\).
 	Vi skriver \(f(a)=b\) eller \(a\mapsto b\) och säger att \(a\)
 	\emph{avbildas} på \(b\) eller att \(b\) är \emph{bilden} av \(a\).
+	Mängden \(A\) sägs vara funktionens \emph{definitionsmängd} och mängden
+	\(B\) sägs vara funktionens \emph{värdemängd}.
 \end{definition}
 \begin{remark}
-	Notera att vi kan se funktionen \(f\) som en delmängd till den kartesiska
-	produkten \(A\times B\).
-	Det vill säga \(f=\{(a,b)\in A\times B : a\mapsto b\}\).
-	Då är \((a,b)\in f\) om \(a\mapsto b\), eller \(f(a)=b\).
+	Notera att varje funktion \(f\colon A\to B\) ger en funktionsgraf \(G_f\)
+	som är en delmängd till den kartesiska produkten \(A\times B\).
+	Det vill säga, \(G_f=\{(a,b)\in A\times B : f(a)=b\}\).
+	Då är \((a,b)\in G_f\) om \(f(a)=b\), eller \(a\mapsto b\).
 \end{remark}
 \begin{example}
 	Låt \(A=\{1,2,3\}\) och \(B=\{x,y,z\}\) vara mängder.
@@ -480,14 +514,25 @@ Vi börjar med att definiera vad en funktion är.
 	Vi har då exempelvis att \(2\) avbildas på \(f(2)=z\).
 \end{example}
 
-I de flesta fall är det inte lämpligt att tala om hur varje element avbildas
-utan istället ge en beskrivning av hur elementen ska avbildas.
+\begin{exercise}
+	Skulle en funktion kunna ses som en relation?
+\end{exercise}
+
+I de flesta fall är det inte lämpligt att lista alla avbildningarna för
+funktionen, det vill säga ge dess funktionsgraf, som vi gjorde ovan.
+Istället är det bättre att ge en beskrivning av hur elementen ska avbildas.
+Vi ska illustrera med två exempel.
 \begin{example}
 	Låt \(M\) vara mängden av alla människor i Sverige och \(P\) vara mängden
-	av alla geografiska platser i Sverige.
-	Låt \(p:M\to P\) vara en avbildning från \(M\) till \(P\).
+	av alla geografiska platser på jorden.
+	Låt \(p\colon M\to P\) vara en avbildning från \(M\) till \(P\).
 	Vi avbildar då varje människa i \(M\) på den geografiska plats i \(P\) där
-	den för tillfället befinner sig.
+	den föddes.
+\end{example}
+\begin{example}
+	Låt \(f\colon M\to M\) vara en avbildning från mängden
+	\(M=\{0,1,2,3,\ldots\}\) till sig själv, och låt \(x\) avbildas på
+	\(f(x)=x+1\).
 \end{example}
 
 Vi ska nu införa en egenskap för avbildningar.
@@ -522,7 +567,7 @@ Vi vill kunna beskriva en funktion som avbildar element på ett särskilt vis.
 %\end{figure}
 
 Vi ska införa en till egenskap likt den ovan.
-\begin{definition}[Surjektivitet]
+\begin{definition}
 	\label{def:Surjektiv}\index{surjektiv}
 	Låt \(f\) vara en funktion från en mängd \(A\) till en mängd \(B\).
 	Vi säger att \(f\) är \emph{surjektiv} om det för varje \(b\in B\)
@@ -546,8 +591,10 @@ Vi ska införa en till egenskap likt den ovan.
 %	\label{fig:Surjektion}
 %\end{figure}
 
-En avbildning som är både injektiv och surjektiv sägs vara
-\emph{bijektiv}\index{bijektiv}.
+\begin{definition}
+	En avbildning som är både injektiv och surjektiv sägs vara
+	\emph{bijektiv}\index{bijektiv}.
+\end{definition}
 
 
 
@@ -564,7 +611,7 @@ Det kan dock vara intressant att kunna se hur två disjunkta mängder förhåller
 sig till varandra.
 Till exempel genom att bestämma hur stora de är.
 
-När vi avgör hur stort någonting är med avseende på antal brukar vi räkna
+När vi avgör hur stort någonting är, med avseende på antal, brukar vi räkna
 antalet objekt.
 Om vi exempelvis skulle avgöra hur många personer vi ser just nu börjar vi med
 att peka på en person och säga \emph{ett}, peka på en annan person och säga
@@ -572,8 +619,8 @@ att peka på en person och säga \emph{ett}, peka på en annan person och säga
 Det vi egentligen gör när vi räknar på detta vis är att upprätta en avbildning
 från talen \(1,2,3,\ldots\) till objekten vi räknar.
 Vi kan utifrån denna idé definiera storleken för mängder, kallad en mängds
-kardinalitet, på följande vis.
-\begin{definition}[Kardinalitet]
+\emph{kardinalitet}, på följande vis.
+\begin{definition}
 	\label{def:Kardinalitet}\index{kardinalitet}
 	Om \(A\) och \(B\) är mängder säger vi att de har samma \emph{kardinalitet}
 	om det finns en bijektiv avbildning mellan \(A\) och \(B\).
@@ -584,9 +631,10 @@ kardinalitet, på följande vis.
 \end{definition}
 
 \begin{example}
-	Mängderna \(M=\{a,b,c\}\) och \(N=\{1,2,3\}\) har samma kardinalitet, det
-	vill säga \(\card M = \card N\), eftersom att avbildningen
-	\(\{(a,1),(b,2),(c,3)\}\) är bijektiv.
+	Mängderna \(M=\{a,b,c\}\) och \(N=\{1,2,3\}\) har samma kardinalitet,
+	nämligen \(3\).
+	Detta eftersom att avbildningen \(f\colon M\to N\) sådan att \(f(a)=1\),
+	\(f(b)=2\) och \(f(c)=3\) är bijektiv.
 \end{example}
 
 Anledningen till att vi definierar kardinalitet på detta vis och inte nöjer oss
