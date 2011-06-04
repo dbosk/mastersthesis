@@ -47,6 +47,7 @@ all-print: ${DOCUMENTS:.pdf=.print}
 clean:
 	@rm -f *.log *.aux *.toc *.core *.o *~ *.bbl *.blg *.ind *.ilg \
 		*.dvi *.ps *.out ${DOCUMENTS} *.idx
+clean-all: clean
 
 struct:
 	@for f in ${DOCUMENTS}; do \
@@ -63,3 +64,4 @@ run: view
 todo:
 	@grep -e TODO -e todo -e XXX * | grep -v '^Makefile:'
 
+#thesis.pdf: ../dokument/projektbeskrivning.pdf
