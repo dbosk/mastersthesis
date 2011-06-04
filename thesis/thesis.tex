@@ -1,20 +1,52 @@
-\documentclass[a4paper,11pt,draft,twoside]{kth-mag}
-%\documentclass[a4paper,11pt,final,twoside]{kth-mag}
+%\documentclass[a4paper,11pt,draft,twoside]{kth-mag}
+\documentclass[a4paper,11pt,final,twoside]{kth-mag}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{lmodern}
 \usepackage[latin1]{inputenc}
-\usepackage[swedish,english]{babel}
+\usepackage[english,swedish]{babel}
 \usepackage{url}
+\usepackage{varioref,prettyref}
 \usepackage{hyperref}
-\usepackage{natbib}
-\bibliographystyle{kthnat}
+\usepackage{verbatim}
+\usepackage[longnamesfirst]{natbib}
+%\bibliographystyle{kthnat}
+\bibliographystyle{sweplnat}
 \usepackage{pdfpages}
+%\setlength{\fboxrule}{5pt}
 \usepackage{ifdraft}
 
+\addto{\captionsswedish}{%
+	\renewcommand{\bibname}{Referenser} % also \refname
+}
+\addto{\extrasswedish}{%
+	\renewcommand{\reftextbefore}{på föregående sida}
+	\renewcommand{\reftextfacebefore}{på motsatt sida} 
+	\renewcommand{\reftextafter}{på nästa sida}
+	\renewcommand{\reftextfaceafter}{på motsatt sida}
+	\renewcommand{\reftextfaraway}[1]{på sidan \pageref{#1}}
+}
+
+%\newcommand{\chref}[1]{Kapitel \ref{#1}}
+\newrefformat{ch}{Kapitel \ref{¤1}}
+%\newcommand{\secref}[1]{avsnitt \ref{#1}}
+\newrefformat{sec}{avsnitt \ref{#1}}
+%\newcommand{\subsecref}[1]{delavsnitt \ref{#1}}
+\newrefformat{subsec}{delavsnitt \ref{#1}}
+%\newcommand{\appref}[1]{Bilaga \ref{#1}}
+\newrefformat{app}{Bilaga \ref{#1}}
+%\newcommand{\figref}[1]{Figur \ref{#1}}
+\newrefformat{fig}{Figur \vref{#1}}
+%\newcommand{\tblref}[1]{Tabell \ref{#1}}
+\newrefformat{tbl}{Tabell \vref{#1}}
+
+%\newcommand{\comment}[1]{}
+
 \ifdraft{
-	\includeonly{intro,research,dokument}
-}{}
+	\includeonly{intro,research,method,results,discussion,dokument,material}
+}{
+	%\includeonly{intro,research,method,results,discussion,dokument}
+}
 
 %\kthlogo{logo_kth.png}
 \kthlogo{kth_logo.pdf}
@@ -23,7 +55,7 @@
 
 \title{En formalisering av matematiken i svensk gymnasieundervisning}
 \author{Daniel Bosk}
-\date{Maj 2010}
+\date{Juni 2011}
 \blurb{Examensarbete vid programmet \emph{Civilingenjör och lärare}\\
 	inom området Teknik och lärande\\
 }
@@ -31,13 +63,15 @@
 
 \setlength{\parskip}{0pt}
 
+
+
 \begin{document}
 \selectlanguage{swedish}
 \ifdraft{
-\makeevenfoot{plain}{dbosk-\today}{\thepage}{}
-\makeoddfoot{plain}{}{\thepage}{dbosk-\today}
-\makeevenfoot{headings}{dbosk-\today}{}{}
-\makeoddfoot{headings}{}{}{dbosk-\today}
+	\makeevenfoot{plain}{dbosk-\today}{\thepage}{}
+	\makeoddfoot{plain}{}{\thepage}{dbosk-\today}
+	\makeevenfoot{headings}{dbosk-\today}{}{}
+	\makeoddfoot{headings}{}{}{dbosk-\today}
 }{}
 
 \frontmatter
@@ -47,7 +81,7 @@
 \mainmatter
 
 \ifdraft{
-\DoubleSpacing
+	%\DoubleSpacing
 }{}
 
 % inledning
@@ -68,18 +102,20 @@
 \include{discussion}
 
 \ifdraft{
-\SingleSpacing
+	\SingleSpacing
 }{}
 
 \bibliography{thesis}
 
 \appendix
 \ifdraft{
-\DoubleSpacing
+	%\DoubleSpacing
 }{}
 
-\include{material}
 \include{dokument}
+%\include{enkatsvar}
+\include{material}
 
+\clearpage
 \end{document}
 
