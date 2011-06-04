@@ -2,9 +2,6 @@
 
 DOCUMENTS=	kompendium.pdf
 DOCUMENT?=	kompendium
-SOURCES=	kompendium kursplanering intro frontmatter backmatter \
-			heltalen naturliga reella logik mangder talsystem preface \
-			funktioner talteori
 PAPER?=		a4
 
 TEX=		latex
@@ -18,7 +15,7 @@ PRINT?=		lpr
 
 
 .SUFFIXES: .tex .pdf .ps .dvi .print
-.PHONY: all all-print clean struct print view run clean-all
+.PHONY: all all-print clean struct print view run
 
 
 .tex.pdf:
@@ -50,28 +47,8 @@ all: ${DOCUMENTS}
 all-print: ${DOCUMENTS:.pdf=.print}
 
 clean:
-	@rm -f \
-		${DOCUMENT}.log \
-		${DOCUMENT}.aux \
-		${DOCUMENT}.toc \
-		${DOCUMENT}.bbl \
-		${DOCUMENT}.blg \
-		${DOCUMENT}.ind \
-		${DOCUMENT}.ilg \
-		${DOCUMENT}.dvi \
-		${DOCUMENT}.ps \
-		${DOCUMENT}.out \
-		${DOCUMENT}.pdf \
-		${DOCUMENT}.idx \
-		${DOCUMENT}.nls \
-		${DOCUMENT}.nlo \
-		${DOCUMENT}.lof \
-		${DOCUMENT}.lot \
-		*.core *.o *~ *.out missfont.log
-clean-all:
-	@for d in ${SOURCES}; do \
-		${MAKE} DOCUMENT=$$d clean; \
-		done
+	@rm -f *.log *.aux *.toc *.core *.o *~ *.bbl *.blg *.ind *.ilg \
+		*.dvi *.ps *.out ${DOCUMENTS} *.idx *.nls *.nlo
 
 struct:
 	@for f in ${DOCUMENTS}; do \
@@ -86,4 +63,6 @@ view: ${DOCUMENT}.pdf
 run: view
 
 todo:
-	@grep -e TODO -e todo -e 'XXX ' * | grep -v '^Makefile:'
+	@grep -e TODO -e todo -e XXX * | grep -v '^Makefile:'
+
+include depends.mk
