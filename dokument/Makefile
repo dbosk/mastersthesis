@@ -1,7 +1,10 @@
 #.include pub.mk
 
-DOCUMENTS=	thesis.pdf
-DOCUMENT?=	thesis
+DOCUMENTS=	deltagande.pdf projektbeskrivning.pdf vr_principer.pdf \
+			forfragan.pdf enkat.pdf
+DOCUMENT?=	enkat
+SOURCES=	deltagande.tex projektbeskrivning.tex vr_principer.tex \
+			forfragan.tex enkat.tex
 PAPER?=		a4
 
 TEX=		latex
@@ -15,13 +18,14 @@ PRINT?=		lpr
 
 
 .SUFFIXES: .tex .pdf .ps .dvi .print
-.PHONY: all all-print clean struct print view run
+.PHONY: all all-print clean struct print view run clean-all
 
 
 .tex.pdf:
 	${PDFTEX} ${TEXFLAGS} $<
 	-${BIBTEX} ${<:.tex=}
 	-${MAKEINDEX} ${<:.tex=.idx}
+	-${MAKEINDEX} ${<:.tex=.nlo} -s nomencl.ist -o ${<:.tex=.nls}
 	while (${PDFTEX} ${TEXFLAGS} $<; \
 		grep "Rerun to get cross" ${<:.tex=.log}) \
 		do true; done
@@ -30,6 +34,7 @@ PRINT?=		lpr
 	${TEX} ${TEXFLAGS} $<
 	-${BIBTEX} ${<:.tex=}
 	-${MAKEINDEX} ${<:.tex=.idx}
+	-${MAKEINDEX} ${<:.tex=.nlo} -s nomencl.ist -o ${<:.tex=.nls}
 	while (${TEX} ${TEXFLAGS} $<; \
 		grep "Rerun to get cross" ${<:.tex=.log}) \
 		do true; done
@@ -45,8 +50,28 @@ all: ${DOCUMENTS}
 all-print: ${DOCUMENTS:.pdf=.print}
 
 clean:
-	@rm -f *.log *.aux *.toc *.core *.o *~ *.bbl *.blg *.ind *.ilg \
-		*.dvi *.ps *.out ${DOCUMENTS} *.idx
+	@rm -f \
+		${DOCUMENT}.log \
+		${DOCUMENT}.aux \
+		${DOCUMENT}.toc \
+		${DOCUMENT}.bbl \
+		${DOCUMENT}.blg \
+		${DOCUMENT}.ind \
+		${DOCUMENT}.ilg \
+		${DOCUMENT}.dvi \
+		${DOCUMENT}.ps \
+		${DOCUMENT}.out \
+		${DOCUMENT}.pdf \
+		${DOCUMENT}.idx \
+		${DOCUMENT}.nls \
+		${DOCUMENT}.nlo \
+		${DOCUMENT}.lof \
+		${DOCUMENT}.lot \
+		*.core *.o *~ *.out missfont.log
+clean-all:
+	@for d in ${SOURCES:.tex=}; do \
+		${MAKE} DOCUMENT=$$d clean; \
+		done
 
 struct:
 	@for f in ${DOCUMENTS}; do \
@@ -61,5 +86,4 @@ view: ${DOCUMENT}.pdf
 run: view
 
 todo:
-	@grep -e TODO -e todo -e XXX * | grep -v '^Makefile:'
-
+	@grep -e TODO -e todo -e 'XXX ' * | grep -v '^Makefile:'
