@@ -1,0 +1,468 @@
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass[handout]{beamer}
+
+\mode<presentation>
+{
+  %\usetheme{Warsaw}
+  \usetheme{Berkeley}
+  %\usetheme{Dresden}
+  %\usetheme{Frankfurt}
+  %\usetheme{Madrid}
+  %\usetheme{PaloAlto}
+  \setbeamercovered{transparent}
+}
+
+
+\usepackage[english,swedish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{natbib}
+\bibliographystyle{swekthnat}
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+\title[Formalisering av gymnasiematematiken]
+{En formalisering av matematiken i svensk gymnasieundervisning}
+
+\author{Daniel Bosk}
+
+\institute
+{
+	Civilingenjör- och lärarprogrammet\\
+	Kungliga Tekniska Högskolan och Stockholms universitet
+}
+
+\date[Opponering, 14/6-11] % (optional)
+{Opponering, 14 juni 2011}
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>{Översikt}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Översikt}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Inledning}
+\begin{frame}{Bakgrund}
+	\begin{itemize}
+		\uncover<2>{\item Bara räkning, ingen matematik}
+		\uncover<3-5>{\item \citet{Skolinspektionen2010uim} granskade
+			matematikundervisningen i kursen Matematik A}
+			\begin{itemize}
+				\uncover<4>{\item Lektionen består av två delar:
+					gemensam genomgång och eget arbete}
+				\uncover<5>{\item Dominerande arbetsformen är enskilt arbete i
+					läroboken}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Syfte}
+	\begin{itemize}
+		\item<2>
+			Lägga grunden för en formalisering av gymnasiematematiken
+		\item<3>
+			Ta fram en början till ett undervisningsmaterial
+		\item<4>
+			Undersöka hur detta kan användas
+	\end{itemize}
+\end{frame}
+\begin{frame}{Frågeställning}
+	\begin{enumerate}
+		\uncover<2-4>{\item\label{rq:Tillåtande}
+			På vilka sätt tillåter, eller hindrar, gymnasieskolans nya
+			ämnesplan i matematik att undervisa formell matematik?}
+			\begin{enumerate}
+				\uncover<3>{\item\label{rq:MängdInnehåll}
+					Hur mycket extra innehåll behövs uppskattningsvis för att
+					undervisa Matematik 1c med formell matematik?}
+				\uncover<4>{\item\label{rq:Övningsuppgifter}
+					Vilken typ av elevarbete, om något särskilt, kräver
+					ämnesplanen?}
+			\end{enumerate}
+		\uncover<5>{\item\label{rq:Material}
+			På vilka sätt kan ett undervisningsmaterial för formell matematik
+			motsvarande Matematik 1c se ut?}
+		\uncover<6>{\item\label{rq:Möjligt}
+			Hur är möjligheterna att undervisa formell matematik på
+			gymnasienivå?}
+\end{enumerate}
+\end{frame}
+
+
+\begin{comment}
+\section{Tidigare forskning}
+\begin{frame}{Matematikundervisningen i svensk gymnasieskola}
+	{Räkning, räkning och räkning}
+	\begin{itemize}
+		\uncover<2-4>{\item \citet{Skolinspektionen2010uim} granskade
+			matematikundervisningen i kursen Matematik A}
+			\begin{itemize}
+				\uncover<3>{\item Lektionen består av två delar:
+					gemensam genomgång och eget arbete}
+				\uncover<4>{\item Dominerande arbetsformen är enskilt arbete i
+					läroboken}
+			\end{itemize}
+		\uncover<5>{\item Även \citet{Johansson2006tmw} och
+			\citet{Skolverket2003lal} har funnit att läroboken dominerar
+			undervisningen
+		\item Redan 1946 uttryckte Skolkommittén att undervisningen berodde för
+			mycket på läroboken \citep{Johansson2006tmw}}
+		\uncover<6-8>{\item \citet{Johansson2006tmw} undersökte läroböckernas
+			utveckling}
+			\begin{itemize}
+				\uncover<7>{\item Förändringen från 1979 års upplaga till 2001
+					års upplaga är tematiska avsnitt och problemlösningsavsnitt}
+				\uncover<8>{\item Enligt \citet{Skolinspektionen2010uim} hinns
+					dessa inte med eller arbetas med i mån av tid}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Skillnaderna mellan gymnasieskola och högskola}
+	{Litteratur, undervisning och bristande förkunskaper}
+	\begin{itemize}
+		\uncover<2-6>{\item \citet{Thunberg2006gmo} rapporterar om ett växande
+			kunskapsgap mellan gymnasium och högskola}
+			\begin{itemize}
+				\uncover<3>{\item Viktiga förkunskaper saknas i gymnasiets
+					kurser}
+				\uncover<4>{\item Olika kunskapsmål}
+				\uncover<5>{\item Svårigheter med uppgifter som kräver flera
+					steg}
+				\uncover<6>{\item Saknar förståelse för att formler ingår i
+					en helhet}
+			\end{itemize}
+		\uncover<7-10>{\item \citet{Hemmi2006api} fann att matematikstudenter
+			är dåligt förberedda för bevis och exakt matematiskt språk}
+			\begin{itemize}
+				\uncover<8>{\item Matematiska språket viktigt för tydlighet
+					och elevernas lärande \citep{Engstrom2006mtl}}
+				\uncover<9>{\item Två procent av uppgifterna i gymnasiet var
+					av beviskaraktär \citep{Agahi2010mdi}}
+				\uncover<10>{\item Studenterna ville dock lära sig bevis}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Skillnaderna mellan gymnasieskola och högskola}
+	{Litteratur, undervisning och bristande förkunskaper}
+	\begin{itemize}
+		\uncover<2-5>{\item \citet{Agahi2010mdi} har funnit skillnader med
+			avseende på definitioner mellan gymnasie- och högskolelitteraturen}
+			\begin{itemize}
+				\uncover<3>{\item Liknande antal definitioner}
+				\uncover<4>{\item Gymnasieboken definierade genom exempel och
+					ibland i kombination med egenskaper}
+				\uncover<5>{\item Högskoleboken definierade genom att ange
+					egenskaper och ibland genom exempel}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Lärande i matematik}
+	{Problemformuleringar, metaforer och läsförmågor}
+	\begin{itemize}
+		\uncover<2-5>{\item \citet{Kilhamn2011mso} har funnit att metaforer
+			kan leda till förvirring hos eleverna}
+			\begin{itemize}
+				\uncover<3>{\item Läraren avbildar matematiska begrepp på
+					verkligheten}
+				\uncover<4>{\item Eleverna avbildar verkligheten på
+					matematiska begrepp}
+				\uncover<5>{\item Eleverna använder verkligheten för att
+					räkna på matematiken}
+			\end{itemize}
+		\uncover<6-8>{\item \citet{Engstrom2006mtl} har funnit att lärarens
+			problemformulering var av vikt för elevernas lärande}
+			\begin{itemize}
+				\uncover<7>{\item Öppna utforskande formuleringar istället för
+					strikt styrande}
+				\uncover<8>{\item Kan generera nyfikenhet och vara en utmaning}
+			\end{itemize}
+		\uncover<9>{\item \citet{Osterholm2006kom} har funnit att elever
+			använder en särskild läsförmåga för att läsa matematik}
+	\end{itemize}
+\end{frame}
+\end{comment}
+
+
+\section{Metod}
+\begin{frame}{Urval}
+	{En skola, en klass}
+	\begin{itemize}
+		\item<2> Skickade e-post till rektorerna på de närmsta skolorna,
+			fick endast svar från gymnasieskolan
+		\item<3> Fick fyra lektioner med NV2, en klass om 15 elever
+	\end{itemize}
+\end{frame}
+\begin{frame}{Genomförande}
+	{Undervisning, uppgifter och intervjuer}
+	\begin{itemize}
+		\item<2> Genomförde undervisning och examination med materialet
+		\item<3> Klassen utvärderade med en enkät
+		\item<4> Intervjuade fem elever
+	\end{itemize}
+\end{frame}
+%\begin{frame}{Etiska synpunkter}
+%	\begin{itemize}
+%		\item \dots
+%	\end{itemize}
+%\end{frame}
+
+
+\section{Resultat}
+\begin{frame}{Kompendiets utformning}
+	{Den nya ämnesplanens möjligheter och krav}
+	\begin{itemize}
+		\uncover<2-3>{\item Matematiken som oberoende av verkligheten}
+			\begin{itemize}
+				\uncover<3>{\item Problematiken med metaforerna
+					\citep{Kilhamn2011mso}}
+			\end{itemize}
+		\uncover<4-7>{\item Eleven får konstruera sina kunskaper genom
+			erfarenhet}
+			\begin{itemize}
+				\uncover<5-6>{\item De får utforska matematiken
+					\citep{Engstrom2006mtl}}
+				\uncover<6>{\item De ges möjligheten att skapa matematik}
+				\uncover<7>{\item Undervisningen ska låta eleverna ''utmana,
+					fördjupa och bredda sin kreativitet och sitt
+					matematikkunnande'' \citep[sidan 87]{SKOLFS2010-261}}
+			\end{itemize}
+		\uncover<8-10>{\item Okonventionella exempel}
+			\begin{itemize}
+				\uncover<9>{\item Definiera en
+					relation på mängden av kort i en kortlek}
+				\uncover<10>{\item Ge eleverna erfarenhet av matematikens
+					''kreativa kvaliteter och mångfacetterade karaktär''
+					\citep[sidan 87]{SKOLFS2010-261}}
+			\end{itemize}
+		\uncover<11-14>{\item Flytande text}
+			\begin{itemize}
+				\uncover<12-13>{\item \(a=b\) skrivs \emph{\(a\) är lika med
+					\(b\)}}
+				\uncover<13>{\item Mindre fokus på symboler, mer generell
+					läsförmåga \citep{Osterholm2006kom}}
+				\uncover<14>{\item Uppgifterna är \emph{ej} samlade i
+					slutet av avsnitten}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{comment}
+\begin{frame}{Kompendiets utformning}
+	{Den nya ämnesplanens möjligheter och krav}
+	Kompendiet ger möjlighet att utveckla:
+	\begin{enumerate}
+		\uncover<2>{\item\label{begrepp}
+			Förmåga att använda och beskriva innebörden av matematiska
+			begrepp samt samband mellan begreppen.}
+		%\item\label{procedurer}
+		\uncover<0>{\item \dots}
+		%	Förmåga att hantera procedurer och lösa uppgifter av
+		%	standardkaraktär utan och med verktyg.
+		\uncover<3>{\item\label{problem}
+			Förmåga att formulera, analysera och lösa matematiska problem
+			samt att värdera valda strategier, metoder och resultat.}
+		%\item\label{modellering}
+		\uncover<0>{\item \dots}
+		%	Förmåga att tolka en realistisk situation och utforma en
+		%	matematisk modell samt att använda och utvärdera en modells
+		%	egenskaper och begränsningar.
+		\uncover<4>{\item\label{resonemang}
+			Förmåga att följa, föra och bedöma matematiska resonemang.}
+		\uncover<5>{\item\label{kommunikation}
+			Förmåga att kommunicera matematiska tankegångar muntligt,
+			skriftligt och i handling.}
+		%\item\label{sammanhang}
+		\uncover<0>{\item \dots
+		%	Förmåga att relatera matematiken till dess betydelse och
+		%	användning inom andra ämnen, i ett yrkesmässigt, samhälleligt och
+		%	historiskt sammanhang.
+			\citep[sidan 87]{SKOLFS2010-261}}
+	\end{enumerate}
+\end{frame}
+\begin{frame}{Kompendiets utformning}
+	{Den nya ämnesplanens möjligheter och krav}
+	Kompendiet fokuserar \alert{ej} på att ge möjlighet att utveckla:
+	\begin{enumerate}
+		%\item\label{begrepp}
+		\item<0> \dots
+		%	Förmåga att använda och beskriva innebörden av matematiska
+		%	begrepp samt samband mellan begreppen.
+		\item<2>\label{procedurer}
+			Förmåga att hantera procedurer och lösa uppgifter av
+			standardkaraktär utan och med verktyg.
+		%\item\label{problem}
+		\item<0> \dots
+		%	Förmåga att formulera, analysera och lösa matematiska problem
+		%	samt att värdera valda strategier, metoder och resultat.
+		\item<3>\label{modellering}
+			Förmåga att tolka en realistisk situation och utforma en
+			matematisk modell samt att använda och utvärdera en modells
+			egenskaper och begränsningar.
+		%\item\label{resonemang}
+		\item<0> \dots
+		%	Förmåga att följa, föra och bedöma matematiska resonemang.
+		%\item\label{kommunikation}
+		\item<0> \dots
+		%	Förmåga att kommunicera matematiska tankegångar muntligt,
+		%	skriftligt och i handling.
+		\item<4>\label{sammanhang}
+			Förmåga att relatera matematiken till dess betydelse och
+			användning inom andra ämnen, i ett yrkesmässigt, samhälleligt och
+			historiskt sammanhang.
+			\citep[sidan 87]{SKOLFS2010-261}
+	\end{enumerate}
+\end{frame}
+\end{comment}
+\begin{comment}
+\begin{frame}{Elevernas upplevelse av undervisningen}
+	{Observationer, intervjuer, enkät.}
+	\begin{itemize}
+		\uncover<2-3>{\item Majoriteten tyckte att det var svårt att förstå,
+			men förstod helheten}
+		\uncover<3>{\item En tredjedel förstod även vissa detaljer}
+		\uncover<4-5>{\item Två tredjedelar tyckte att de aldrig tidigare sett
+			denna typ av matematik}
+		\uncover<5>{\item En tredjedel tyckte att den påminde om det de
+			arbetat med tidigare}
+		\uncover<6-9>{\item Jämn spridning på hur de uppfattade uppgifterna}
+			\begin{itemize}
+				\uncover<7>{\item Förstod ej vad (5)}
+				\uncover<8>{\item Förstod vad men ej hur (4)}
+				\uncover<9>{\item Förstod både vad och hur (6)}
+			\end{itemize}
+		\uncover<10>{\item Hälften föredrog kompendiets uppgifter, andra
+			hälften bokens}
+	\end{itemize}
+\end{frame}
+\end{comment}
+\begin{frame}{Elevernas upplevelse av undervisningen}
+	{Observationer, intervjuer, enkät.}
+	\begin{itemize}
+		\uncover<2-4>{\item De lösta exemplen möttes övervägande positivt}
+			\begin{itemize}
+				\uncover<3-4>{\item Bra och enkla att förstå}
+			\end{itemize}
+		\uncover<4>{\item Detsamma för uppgifterna}
+		\uncover<5-9>{\item Undervisningen skilde sig från den vanliga}
+			\begin{itemize}
+				\uncover<6>{\item Mer genomgångar}
+				\uncover<7>{\item Mer diskussion och förståelse}
+				\uncover<8>{\item Mer fokus på \emph{varför} snarare än
+					\emph{att}}
+				\uncover<9>{\item Majoriteten positiv till den nya typen av
+					undervisning}
+			\end{itemize}
+		\uncover<10>{\item Elevernas bild av matematiken förändrades}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Elevernas upplevelse av undervisningen}
+	{Observationer, intervjuer, enkät.}
+	\begin{itemize}
+		\item<1> De kan anpassa sig efter definitionerna
+		\item<2> De kan förstå de abstrakta logiska resonemangen
+		\item<3> De behäver bara få vänja sig och få tid med matematiken
+	\end{itemize}
+\end{frame}
+\begin{frame}{Elevernas upplevelse av undervisningen}
+	{Observationer, intervjuer, enkät.}
+	\begin{itemize}
+		\uncover<1-5>{\item En G-elev på kurs B tyckte att kompendiet var
+			lättare än den vanliga matematiken}
+			\begin{itemize}
+				\uncover<2>{\item Kan bero på användandet av en annan
+					läsförmåga \citep{Osterholm2006kom}}
+				\uncover<3>{\item Kan bero på mer sammanhängande innehåll}
+				\uncover<4>{\item Kan bero på explicita definitioner
+					istället för implicita \citep{Agahi2010mdi}}
+				\uncover<5>{\item Kan bero på att matematiken framställs
+					utan metaforer \citep{Kilhamn2011mso}}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{comment}
+\section{Diskussion}
+\begin{frame}{Diskussion}
+	% - A title should summarize the slide in an understandable fashion
+	%   for anyone who does not follow everything on the slide itself.
+\end{frame}
+\end{comment}
+
+
+\section{Slutsats}
+\begin{frame}{Slutsats}
+	% Keep the summary *very short*.
+	\begin{itemize}
+		\uncover<2>{\item
+			% På vilka sätt tillåter, eller hindrar, gymnasieskolans nya
+			% ämnesplan i matematik att undervisa formell matematik?}
+			% - Hur mycket extra innehåll behövs uppskattningsvis för att
+			%   undervisa Matematik 1c med formell matematik?
+			% - Vilken typ av elevarbete, om något särskilt, kräver
+			%   ämnesplanen?
+			Ämnesplanen tillåter formell matematik, innehålls- som tidsmässigt}
+		%\uncover<2>{\item
+			% På vilka sätt kan ett undervisningsmaterial för formell matematik
+			% motsvarande Matematik 1c se ut?
+		%	\dots}
+		\uncover<3-5>{\item
+			% Hur är möjligheterna att undervisa formell matematik på
+			% gymnasienivå?
+			Finns ingen egentlig problematik för att undervisa formell
+			matematik i gymnasieskolan}
+			\begin{itemize}
+				\uncover<4>{\item Eleverna vill ha bevis och härledningar}
+				\uncover<5>{\item Eleverna trivdes med undervisningsformen}
+			\end{itemize}
+	\end{itemize}
+  
+	% The following outlook is optional.
+	\vskip0pt plus.5fill
+	\begin{itemize}
+		\uncover<6->{\item
+			Vidare forskning}
+			\begin{itemize}
+				\uncover<7>{\item
+					Longitudinell studie med hela kursen Matematik 1c}
+				\uncover<8>{\item
+					Vilka har eventuellt lätt och vilka har eventuellt svårt
+					för denna typ av matematik?}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{Referenser}
+	\bibliography{../thesis/thesis}
+\end{frame}
+
+
+\end{document}
+
