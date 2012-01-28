@@ -69,7 +69,7 @@ Denna relation \(\sim\) är faktiskt en ekvivalensrelation.
 För att visa detta kollar vi att relationen uppfyller axiomen i
 \defref{def:Ekvivalensrelation} för en ekvivalensrelation.
 Additionen är kommutativ och eftersom att \(a+b=b+a\) har vi
-\((a,b)\sim (a,b)\), och följdaktligen är den reflexiv.
+\((a,b)\sim (a,b)\), och följaktligen är den reflexiv.
 Om \((a,b)\sim (c,d)\) då är \(a+d=b+c\) och således 
 \begin{align*}
 	c+b &= b+c,\\
@@ -78,6 +78,15 @@ Om \((a,b)\sim (c,d)\) då är \(a+d=b+c\) och således
 \end{align*}
 Den sista ekvationen ger precis \((c,d)\sim (a,b)\).
 Relationen måste då vara symmetrisk.
+För att visa transitiviteten behövs följande resultat.
+\begin{lemma}
+	\label{lem:AdditionInjektiv}
+	Låt \(x\) och \(y\) vara naturliga tal.
+	Om \(z\) är ett naturligt tal och \(x+z=y+z\) då är \(x=y\).
+\end{lemma}
+\begin{exercise}
+	Bevisa \prettyref{lem:AdditionInjektiv}.
+\end{exercise}
 Om \((a,b)\sim (c,d)\) och \((c,d)\sim (e,f)\), då har vi först att
 \begin{equation}
 	\label{eq:VisaHeltalensEkvivalensrelation1}
@@ -93,7 +102,8 @@ Detta ger
 	a+d+f = b+c+f = b+d+e.
 \end{equation*}
 Eftersom att additionen är kommutativ får vi \(a+f+d = b+e+d\) och
-följdaktligen att \(a+f = b+e\) som betyder att \((a,b)\sim (e,f)\).
+enligt \prettyref{lem:AdditionInjektiv} har vi då att \(a+f = b+e\) som
+betyder att \((a,b)\sim (e,f)\).
 Eftersom att relationen då även är transitiv är relationen en
 ekvivalensrelation.
 
@@ -104,7 +114,7 @@ Det vill säga, \([(a,b)]\) innehåller alla talpar i \(M\) som uppfyller
 ekvivalensrelationen med talparet \((a,b)\).
 \begin{example}
 	Vi har att \((0,0)\sim (1,1)\) eftersom att \(0+1 = 0+1\).
-	Följdaktligen har vi \([(0,0)]=[(1,1)]\) och \((1,1)\in [(0,0)]\), men
+	Följaktligen har vi \([(0,0)]=[(1,1)]\) och \((1,1)\in [(0,0)]\), men
 	naturligtvis även \((0,0)\in [(0,0)]\).
 \end{example}
 \begin{remark}
@@ -115,7 +125,7 @@ ekvivalensrelationen med talparet \((a,b)\).
 \end{remark}
 \begin{example}
 	Vi har däremot \((0,0)\nsim (1,0)\) eftersom att \(0+0\neq 0+1\),
-	och följdaktligen \((1,0)\notin [(0,0)]\).
+	och följaktligen \((1,0)\notin [(0,0)]\).
 \end{example}
 
 Låt oss nu definiera en binär operation \(+\) som vi kallar för addition och en
@@ -415,7 +425,7 @@ Vi formulerar detta som en sats.
 	Vi har att \(1+(-1) = 0\).
 	Om vi multiplicerar noll med ett tal får vi enlingt
 	\lemref{lem:IngenNolldelare} fortfarande noll.
-	Följdaktligen får vi att \(a(1+(-1))=0\) eftersom att vi då multiplicerar
+	Följaktligen får vi att \(a(1+(-1))=0\) eftersom att vi då multiplicerar
 	\(a\) med noll.
 	Eftersom att multiplikation är distributiv över addition får vi då att
 	\begin{equation*}

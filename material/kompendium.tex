@@ -20,6 +20,7 @@
 \usepackage{subfig}
 %\usepackage{enumerate}
 \usepackage{verbatim}
+\usepackage{varioref,prettyref}
 \usepackage{ifdraft}
 \ifdraft{
 	\usepackage{fancyhdr}
@@ -44,6 +45,7 @@
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
 
+% TODO migrate to prettyref
 \newcommand{\chref}[1]{Kapitel \ref{#1}}
 \newcommand{\secref}[1]{avsnitt \ref{#1}}
 \newcommand{\appref}[1]{Appendix \ref{#1}}
@@ -102,7 +104,7 @@
 }
 \date{\today}
 \author{Daniel Bosk}
-\address{Sandgatan 6, 860\,35 Söråker}
+%\address{Sandgatan 6, 860\,35 Söråker}
 \email{\url{dbosk@kth.se}}
 \urladdr{\url{http://www.bosk.se/}}
 %\thanks{...}

@@ -10,8 +10,8 @@
 \usepackage{hyperref}
 \usepackage{verbatim}
 \usepackage[longnamesfirst]{natbib}
-%\bibliographystyle{kthnat}
-\bibliographystyle{sweplnat}
+\bibliographystyle{swekthnat}
+%\bibliographystyle{sweplnat}
 \usepackage{pdfpages}
 %\setlength{\fboxrule}{5pt}
 \usepackage{ifdraft}
@@ -21,14 +21,14 @@
 }
 \addto{\extrasswedish}{%
 	\renewcommand{\reftextbefore}{på föregående sida}
-	\renewcommand{\reftextfacebefore}{på motsatt sida} 
+	\renewcommand{\reftextfacebefore}{på föregående sida} 
 	\renewcommand{\reftextafter}{på nästa sida}
-	\renewcommand{\reftextfaceafter}{på motsatt sida}
+	\renewcommand{\reftextfaceafter}{på nästa sida}
 	\renewcommand{\reftextfaraway}[1]{på sidan \pageref{#1}}
 }
 
 %\newcommand{\chref}[1]{Kapitel \ref{#1}}
-\newrefformat{ch}{Kapitel \ref{¤1}}
+\newrefformat{ch}{Kapitel \ref{#1}}
 %\newcommand{\secref}[1]{avsnitt \ref{#1}}
 \newrefformat{sec}{avsnitt \ref{#1}}
 %\newcommand{\subsecref}[1]{delavsnitt \ref{#1}}
@@ -54,12 +54,18 @@
 \sulogo{su_logo.pdf}
 
 \title{En formalisering av matematiken i svensk gymnasieundervisning}
+\subtitle{A Formalisation of Swedish Upper Secondary School Mathematics}
 \author{Daniel Bosk}
 \date{Juni 2011}
 \blurb{Examensarbete vid programmet \emph{Civilingenjör och lärare}\\
 	inom området Teknik och lärande\\
 }
 \trita{Stockholm 2011}
+
+\newcommand{\refenkat}{(enkät, den 9 maj 2011)}
+\newcommand{\refsandra}{(intervju Carolina, den 11 maj 2011)}
+\newcommand{\refoscar}{(intervju Oscar, den 13 maj 2011)}
+\newcommand{\refsjm}{(intervju Sara, Jens och Mattias, den 13 maj 2011)}
 
 \setlength{\parskip}{0pt}
 
